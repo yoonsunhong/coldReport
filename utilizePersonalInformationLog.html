@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+  <meta charset="utf-8">
+  <title> Log Monitoring | Utilize Personal Information Log  </title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/sub.css">
+  <link href="js/jqGrid/ui.jqgrid.css" rel="stylesheet">
+  <link href="js/jqGrid/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+  <link href="js/jqGrid/jquery-ui.min.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+	<script src="js/jqGrid/jquery-1.7.1.min.js"></script>
+	<script src="js/jqGrid/json3.min.js"></script>
+    <script src="js/jqGrid/jquery.jqGrid.src.js"></script>
+    <script src="js/jqGrid/grid.locale-kr.js"></script>
+    <script src="js/jqGrid/common.js"></script>
+    <script src="js/jqGrid/rtComm.js"></script>
+    <script src="js/common.js" type="text/javascript"></script>
+    <script src="js/jquery.treeview.js" type="text/javascript"></script>
+    <script src="js/jquery-ui.js" type="text/javascript"></script>
+    <script type="text/javascript">
+		$(function(){
+			$("#skip").load("include/skip.html"); 
+			$("#header").load("include/header.html"); 
+			$("#footer").load("include/footer.html"); 
+		});
+		$(function() {
+			$( ".date" ).datepicker({
+				showOn: "button",								// 버튼과 텍스트 필드 또는 모두 캘린더에 표시할지에 대한 여부 선택, both/button,text
+				buttonImage: "images/sub/date_icon.png",	// image 경로 지정, 버튼 이미지 선택
+				buttonImageOnly: true,							// 버튼에 있는 이미지만 표시, true/false
+				buttonText: "Select date",						
+				changeMonth: true,								// 월을 바꿀 수 있는 select 박스 표시, true/false
+				changeYear: true,									// 년을 바꿀 수 있는 select 박스 표시, true/false
+				nextText: '다음달',								// next 아이콘의 title 설정
+				prevText: '이전달',								// prev 아이콘의 title 설정
+				showButtonPanel: true,						// 캘린더 하단에 (today,done) 버튼 패널 표시 여부 선택
+				closeText: '닫기',									// close 버튼의 text 선택
+				dateFormat: 'yy-mm-dd',						// 표시할 날짜 형식 선택
+				dayNames: ['월요일', '화요일', '수요일', '목요일', '금요일', '토요일', '일요일'],			// 표시할 요일 이름
+				dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'],											// 표시할 요일 약자 이름
+				monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월']	,	// 표시할 달 이름
+				monthNamesShort: ['1','2','3','4','5','6','7','8','9','10','11','12'],								// 표시할 달 약자 이름
+			}); 
+		});
+			$(document).ready(function () {
+				jQuery("#grid1").jqGrid({
+					colNames: ['정보접근아이디' , '메뉴명' , 'CRUD구분' , '대상아이디' , '대상타입' , '정보접근IP' , '정보접근일시'],
+					colModel: [
+						  { name: 'REG_ID', align: 'center', width: 200 },
+						  { name: 'MENU_ID', align: 'center', width: 150 },
+						  { name: 'CRUD_GB', align : 'center' },
+						  { name: 'TARGET', align : 'center' },
+						  { name: 'TARGET_TYPE', align : 'center' },
+						  { name: 'REG_IP', align : 'center' },
+						  { name: 'REG_DTTM', align : 'center' },
+					],
+					rowNum: 10,							// 한 페이지에 보여줄 데이터 갯수
+					rowList: [5, 10, 20, 50],			// 한 화면에서 볼 수 있는 row의 수를 조절 가능
+					rownumbers: true,					// row의 숫자를 표시해 줌
+					pager: '#pager'						// 페이징을 처리할 <div> 태그의 #id값
+				});
+				var mydata = [
+					{REG_ID:'admin',MENU_ID:'CompanyManagement',CRUD_GB:'Read',TARGET:'admin',TARGET_TYPE:'User',REG_IP:'175.113.81.171',REG_DTTM:'2016-03-16 오전 08:49:29'},
+					{REG_ID:'admin',MENU_ID:'UserRegistration',CRUD_GB:'Read All',TARGET:'admin',TARGET_TYPE:'User',REG_IP:'175.113.81.171',REG_DTTM:'2016-03-15 오후 05:32:04'},
+				]
+
+				for(var i=0;i<=mydata.length;i++)	// 스크립트 변수에 담겨 있는 json 데이터의 길이만큼
+					jQuery("#grid1").jqGrid('addRowData',i+1,mydata[i]);		// jqgrid의 addRowData를 이용하여 각각의 row에 gridData 변수의 데이터를 add한다
+
+				reSizefn();
+				//jQuery("#grid1").jqGrid('addJSONData', data);
+			});
+			
+			function reSizefn() {
+				//그리드1 사이즈 
+				$(window).resize(function () {
+					var grid = $("#grid1");
+					var gridCnt = $(".grid_area > div");
+					var width = $(".grid_area").width()-2;
+					var height = $(window).height() - 318;
+					if ( height <= 590 ) {
+						height = 590;
+					}
+
+					grid.setGridWidth(width, true);
+					grid.setGridHeight(height, true);
+					gridCnt.width(width+2);
+				}).resize();       
+			}
+    </script>
+ </head>
+
+ <body>
+		<!-- ========= skip =========== -->
+		<div id="skip"></div>
+		<!-- ========= //skip =========== -->
+		<!-- ========= header =========== -->
+		<header id="header"></header>
+		<!-- ========= //header =========== -->
+		<!-- ========= content ========= -->
+		<section id="content">
+			<div class="tit">
+				<h2 class="sub_tit">Utilize Personal Information Log</h2>
+				<ul class="location">
+					<li>Log Monitoring</li>
+					<li>Utilize Personal Information Log</li>
+				</ul>
+			</div>
+			<div class="frame1_cnt">
+				<div class="sub_cnt">
+					<div class="btn_area">
+						<button class="btn_type btn_type1">조회</button>
+						<button class="btn_type btn_type1">엑셀 다운로드</button>
+					</div>
+					<div class="search_area">
+						<form action="" method="post">
+							<span>· 조회일</span><label for="inquiryStart" class="blind">조회시작일</label><input type="text" id="inquiryStart" class="date">~<label for="inquiryEnd" class="blind">조회종료일</label><input type="text" id="inquiryEnd" class="date">
+							<label for="menuName">· 메뉴명</label><input type="text" id="menuName">
+							<label for="crud">· CRUD</label>
+							<select name="crud" id="crud">
+								<option value="(전체)">(전체)</option>
+								<option value="Create">Create</option>
+								<option value="Read">Read</option>
+								<option value="Update">Update</option>
+								<option value="Delete">Delete</option>
+								<option value="Read All">Read All</option>
+							</select>
+							<label for="objectType">· 대상타입</label>
+							<select name="objectType" id="objectType">
+								<option value="(전체)">(전체)</option>
+								<option value="User">User</option>
+								<option value="Truck">Truck</option>
+							</select>
+						</form>
+					</div>
+					<div class="grid_area">
+						<table id="grid1" ></table>    
+					</div>
+					<div id="pager" ></div>		
+				</div>
+			</div>
+		</section>
+		<!-- ========= //content ========= -->
+		<!-- =========footer=========== -->
+		<footer id="footer"></footer>
+		<!-- =========//footer=========== -->	
+ </body>
+</html>

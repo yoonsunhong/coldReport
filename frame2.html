@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+  <meta charset="utf-8">
+  <title> frame2 </title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/sub.css">
+  <link href="js/jqGrid/ui.jqgrid.css" rel="stylesheet">
+  <link href="js/jqGrid/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+  <link href="js/jqGrid/jquery-ui.min.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+	<script src="js/jqGrid/jquery-1.7.1.min.js"></script>
+	<script src="js/jqGrid/json3.min.js"></script>
+    <script src="js/jqGrid/jquery.jqGrid.src.js"></script>
+    <script src="js/jqGrid/grid.locale-kr.js"></script>
+    <script src="js/jqGrid/common.js"></script>
+    <script src="js/jqGrid/rtComm.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/common.js" type="text/javascript"></script>
+    <script src="js/jquery.treeview.js" type="text/javascript"></script>
+    <script type="text/javascript">
+		$(function(){
+			$("#skip").load("include/skip.html"); 
+			$("#header").load("include/header.html"); 
+			$("#footer").load("include/footer.html"); 
+		});
+		$(function() {
+			$("#tabTree1").treeview({
+				collapsed: true,
+				animated: "medium",
+				control:"#sidetreecontrol",
+				persist: "location"
+			});
+		});
+    </script>
+ </head>
+<body>
+<div>
+    <!-- ========= skip =========== -->
+	<div id="skip"></div>
+    <!-- ========= //skip =========== -->
+    <!-- ========= header =========== -->
+	<header id="header"></header>
+    <!-- ========= //header =========== -->
+	<!-- ========= content ========= -->
+	<section id="content">
+		<div class="tit">
+			<h2 class="sub_tit">서브 타이틀 이름</h2>
+			<ul class="location">
+				<li>depth1 이름</li>
+				<li>depth2 이름</li>
+			</ul>
+		</div>
+		<div class="frame2_cnt clear">
+			<div class="ban_l">
+				<div class="tree_area">
+					<h3 class="tit_bg">Location Explor</h3>
+					<div>
+						<ul id="tabTree1" class="tree_cnt location_tree">
+							<li>
+								<a href="#">Root</a>
+								<ul>
+									<li>
+										<a href="#">그린트리플러스</a>
+										<ul>
+											<li><a href="#">이천농장</a></li> 
+										</ul>
+									</li>
+									<li>
+										<a href="#">리테일테크</a>
+										<ul>
+											<li><a href="#">본사사옥</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<button type="button" class="btn_fold close_btn" onclick="fordingLeft();"></button>
+			</div>
+			<div class="sub_cnt f_r"></div>
+		</div>
+	</section>
+    <!-- ========= //content ========= -->
+    <!-- =========footer=========== -->
+    <footer id="footer"></footer>
+    <!-- =========//footer=========== -->
+</div>
+
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+  <meta charset="utf-8">
+  <title> Monitoring | Location Monitoring </title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/sub.css">
+  <link href="js/jqGrid/ui.jqgrid.css" rel="stylesheet">
+  <link href="js/jqGrid/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+  <link href="js/jqGrid/jquery-ui.min.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+	<script src="js/jqGrid/jquery-1.7.1.min.js"></script>
+	<script src="js/jqGrid/json3.min.js"></script>
+    <script src="js/jqGrid/jquery.jqGrid.src.js"></script>
+    <script src="js/jqGrid/grid.locale-kr.js"></script>
+    <script src="js/jqGrid/common.js"></script>
+    <script src="js/jqGrid/rtComm.js"></script>
+    <script src="js/common.js" type="text/javascript"></script>
+    <script src="js/jquery.treeview.js" type="text/javascript"></script>
+    <script src="js/jquery-ui.js" type="text/javascript"></script>
+    <script type="text/javascript">
+		$(function(){
+			$("#skip").load("include/skip.html"); 
+			$("#header").load("include/header.html"); 
+			$("#footer").load("include/footer.html"); 
+		});
+		$(function() {
+			$("#tabTree1").treeview({
+				collapsed: true,
+				animated: "medium",
+				control:"#sidetreecontrol",
+				persist: "location"
+			});
+		});
+		$(function() {
+			$( ".date" ).datepicker({
+				showOn: "button",								// 버튼과 텍스트 필드 또는 모두 캘린더에 표시할지에 대한 여부 선택, both/button,text
+				buttonImage: "images/sub/date_icon.png",	// image 경로 지정, 버튼 이미지 선택
+				buttonImageOnly: true,							// 버튼에 있는 이미지만 표시, true/false
+				buttonText: "Select date",						
+				changeMonth: true,								// 월을 바꿀 수 있는 select 박스 표시, true/false
+				changeYear: true,									// 년을 바꿀 수 있는 select 박스 표시, true/false
+				nextText: '다음달',								// next 아이콘의 title 설정
+				prevText: '이전달',								// prev 아이콘의 title 설정
+				showButtonPanel: true,						// 캘린더 하단에 (today,done) 버튼 패널 표시 여부 선택
+				closeText: '닫기',									// close 버튼의 text 선택
+				dateFormat: 'yy-mm-dd',						// 표시할 날짜 형식 선택
+				dayNames: ['월요일', '화요일', '수요일', '목요일', '금요일', '토요일', '일요일'],			// 표시할 요일 이름
+				dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'],											// 표시할 요일 약자 이름
+				monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월']	,	// 표시할 달 이름
+				monthNamesShort: ['1','2','3','4','5','6','7','8','9','10','11','12'],								// 표시할 달 약자 이름
+			}); 
+		});
+   </script>
+</head>
+<body>
+    <!-- ========= skip =========== -->
+	<div id="skip"></div>
+    <!-- ========= //skip =========== -->
+    <!-- ========= header =========== -->
+	<header id="header"></header>
+    <!-- ========= //header =========== -->   
+    <!-- ========= content ========= -->
+	<section id="content">
+		<div id="wrap">
+			<div class="tit">
+				<h2 class="sub_tit">Location Monitoring</h2>
+				<ul class="location">
+					<li>Monitoring</li>
+					<li>Location Monitoring</li>
+				</ul>
+			</div>
+			<div class="frame4_cnt clear">
+				<div class="ban_l">
+					<div class="tree_area">
+						<h3 class="tit_bg">Location Explor</h3>
+						<div>
+							<ul id="tabTree1" class="tree_cnt location_tree">
+								<li>
+									<a href="#">Root</a>
+									<ul>
+										<li>
+											<a href="#">그린트리플러스</a>
+											<ul>
+												<li><a href="#">이천농장</a></li> 
+											</ul>
+										</li>
+										<li>
+											<a href="#">리테일테크</a>
+											<ul>
+												<li><a href="#">본사사옥</a></li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<button type="button" class="btn_fold blind" onclick="fordingLeft();">배너 닫기</button>
+				</div>
+				<div class="cnt_r">
+					<div class="sub_cnt">
+						<div>
+							<div class="search_area">
+								<label for="baseName">· 거점명</label><input type="text" id="baseName" disabled>
+								<span>· Auto Reflash</span><input type="radio" id="reflashOn" name="reflash" value="Y"><label for="reflashOn">On</label><input type="radio" id="reflashOff" name="reflash" value="N" checked><label for="reflashOff">Off</label>
+								<button class="btn_type btn_type3 f_r"><a href="#" target= "new" >+ 전체화면</a></button>
+							</div>			
+							<div>
+								<h4 class="side_tit">UB센터1</h4>
+								<div class="scroll_box">
+									<div class="p_r">
+										<img class="img_cnt"src="images/sub/echon.jpg" width="1000" height="800" alt="이천농장 이미지">
+										<img class="imgSelect" style="position:absolute;top:133px;left:198px" src="images/sub/icon_temp_humidity_danger.png" alt="습도 위험 아이콘">
+										<img class="imgSelect" style="position:absolute;top:130px;left:294px" src="images/sub/icon_co2_caution.png" alt="co2 경고 아이콘">
+										<img class="imgSelect" style="position:absolute;top:120px;left:614px" src="images/sub/icon_ec_danger.png" alt="ec 위험 아이콘">
+										<img class="imgSelect" style="position:absolute;top:156px;left:512px" src="images/sub/icon_ec_normal.png" alt="ec 정상 아이콘">
+										<img class="imgSelect" style="position:absolute;top:194px;left:532px" src="images/sub/icon_ph_danger.png" alt="ph 위험 아이콘">
+										<img class="imgSelect" style="position:absolute;top:155px;left:332px" src="images/sub/icon_ph_normal.png" alt="ph 정상 아이콘">
+										<img class="imgSelect" style="position:absolute;top:219px;left:273px" src="images/sub/icon_temp_humidity_caution.png" alt="습도 경고 아이콘">
+										<img class="imgSelect" style="position:absolute;top:192px;left:408px" src="images/sub/icon_temp_humidity_normal.png" alt="습도 정상 아이콘">
+										<img class="imgSelect" style="position:absolute;top:78px;left:640px" src="images/sub/icon_waterTemp_caution.png" alt="수온 경고 아이콘">
+										<img class="imgSelect" style="position:absolute;top:158px;left:389px" src="images/sub/icon_waterTemp_danger.png" alt="수온 위험 아이콘">
+										<img class="imgSelect" style="position:absolute;top:226px;left:222px" src="images/sub/icon_waterTemp_danger.png" alt="수온 위험 아이콘">
+									</div>
+									<div class="popupLayer popup pop_sensor">
+										<h4>UB센터 센서1</h4>
+										<ul>
+											<li class="ico_tem"><strong class="name">Temperature</strong><p><span>12.2</span><span>℃</span></p></li>
+											<li class="ico_hum"><strong class="name">Humidity</strong><p><span>12.2</span><span>%</span></p></li>
+											<li class="ico_co2"><strong class="name">CO2</strong><p><span>12.2</span><span>ppm</span></p></li>
+											<li class="ico_wat"><strong class="name">WaterTemperature</strong><p><span>12.2</span><span>℃</span></p></li>
+											<li class="ico_lig"><strong class="name">Light</strong><p><span>12.2</span><span>℃</span></p></li>
+											<li class="ico_ph"><strong class="name">PH</strong><p><span>12.2</span><span>pH</span></p></li>
+											<li class="ico_ec"><strong class="name">EC</strong><p><span>12.2</span><span>mS/c</span></p></li>
+											<li class="ico_sen"><strong class="name">센싱시간</strong><p><span>2016-05-03</span><span>오후 02:34:12</span></p></li>
+										</ul>
+										<a href="#" class="close_btn"><img src="images/sub/close_btn.gif" width="18" height="18" alt="닫기"></a>
+									</div>
+								</div>
+							</div>
+						</div>					
+					</div>
+					<div class="graph">
+						<h3 class="graph_tit tit_bg">Chart Explorer</h3>
+						<div class="graph_area">
+							<div class="graph_data clear">
+								<div class="graph_info f_l">
+									<h4 class="graph_name f_l">UB센터1</h4>
+									· 조회일<label for="inquiryStart" class="blind">조회시작일</label><input type="text" id="inquiryStart" class="date">~<label for="inquiryEnd" class="blind">조회종료일</label><input type="text" id="inquiryEnd" class="date">
+									<label for="senserType">· 센서종류</label>
+									<select name="senserType" id="senserType">
+										<option value="선택">:: 선택하세요</option>
+										<option value="Temperature">Temperature</option>
+										<option value="Humidity">Humidity</option>
+										<option value="CO2">CO2</option>
+										<option value="WaterTemperature">WaterTemperature</option>
+										<option value="Light">Light</option>
+										<option value="PH">PH</option>
+										<option value="EC">EC</option>
+									</select>
+									<label for="sensorCircle">· 센서 주기</label>
+									<select name="sensorCircle" id="sensorCircle">
+										<option value="선택">:: 선택하세요</option>
+										<option value="1시간">1시간</option>
+										<option value="2시간">2시간</option>
+										<option value="3시간">3시간</option>
+									</select>
+								</div>
+								<button class="btn_type btn_type1 f_r">조회</button>
+							</div>
+							<div class="graph_cnt">
+								<div>
+									<!-- 그래프 영역 -->
+								</div>
+							</div>
+						</div>
+					</div>	
+				</div>
+			</div>	
+		</div>
+	</section>
+    <!-- ========= //content ========= -->
+    <!-- =========footer=========== -->
+    <footer id="footer"></footer>
+    <!-- =========//footer=========== -->
+</body>
+</html>

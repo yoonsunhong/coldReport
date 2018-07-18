@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+  <meta charset="utf-8">
+  <title> Administrator | Company Management </title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/sub.css">
+  <link href="js/jqGrid/ui.jqgrid.css" rel="stylesheet">
+  <link href="js/jqGrid/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+  <link href="js/jqGrid/jquery-ui.min.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+	<script src="js/jqGrid/jquery-1.7.1.min.js"></script>
+	<script src="js/jqGrid/json3.min.js"></script>
+    <script src="js/jqGrid/jquery.jqGrid.src.js"></script>
+    <script src="js/jqGrid/grid.locale-kr.js"></script>
+    <script src="js/jqGrid/common.js"></script>
+    <script src="js/jqGrid/rtComm.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/common.js" type="text/javascript"></script>
+    <script src="js/jquery.treeview.js" type="text/javascript"></script>
+    <script type="text/javascript">
+		$(function(){
+			$("#skip").load("include/skip.html"); 
+			$("#header").load("include/header.html"); 
+			$("#footer").load("include/footer.html"); 
+		});
+    </script>
+ </head>
+
+ <body>
+		<!-- ========= skip =========== -->
+		<div id="skip"></div>
+		<!-- ========= //skip =========== -->
+		<!-- ========= header =========== -->
+		<header id="header"></header>
+		<!-- ========= //header =========== -->
+		<!-- ========= content ========= -->
+		<section id="content">
+			<div class="tit">
+				<h2 class="sub_tit">Company Management</h2>
+				<ul class="location">
+					<li>Administrator</li>
+					<li>Company Management</li>
+				</ul>
+			</div>
+			<div class="frame1_cnt">
+				<div class="sub_cnt">
+					<div class="btn_area">
+						<button class="btn_type btn_type1">저장</button>
+					</div>
+					<table class="enroll_area">
+						<tbody>
+							<tr>
+								<th><span class="red_icon">*</span><span class="blind">필수 입력</span><label for="companyName">업체명</label></th>
+								<td><input class="wid2" type="text" id="companyName" disabled></td>
+								<th><span class="red_icon">*</span><span class="blind">필수 입력</span>사용자등록번호</th>
+								<td><label for="userRegiNum1" class="blind">사용자등록번호 앞자리</label><input class="wid4" type="text" id="userRegiNum1" disabled> - <label for="userRegiNum2" class="blind">사용자등록번호 중간자리</label><input class="wid4" type="text" id="userRegiNum2" disabled> - <label for="userRegiNum3" class="blind">사용자등록번호 뒷자리</label><input class="wid4" type="text" id="userRegiNum3" disabled></td>
+							</tr>
+							<tr>
+								<th><span class="red_icon">*</span><span class="blind">필수 입력</span><label for="ceoName">대표자명</label></th>
+								<td><input class="wid2" type="text" id="ceoName"></td>
+								<th><span class="red_icon">*</span><span class="blind">필수 입력</span><label for="address">주소</label></th>
+								<td><input class="wid1" type="text" id="address" disabled></td>
+							</tr>
+							<tr>
+								<th><span class="red_icon">*</span><span class="blind">필수 입력</span>업체연락처</th>
+								<td><label for="comTel1" class="blind">사용자등록번호 앞자리</label><input class="wid4" type="text" id="comTel1" disabled> - <label for="comTel2" class="blind">사용자등록번호 중간자리</label><input class="wid4" type="text" id="comTel2" disabled> - <label for="comTel3" class="blind">사용자등록번호 뒷자리</label><input class="wid4" type="text" id="comTel3" disabled></td>
+								<th><span class="red_icon">*</span><span class="blind">필수 입력</span>업체팩스</th>
+								<td><label for="comFax1" class="blind">사용자등록번호 앞자리</label><input class="wid4" type="text" id="comFax1" disabled> - <label for="comFax2" class="blind">사용자등록번호 중간자리</label><input class="wid4" type="text" id="comFax2" disabled> - <label for="comFax3" class="blind">사용자등록번호 뒷자리</label><input class="wid4" type="text" id="comFax3" disabled></td>
+							</tr>
+							<tr>
+								<th><span class="red_icon">*</span><span class="blind">필수 입력</span><label for="userName">사용자이름</label></th>
+								<td><input class="wid2" type="text" id="userName" /></td>
+								<th class="icon_no"><label for="userPosition">사용자직책</label></th>
+								<td><input class="wid2" type="text" id="userPosition"/></td>
+							</tr>
+							<tr>
+								<th><span class="red_icon">*</span><span class="blind">필수 입력</span><label for="userID">사용자아이디</label></th>
+								<td colspan="3"><input class="wid2" type="text" id="userID" disabled></td>
+							</tr>
+							<tr>
+								<th><span class="red_icon">*</span><span class="blind">필수 입력</span><label for="userEmail">사용자이메일</label></th>
+								<td><label for="userEmailID" class="blind">이메일 아이디</label><input class="wid3" type="text" id="userEmailID"/> @ <label for="userEmailDamain" class="blind">이메일 도메인</label><input class="wid2" type="text" id="userEmailDamain"/></td>
+								<th><span class="red_icon">*</span><span class="blind">필수 입력</span><label for="userTel">사용자연락처</label></th>
+								<td><label for="tel1" class="blind">휴대 전화 앞자리</label><input class="wid4" type="text" id="tel1"> - <label for="tel2" class="blind">휴대 전화 중간자리</label><input class="wid4" type="text" id="tel2"> - <label for="tel3" class="blind">휴대 전화 뒷자리</label><input class="wid4" type="text" id="tel3"></td>
+							</tr>
+							<tr>
+								<th><span class="red_icon">*</span><span class="blind">필수 입력</span><label for="userLicense">사용자 라이센스</label></th>
+								<td><input  class="wid4" type="text" id="userLicense" disabled> Users</td>
+								<th class="icon_no"><label for="sensorNum">센서 수량</label></th>
+								<td><input  class="wid4" type="text" id="sensorNum" disabled> 개</td>
+							</tr>
+							<tr>
+								<th class="icon_no">센서종류</th>
+								<td colspan="3"><input type="checkbox"><label for="sensorTemperature">온도</label><input type="checkbox"><label for="sensorHumidity">습도</label><input type="checkbox"><label for="sensorCO2">CO2</label><input type="checkbox"><label for="sensorWaterTem">수온</label><input type="checkbox"><label for="sensorLight">광량</label><input type="checkbox"><label for="sensorPH">PH</label><input type="checkbox"><label for="sensorEC">EC</label></td>
+							</tr>
+							<tr>
+								<th class="icon_no"><label for="logoFile">로고이미지파일</label></th>
+								<td colspan="3"><input class="wid2" type="text" id="logoFile"/><span class="p_r"><button class="btn_type btn_type3">파일찾기</button><input type="file"></span></td>
+							</tr>
+						</tbody>
+					</table>
+					<p class="logo_tip"><span class="logo_star">*</span>로고 이미지 변경 후 저장을 하셔야 로고 이미지가 적용됩니다.</p>				
+				</div>
+			</div>
+		</section>
+		<!-- ========= //content ========= -->
+		<!-- =========footer=========== -->
+		<footer id="footer"></footer>
+		<!-- =========//footer=========== -->	
+ </body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+  <meta charset="utf-8">
+  <title> Analysis | Sensor Status </title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/sub.css">
+  <link href="js/jqGrid/ui.jqgrid.css" rel="stylesheet">
+  <link href="js/jqGrid/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+  <link href="js/jqGrid/jquery-ui.min.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+	<script src="js/jqGrid/jquery-1.7.1.min.js"></script>
+	<script src="js/jqGrid/json3.min.js"></script>
+    <script src="js/jqGrid/jquery.jqGrid.src.js"></script>
+    <script src="js/jqGrid/grid.locale-kr.js"></script>
+    <script src="js/jqGrid/common.js"></script>
+    <script src="js/jqGrid/rtComm.js"></script>
+    <script src="js/common.js" type="text/javascript"></script>
+    <script src="js/jquery.treeview.js" type="text/javascript"></script>
+	<script src="js/jquery-ui.js" type="text/javascript"></script>
+    <script type="text/javascript">
+		$(function(){
+			$("#skip").load("include/skip.html"); 
+			$("#header").load("include/header.html"); 
+			$("#footer").load("include/footer.html"); 
+		});
+		$(function() {
+			$("#tabTree1").treeview({
+				collapsed: true,
+				animated: "medium",
+				control:"#sidetreecontrol",
+				persist: "location"
+			});
+			$("#tabTree2").treeview({
+				collapsed: true,
+				animated: "medium",
+				control:"#sidetreecontrol",
+				persist: "location"
+			});
+			$("#tabTree2").hide();
+		});
+			$(document).ready(function () {
+				jQuery("#grid1").jqGrid({ 
+					height: 600,
+					colNames: ['설명' , '센서 아이디' , '하드웨어 상태' , '배터리' , '전원꺼짐' , '마지막 센싱 시간'],
+					colModel: [
+						  { name: 'DESCRIPTION', align: 'center'},
+						  { name: 'SENSOR_ID', align: 'center'},
+						  { name: 'HW_STATE', align : 'center', formatter: formatImage },
+						  { name: 'BATTERY_STATE', align : 'center', formatter: formatImage },
+						  { name: 'DEAD_STATE', align : 'center' },
+						  { name: 'OCCUR_DTTM', align : 'center'  },
+					],
+					rowNum: 10,							// 한 페이지에 보여줄 데이터 갯수
+					rowList: [5, 10, 20, 50],			// 한 화면에서 볼 수 있는 row의 수를 조절 가능
+					pager: '#pager'						// 페이징을 처리할 <div> 태그의 #id값
+				});
+
+				function formatImage(cellValue, options, rowObject) {
+					var imageHtml = "<img src='images/sub/state_ico_normal.png'>";
+					return imageHtml;
+				}
+				var mydata = [
+					{DESCRIPTION:'발아실센서1',SENSOR_ID:'00102051',HW_STATE:'01',BATTERY_STATE:'02',DEAD_STATE:'Y',OCCUR_DTTM:'2015-06-25 오후 04:45:24'},
+					{DESCRIPTION:'센서27번 센서',SENSOR_ID:'00102070',HW_STATE:'01',BATTERY_STATE:'02',DEAD_STATE:'Y',OCCUR_DTTM:'2015-07-07 오후 08:45:23'},
+				]
+
+				for(var i=0;i<=mydata.length;i++)	// 스크립트 변수에 담겨 있는 json 데이터의 길이만큼
+					jQuery("#grid1").jqGrid('addRowData',i+1,mydata[i]);		// jqgrid의 addRowData를 이용하여 각각의 row에 gridData 변수의 데이터를 add한다
+				
+				reSizefn();
+			});
+			
+			function reSizefn() {
+				//그리드1 사이즈 
+				$(window).resize(function () {
+					var grid = $("#grid1");
+					var gridCnt = $(".grid_area > div");
+					var width = $(".grid_area").width()-2;
+					var height = $(window).height() - 284;
+
+					if ( height <= 422 ) {
+						height = 422;
+					}
+
+					grid.setGridWidth(width, true);
+					grid.setGridHeight(height, true);
+					gridCnt.width(width+2);
+				}).resize();       
+			}
+   </script>
+ </head>
+<body>
+    <!-- ========= skip =========== -->
+	<div id="skip"></div>
+    <!-- ========= //skip =========== -->
+    <!-- ========= header =========== -->
+	<header id="header"></header>
+    <!-- ========= //header =========== -->   
+    <!-- ========= //header =========== -->
+	<!-- ========= content ========= -->
+	<section id="content">
+		<div class="tit">
+			<h2 class="sub_tit">Sensor Status</h2>
+			<ul class="location">
+				<li>Analysis</li>
+				<li>Sensor Status</li>
+			</ul>
+		</div>
+		<div class="frame2_cnt clear">
+			<div class="ban_l">
+				<div class="tree_area">
+					<div class="tab">
+						<div class="tab1 on">
+							<button type="button" class="tab_btn">Location</button>
+							<ul id="tabTree1" class="tree_cnt location_tree">
+								<li>
+									<a href="#">Root</a>
+									<ul>
+										<li>
+											<a href="#">이천</a>
+											<ul>
+												<li><a href="#">1번지점</a></li>
+												<li><a href="#">2번지점</a></li>
+												<li><a href="#">3번지점</a></li>
+											</ul>
+										</li>
+										<li>
+											<a href="#">하남</a>
+											<ul>
+												<li><a href="#">1번지점</a></li>
+												<li>
+													<a href="#">2번지점</a>
+													<ul>
+														<li><a href="#">1번지점</a></li>
+														<li><a href="#">2번지점</a></li>
+														<li><a href="#">3번지점</a></li>
+													</ul>
+												</li>
+												<li><a href="#">3번지점</a></li>
+											</ul>
+										</li>
+										<li>
+											<a href="#">화성</a>
+											<ul>
+												<li><a href="#">1번지점</a></li>
+												<li><a href="#">2번지점</a></li>
+												<li><a href="#">3번지점</a></li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<div class="tab2">
+							<button type="button" class="tab_btn">Truck</button>
+							<ul id="tabTree2" class="tree_cnt truck_tree">
+								<li>
+									<a href="#">Root</a>
+									<ul>
+										<li>
+											<a href="#">이천</a>
+											<ul>
+												<li><a href="#">1번트럭</a></li>
+												<li>
+													<a href="#">2번트럭</a>
+													<ul>
+														<li><a href="#">1번트럭</a></li>
+														<li><a href="#">2번트럭</a></li>
+														<li><a href="#">3번트럭</a></li>
+													</ul>
+												</li>
+												<li><a href="#">3번트럭</a></li>
+											</ul>
+										</li>
+										<li>
+											<a href="#">하남</a>
+											<ul>
+												<li><a href="#">1번트럭</a></li>
+												<li><a href="#">2번트럭</a></li>
+												<li><a href="#">3번트럭</a></li>
+											</ul>
+										</li>
+										<li>
+											<a href="#">화성</a>
+											<ul>
+												<li><a href="#">1번트럭</a></li>
+												<li><a href="#">2번트럭</a></li>
+												<li><a href="#">3번트럭</a></li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>		
+				</div>
+				<button type="button" class="btn_fold close_btn" onclick="fordingLeft();"></button>
+			</div>
+			<div class="sub_cnt f_r">
+				<div class="search_area">
+					<form action="" method="post">
+						<label for="baseName">· 거점명</label><input type="text" id="baseName">
+					</form>
+				</div>
+				<div class="grid_area">
+					<table id="grid1" ></table>
+				</div>
+				<div id="pager" ></div>			
+			</div>
+		</div>
+	</section>
+    <!-- ========= //content ========= -->
+    <!-- =========footer=========== -->
+    <footer id="footer"></footer>
+    <!-- =========//footer=========== -->
+</body>
+</html>

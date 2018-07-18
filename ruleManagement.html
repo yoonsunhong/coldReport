@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+  <meta charset="utf-8">
+  <title> Configuration | Rule Management </title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/sub.css">
+  <link href="js/jqGrid/ui.jqgrid.css" rel="stylesheet">
+  <link href="js/jqGrid/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+  <link href="js/jqGrid/jquery-ui.min.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+	<script src="js/jqGrid/jquery-1.7.1.min.js"></script>
+	<script src="js/jqGrid/json3.min.js"></script>
+    <script src="js/jqGrid/jquery.jqGrid.src.js"></script>
+    <script src="js/jqGrid/grid.locale-kr.js"></script>
+    <script src="js/jqGrid/common.js"></script>
+    <script src="js/jqGrid/rtComm.js"></script>
+    <script src="js/common.js" type="text/javascript"></script>
+    <script src="js/jquery.treeview.js" type="text/javascript"></script>
+    <script type="text/javascript">
+		$(function(){
+			$("#skip").load("include/skip.html"); 
+			$("#header").load("include/header.html"); 
+			$("#footer").load("include/footer.html"); 
+		});
+		$(function() {
+			$("#tabTree1").treeview({
+				collapsed: true,
+				animated: "medium",
+				control:"#sidetreecontrol",
+				persist: "location"
+			});
+			$("#tabTree2").treeview({
+				collapsed: true,
+				animated: "medium",
+				control:"#sidetreecontrol",
+				persist: "location"
+			});
+			$("#tabTree2").hide();
+		});
+    </script>
+ </head>
+<body>
+    <!-- ========= skip =========== -->
+	<div id="skip"></div>
+    <!-- ========= //skip =========== -->
+    <!-- ========= header =========== -->
+	<header id="header"></header>
+    <!-- ========= //header =========== -->   
+    <!-- ========= //header =========== -->
+	<!-- ========= content ========= -->
+	<section id="content">
+		<div class="tit">
+			<h2 class="sub_tit">Rule Management</h2>
+			<ul class="location">
+				<li>Configuration</li>
+				<li>Rule Management</li>
+			</ul>
+		</div>
+		<div class="frame2_cnt clear">
+			<div class="ban_l">
+				<div class="tree_area">
+					<div class="tab">
+						<div class="tab1 on">
+							<button type="button" class="tab_btn">Location</button>
+							<ul id="tabTree1" class="tree_cnt location_tree">
+								<li>
+									<a href="#">Root</a>
+									<ul>
+										<li>
+											<a href="#">이천</a>
+											<ul>
+												<li><a href="#">1번지점</a></li>
+												<li><a href="#">2번지점</a></li>
+												<li><a href="#">3번지점</a></li>
+											</ul>
+										</li>
+										<li>
+											<a href="#">하남</a>
+											<ul>
+												<li><a href="#">1번지점</a></li>
+												<li>
+													<a href="#">2번지점</a>
+													<ul>
+														<li><a href="#">1번지점</a></li>
+														<li><a href="#">2번지점</a></li>
+														<li><a href="#">3번지점</a></li>
+													</ul>
+												</li>
+												<li><a href="#">3번지점</a></li>
+											</ul>
+										</li>
+										<li>
+											<a href="#">화성</a>
+											<ul>
+												<li><a href="#">1번지점</a></li>
+												<li><a href="#">2번지점</a></li>
+												<li><a href="#">3번지점</a></li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<div class="tab2">
+							<button type="button" class="tab_btn">Truck</button>
+							<ul id="tabTree2" class="tree_cnt truck_tree">
+								<li>
+									<a href="#">Root</a>
+									<ul>
+										<li>
+											<a href="#">이천</a>
+											<ul>
+												<li><a href="#">1번트럭</a></li>
+												<li>
+													<a href="#">2번트럭</a>
+													<ul>
+														<li><a href="#">1번트럭</a></li>
+														<li><a href="#">2번트럭</a></li>
+														<li><a href="#">3번트럭</a></li>
+													</ul>
+												</li>
+												<li><a href="#">3번트럭</a></li>
+											</ul>
+										</li>
+										<li>
+											<a href="#">하남</a>
+											<ul>
+												<li><a href="#">1번트럭</a></li>
+												<li><a href="#">2번트럭</a></li>
+												<li><a href="#">3번트럭</a></li>
+											</ul>
+										</li>
+										<li>
+											<a href="#">화성</a>
+											<ul>
+												<li><a href="#">1번트럭</a></li>
+												<li><a href="#">2번트럭</a></li>
+												<li><a href="#">3번트럭</a></li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>		
+				</div>
+				<button type="button" class="btn_fold close_btn" onclick="fordingLeft();"></button>
+			</div>
+			<div class="sub_cnt f_r cnt44">
+				<div class="btn_area"><button class="btn_type btn_type1">삭제</button><button class="btn_type btn_type1">저장</button></div>
+				<div class="search_area">
+					<form action="" method="post"><label for="baseName">· 거점명</label><input type="text" id="baseName" disabled></form>
+				</div>
+				<div class="rule_area">
+					<h3 class="menu_tit">룰 옵션 선택</h3>
+					<div>
+						<ul>
+							<li><input type="radio" id="ruleAvg" name="ruleOpt" checked><label for="ruleAvg">평균</label><span class="txt_red">(* 설치된 센서들의 평균값을 비교하여 정상범위를 넘어갈 시 알람이 발생 합니다.)</span></li>
+							<li><input type="radio" id="ruleInd" name="ruleOpt"><label for="ruleInd">개별</label><span class="txt_red">(* 설치된 센서마다 값을 비교하여 정상범위를 넘어갈 시 알람이 발생 됩니다.)</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="rule_area">
+					<h3 class="menu_tit">트럭 옵션 선택</h3>
+					<div>
+						<ul>
+							<li><input type="radio" id="truckT" name="truckOpt" checked><label for="truckT">트럭</label><span class="txt_red">(* 트럭에 설치된 센서의 값을 체크 합니다.)</span></li>
+							<li><input type="radio" id="truckI" name="truckOpt"><label for="truckI">아이템</label><span class="txt_red">(* 트럭에 실린 아이템에 부착된 센서의 값을 체크 합니다.)</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="rule_set">
+					<h3 class="menu_tit">센서 룰 설정</h3>
+					<div>
+						<ul>
+							<li class="list1">
+								<label for="temMax" class="blind">기온 최고 온도 설정</label><input class="num1" type="text" id="temMax">
+								<label for="temMaxCau" class="blind">기온 최고 온도 직전의 경고 온도 설정</label><input class="num2" type="text" id="temMaxCau">
+								<label for="temMinCau" class="blind">기온 최저 온도 직전의 경고 온도 설정</label><input class="num3" type="text" id="temMinCau">
+								<label for="temMin" class="blind">기온 최저 온도 설정</label><input class="num4" type="text" id="temMin">
+							</li>
+							<li class="list2">
+								<label for="humMax" class="blind">습도 최고 온도 설정</label><input class="num1" type="text" id="humMax">
+								<label for="humMaxCau" class="blind">습도 최고 온도 직전의 경고 온도 설정</label><input class="num2" type="text" id="humMaxCau">
+								<label for="humMinCau" class="blind">습도 최저 온도 직전의 경고 온도 설정</label><input class="num3" type="text" id="humMinCau">
+								<label for="humMin" class="blind">습도 최저 온도 설정</label><input class="num4" type="text" id="humMin">
+							</li>
+							<li class="list3">
+								<label for="co2Max" class="blind">이산화탄소 최고 수치 설정</label><input class="num1" type="text" id="co2Max">
+								<label for="co2MaxCau" class="blind">이산화탄소 최고 수치 직전의 경고 수치 설정</label><input class="num2" type="text" id="co2MaxCau">
+								<label for="co2MinCau" class="blind">이산화탄소 최저 수치 직전의 경고 수치 설정</label><input class="num3" type="text" id="co2MinCau">
+								<label for="co2Min" class="blind">이산화탄소 최저 수치 설정</label><input class="num4" type="text" id="co2Min">
+							</li>
+							<li class="list4">
+								<label for="watMax" class="blind">수온 최고 온도 설정</label><input class="num1" type="text" id="watMax">
+								<label for="watMaxCau" class="blind">수온 최고 온도 직전의 경고 온도 설정</label><input class="num2" type="text" id="watMaxCau">
+								<label for="watMinCau" class="blind">수온 최저 온도 직전의 경고 온도 설정</label><input class="num3" type="text" id="watMinCau">
+								<label for="watMin" class="blind">수온 최저 온도 설정</label><input class="num4" type="text" id="watMin">
+							</li>
+							<li class="list5">
+								<label for="lightMax" class="blind">광량 최고 수치 설정</label><input class="num1" type="text" id="lightMax">
+								<label for="lightMaxCau" class="blind">광량 최고 수치 직전의 경고 수치 설정</label><input class="num2" type="text" id="lightMaxCau">
+								<label for="lightMinCau" class="blind">광량 최저 수치 직전의 경고 수치 설정</label><input class="num3" type="text" id="lightMinCau">
+								<label for="lightMin" class="blind">광량 최저 수치 설정</label><input class="num4" type="text" id="lightMin">
+							</li>
+							<li class="list6">
+								<label for="phMax" class="blind">농도 최고 수치 설정</label><input class="num1" type="text" id="phMax">
+								<label for="phMaxCau" class="blind">농도 최고 수치 직전의 경고 수치 설정</label><input class="num2" type="text" id="phMaxCau">
+								<label for="phMinCau" class="blind">농도 최저 수치 직전의 경고 수치 설정</label><input class="num3" type="text" id="phMinCau">
+								<label for="phMin" class="blind">농도 최저 수치 설정</label><input class="num4" type="text" id="phMin">
+							</li>
+							<li class="list7">
+								<label for="ecMax" class="blind">전기전도도 최고 수치 설정</label><input class="num1" type="text" id="ecMax">
+								<label for="exMaxCau" class="blind">전기전도도 최고 수치 직전의 경고 수치 설정</label><input class="num2" type="text" id="exMaxCau">
+								<label for="exMinCau" class="blind">전기전도도 최저 수치 직전의 경고 수치 설정</label><input class="num3" type="text" id="exMinCau">
+								<label for="exMin" class="blind">전기전도도 최저 수치 설정</label><input class="num4" type="text" id="exMin">
+							</li>
+						</ul>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</section>
+    <!-- ========= //content ========= -->
+    <!-- =========footer=========== -->
+    <footer id="footer"></footer>
+    <!-- =========//footer=========== -->
+</body>
+</html>

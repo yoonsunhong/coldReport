@@ -1,0 +1,32 @@
+#mainHeader{height:47px;padding-left:35px;background:url("../images/main/tit_bg.jpg") repeat-x}
+#mainContent{height:100%;background:url("../images/main/body_bg.jpg") repeat-x;overflow:hidden;}
+
+#mainContent > div{padding-top:441px;margin:0px auto;background:url("../images/main/main_img.png") no-repeat 50% 100px}
+#loginForm{margin:0px auto;padding:20px 30px;background:#fff;-webkit-border-radius:10px; -moz-border-radius:10px; border-radius:10px;}
+.login{width:413px;}
+.psw_chg{width:465px}
+#loginForm h2{padding-bottom:20px;text-align:center;font-size:17px;color:#2778b7;font-weight:900}
+
+#loginForm p{padding-left:28px;background-repeat:no-repeat;background-position-y:50%}
+.id_area{background-image:url("../images/main/id.gif")}
+.login .id_area ~ p{margin-top:4px;}
+.psw_chg .id_area ~ p{margin-top:3px;}
+.pwd_area{background-image:url("../images/main/pwd.gif")}
+.new_pwd_area, .pwd_chk_area{background-image:url("../images/main/pwd_blue.gif")}
+
+#loginForm label{font-size:14px;font-weight:bold}
+.login .id_area label{padding-right:20px}
+.login .pwd_area label{padding-right:6px}
+.psw_chg .id_area label{padding-right:72px}
+.psw_chg .pwd_area label{padding-right:58px}
+.psw_chg .new_pwd_area label{padding-right:39px}
+.psw_chg .pwd_chk_area label{padding-right:6px}
+
+#loginForm input{width:146px;height:35px;padding-left:6px}
+.login_btn, .pwd_chk_btn{width:91px;text-indent:-9999px}
+.login_btn{height:74px;background-image:url("../images/main/login.gif")}
+.pwd_chk_btn{height:148px;background-image:url("../images/main/change.gif");-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:contain;}
+
+#mainFooter{position:fixed;left:50%;margin-left:-136.5px;text-align:center;color:#fff}
+.mainfoot1{top:664px;}
+.mainfoot2{bottom:215px;}

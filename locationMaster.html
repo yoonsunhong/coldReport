@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+  <meta charset="utf-8">
+  <title> Master Data | Location Master </title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/sub.css">
+  <link href="js/jqGrid/ui.jqgrid.css" rel="stylesheet">
+  <link href="js/jqGrid/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+  <link href="js/jqGrid/jquery-ui.min.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+	<script src="js/jqGrid/jquery-1.7.1.min.js"></script>
+	<script src="js/jqGrid/json3.min.js"></script>
+    <script src="js/jqGrid/jquery.jqGrid.src.js"></script>
+    <script src="js/jqGrid/grid.locale-kr.js"></script>
+    <script src="js/jqGrid/common.js"></script>
+    <script src="js/jqGrid/rtComm.js"></script>
+    <script src="js/common.js" type="text/javascript"></script>
+    <script src="js/jquery.treeview.js" type="text/javascript"></script>
+    <script type="text/javascript">
+		$(function(){
+			$("#skip").load("include/skip.html"); 
+			$("#header").load("include/header.html"); 
+			$("#footer").load("include/footer.html"); 
+		});
+		$(function() {
+			$("#tabTree1").treeview({
+				collapsed: true,
+				animated: "medium",
+				control:"#sidetreecontrol",
+				persist: "location"
+			});
+		});
+    </script>
+ </head>
+<body>
+    <!-- ========= skip =========== -->
+	<div id="skip"></div>
+    <!-- ========= //skip =========== -->
+    <!-- ========= header =========== -->
+	<header id="header"></header>
+    <!-- ========= //header =========== -->
+	<!-- ========= content ========= -->
+	<section id="content">
+		<div class="tit">
+			<h2 class="sub_tit">Location Master</h2>
+			<ul class="location">
+				<li>Master Data</li>
+				<li>Location Master</li>
+			</ul>
+		</div>
+		<div class="frame2_cnt clear">
+			<div class="ban_l">
+				<div class="tree_area">
+					<h3 class="tit_bg">Location Explor</h3>
+					<div>
+						<ul id="tabTree1" class="tree_cnt location_tree">
+							<li>
+								<a href="#">Root</a>
+								<ul>
+									<li>
+										<a href="#">그린트리플러스</a>
+										<ul>
+											<li><a href="#">이천농장</a></li> 
+										</ul>
+									</li>
+									<li>
+										<a href="#">리테일테크</a>
+										<ul>
+											<li><a href="#">본사사옥</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<button type="button" class="btn_fold close_btn" onclick="fordingLeft();"></button>
+			</div>
+			<div class="sub_cnt f_r cnt51">
+				<div class="btn_area">
+					<button class="btn_type btn_type1">신규</button>
+					<button class="btn_type btn_type1">삭제</button>
+					<button class="btn_type btn_type1">저장</button>
+					<button class="btn_type btn_marl btn_type1">일괄 삭제</button>
+					<p class="txt_red">* 선택된 거점의 모든 하위 거점이 삭제됩니다.</p>
+				</div>
+				<div class="clear">
+					<table class="enroll_area f_l">
+						<tbody>
+							<tr>
+								<th><span class="red_icon">*</span><span class="blind">필수 입력</span><label for="baseMasterCode">거점 마스터 코드</label></th>
+								<td colspan="2"><input class="wid2" type="text" id="baseMasterCode" disabled></td>
+							</tr>
+							<tr>
+								<th><span class="red_icon">*</span><span class="blind">필수 입력</span><label for="baseCode">거점 코드</label></th>
+								<td colspan="2"><input class="wid2" type="text" id="baseCode" disabled></td>
+							</tr>
+							<tr>
+								<th><span class="red_icon">*</span><span class="blind">필수 입력</span><label for="baseName">거점명</label></th>
+								<td colspan="2"><input class="wid2" type="text" id="baseName"></td>
+							</tr>
+							<tr>
+								<th class="icon_no">주소</th>
+								<td colspan="2"><label for="postcode1" class="blind">우편번호 앞자리</label><input class="wid4" type="text" id="postcode1"> - <label for="postcode2" class="blind">우편번호 뒷자리</label><input class="wid4" type="text" id="postcode1"><br><label for="address1" class="blind">시, 군, 구를 포함한 앞주소</label><input class="wid2" type="text" id="address1">&nbsp;<label for="address1" class="blind">동을 포함한 동 이하의 뒷주소</label><input class="wid2" type="text" id="address2"></td>
+							</tr>
+							<tr>
+								<th class="icon_no"><label for="explain">설명</label></th>
+								<td colspan="2"><textarea name="explain" id="explain"></textarea></td>
+							</tr>
+							<tr>
+								<th><span class="red_icon">*</span><span class="blind">필수 입력</span><label for="MapFileName">2D Map 파일</label></th>
+								<td colspan="2"><input class="wid2" type="text" id="MapFileName" disabled><span class="p_r"><button class="btn_type btn_type3">파일찾기</button><input type="file"></span></td>
+							</tr>
+							<tr>
+								<th><span class="red_icon">*</span><span class="blind">필수 입력</span>GPS 정보</th>
+								<td colspan="2">
+									<label for="latitude">위도</label><input class="wid4" type="text" id="latitude">
+									<label for="longitude">경도</label><input class="wid4" type="text" id="longitude">
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="side_area f_r">
+						<h4 class="side_tit">이미지 미리보기</h4>
+						<div class="image_cnt">
+							<img src="images/sub/image_test.jpg" width="217" height="204" alt="미리볼 이미지가 없을 때 사용되는 기본 이미지">
+						</div>
+					</div>
+				</div>
+			</div>
+	</section>
+    <!-- ========= //content ========= -->
+    <!-- =========footer=========== -->
+    <footer id="footer"></footer>
+    <!-- =========//footer=========== -->
+</body>
+</html>
