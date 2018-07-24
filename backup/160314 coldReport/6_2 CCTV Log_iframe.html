@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+  <meta charset="utf-8" />
+  <title> 6_2 Log Monitoring | CCTV Monitoring  </title>
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/sub.css" />
+  <link href="js/jqGrid/ui.jqgrid.css" rel="stylesheet" />
+  <link href="js/jqGrid/jquery-ui-1.10.3.custom.css" rel="stylesheet" />
+  <link href="js/jqGrid/jquery-ui.min.css" rel="stylesheet" />
+  <!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+	<script src="js/jqGrid/jquery-1.7.1.min.js"></script>
+	<script src="js/jqGrid/jquery-1.7.2.min.js"></script>
+	<script src="js/jqGrid/json3.min.js"></script>
+    <script src="js/jqGrid/jquery.jqGrid.src.js"></script>
+    <script src="js/jqGrid/grid.locale-kr.js"></script>
+    <script src="js/jqGrid/common.js"></script>
+    <script src="js/jqGrid/rtComm.js"></script>
+
+   <script src="js/gnb.js" type="text/javascript"></script>
+   <script src="js/sub.js" type="text/javascript"></script>
+   <script src="js/ui_common.js" type="text/javascript"></script>
+   <script src="js/common.js" type="text/javascript"></script>
+   <script src="js/jquery.treeview.js" type="text/javascript"></script>
+    <script>
+			$(document).ready(function () {
+				jQuery("#grid1").jqGrid({
+											//url: "GetUserList",
+											mtype: 'POST', 
+											datatype: "json",
+											colNames: ['회사코드' 
+													 , '아이디'
+													 , '이름'
+													 , '직책'
+													 , '이메일'
+													 , '연락처'
+													 , '사용권한'
+													 , '임시암호변경유무'
+													 
+											],
+											colModel: [
+													  { name: 'COMPANY_CD', align: "left", hidden: true, sortable: true },
+													  { name: 'USER_ID', align: "left", hidden: false, sortable: true },
+													  { name: 'USER_NAME', align: "center", hidden: false, sortable: true },
+													  { name: 'USER_POSI', align: "center", hidden: false, sortable: true },
+													  { name: 'USER_MAIL', align: "center", hidden: false, sortable: true },
+													  { name: 'USER_TEL', align: "center", hidden: false, sortable: true },
+													  { name: 'MASTER_YN', align: "center", hidden: true, sortable: true },
+													  { name: 'RESET_YN', align: "center", hidden: false, sortable: true }
+
+											],
+											autowidth: true,
+											multiselect: false,
+											rowNum: 10,
+											rowList: [5, 10, 20, 50, 100],
+											pager: jQuery('#ajaxProwed1'),
+											sortorder: "asc",
+											viewrecords: true,
+											// caption: "Manipulating Array Data"            
+											onSelectRow: function (id) {
+
+												reSizefn();
+											},
+											onPaging: function (pgButton) {               
+
+												
+
+												reSizefn();
+
+											},
+											//헤더 클릭시 정렬
+											onSortCol: function (sidx, colnum, sort_order) { 	//헤더 클릭
+											
+												reSizefn();
+
+											}
+										});
+										var data = {
+											//"page": "1",
+											//"records": "2",
+											"rows": [
+												{ COMPANY_CD: "1", USER_ID: "어드민", USER_NAME: "유저네임",USER_POSI: "대리",USER_TEL: "010-1234-1235", MASTER_YN:"Y", RESET_YN:"N"}
+												
+											]
+										};
+
+										reSizefn();
+										jQuery("#grid1").jqGrid('addJSONData', data);
+				});
+			
+				function reSizefn() {
+					//그리드1 사이즈 
+					$(window).resize(function () {
+						var grid = $("#grid1");
+						var width = $(".grid_area").width();
+						var height = $(window).height() - 1700;
+						if (height < 115) {
+							height = 115;
+						}
+						grid.setGridWidth(width, true);
+						grid.setGridHeight(height, true);
+					}).resize();       
+				}				
+    </script>
+ </head>
+
+ <body>
+	<!-- =========header=========== -->
+	<!-- =========//header=========== -->
+
+   <hr />
+
+  <!-- =========content=========== -->
+  
+  <div id="wrap">
+  	<div id="container" class="p_r">
+		<div class="top117 title title01 p_r">
+			<h2 class="sub_name f_l">CCTV Log</h2>
+			<ul class="location p_a f_r">
+				<li>1Depth</li>
+				<li>&gt;</li>
+				<li> 현재 위치</li>
+			</ul>
+		</div>
+		<div class="sub_cnt frame1_cnt f_l p_a">
+			<div>
+				<button class="btn_type btn_type1">조회</button>
+				<button class="btn_type btn_type1">Excel Download</button>
+			</div>
+			<div class="search_area">
+				<form action="">
+					<label for="">· 검색어</label>
+					<select name="" id="">
+						<option value="">&nbsp;</option>
+					</select>
+					<input type="text" />
+					<label for="">· 날짜</label><input class="date" type="text"><img src="images/sub/date_icon.png" width="17" height="18" border="0" alt="시작일자">~<input class="date" type="text"><img src="images/sub/date_icon.png" width="17" height="18" border="0" alt="종료일자">
+				</form>
+			</div>
+			<div class="grid_area">
+				<table id="grid1" ></table>    
+			</div>
+			<div id="ajaxProwed1" ></div>
+		</div>	
+	</div>
+  </div>
+
+  <!-- =========//content=========== -->
+
+  <hr />
+
+  <!-- =========footer=========== -->
+	<footer id="footer">
+		<address>Copyrights 2016 RetailTech. All Rights Reserved.</address>
+	</footer>
+  <!-- =========footer=========== -->
+ </body>
+</html>

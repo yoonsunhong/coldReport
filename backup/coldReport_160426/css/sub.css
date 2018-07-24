@@ -1,0 +1,518 @@
+@charset "utf-8";
+/*==========---------- 1_1 login.html, 1_2 password change.html ----------==========*/
+#mainHeader{height:47px;padding-left:35px;background:url("../images/main/tit_bg.jpg") repeat-x}
+#mainContent{height:100%;background:url("../images/main/body_bg.jpg") repeat-x;overflow:hidden;}
+
+#mainContent > div{padding-top:441px;margin:0px auto;background:url("../images/main/main_img.png") no-repeat 50% 100px}
+#login{width:413px;margin:0px auto;padding:20px 30px;background:#fff;-webkit-border-radius:10px; -moz-border-radius:10px; border-radius:10px;}
+#login h2{padding-bottom:20px;text-align:center;font-size:17px;color:#2778b7;font-weight:900}
+#login label{font-size:14px;font-weight:bold;padding-left:11px}
+#login input{width:150px;height:32px;padding-left:6px}
+
+#mainFooter{left:50%;margin-left:-136.5px;text-align:center;color:#fff}
+.mainfoot1{bottom:290px;}
+.mainfoot2{bottom:215px;}
+
+/*==========---------- 서브 공통 ----------==========*/
+/* 서브 타이틀 및 로케이션 */
+.title{width:100%;height:26px;line-height:26px;color:#333;border-bottom:1px solid #b8b9b9;border-top:1px solid #b8b9b9;background:#f1f4f5}
+.sub_name{position:absolute;top:0px;left:30px;padding-left:20px;font-weight:bold;background:url("../images/sub/sub_name_icon.gif") no-repeat 0px 50%}
+.location{position:absolute;top:0px;right:30px;}
+.tit_bg{width:220px;height:28px;line-height:28px;font-weight:bold;text-align:center;color:#253a55;background:url("../images/sub/tit_bg.jpg") repeat-x 0 0}
+.title li{float:left;line-height:28px;padding-left:7px;color:#7a7a7a}
+.title li:first-child{padding-left:18px;background:url("../images/sub/home.gif") no-repeat 0 8.5px}
+.title li:last-child{font-weight:bold}
+
+/* 배너 영역 */
+.banner{top:1px;left:0px;width:220px;height:536px;background:#e1e3ea;border-right:1px solid #9b9b9b}
+.ban_r{position:absolute;top:-1px;right:0px;width:220px;min-height:501px;background:#e1e3ea;border-right:1px solid #9b9b9b;border-left:1px solid #9b9b9b}
+
+.ban_cnt{position:absolute;top:28px;left:0px;width:174px;min-height:500px;padding:12px;margin:10px;border:1px solid #adb3b8;background:#f7f7f7;-webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px;overflow:scroll}
+
+.btn_fold{position:absolute;top:100px;left:220px;width:10px;height:87px;display:block;z-index:1;cursor:pointer;}
+.oc_btn{position:absolute;top:64px;left:221px;width:10px;height:87px;text-indent:-9999px;z-index:1}
+.open_btn{background:url("../images/sub/open_btn.png") no-repeat 0 0}
+.close_btn{background:url("../images/sub/close_btn.png") no-repeat 0 0}
+
+#snb li:first-child{border:none;}
+
+/* 여닫기 */
+.folded #subCnt{left:0; width:100% !important;}
+.folded .graph{width:100%}
+.folded iframe{width:100% !important;}
+.folded #snb{width:0}
+.folded #snb nav{display:none;}
+.folded .btn_fold{left:0; background:url("../images/sub/open_btn.png");}
+
+.folded .grid_area{width:100%}
+.folded .ui-jqgrid{width:100%}
+
+/* 메뉴 타이틀 */
+.menu_tit{height:14px;line-height:14px;padding:10px 0 10px 20px;color:#3e3e3e;font-weight:bold;background:url("../images/sub/menu_icon.png") no-repeat 2px 50%}
+
+/* 버튼 스타일 */
+.btn_type{padding:4px 10px;font-size:12px;color:#fff;font-weight:bold;-webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px;}
+.btn_type1{border: 1px solid #5c6372;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6a707e+0,535a6a+100 */
+background: rgb(106,112,126); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(106,112,126,1) 0%, rgba(83,90,106,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(106,112,126,1) 0%,rgba(83,90,106,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(106,112,126,1) 0%,rgba(83,90,106,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6a707e', endColorstr='#535a6a',GradientType=0 ); /* IE6-9 */
+}
+.btn_type1:hover{border:1px solid #a16628;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f19d28+0,ef7b0d+100 */
+background: rgb(241,157,40); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(241,157,40,1) 0%, rgba(239,123,13,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(241,157,40,1) 0%,rgba(239,123,13,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(241,157,40,1) 0%,rgba(239,123,13,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f19d28', endColorstr='#ef7b0d',GradientType=0 ); /* IE6-9 */
+}
+.btn_type2{border:1px solid #999999;background:#afafaf;cursor:none}
+.btn_type3, .btn_type4{color:#525969}
+.btn_type3{border:1px solid #b6b6b6;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fcfcfc+0,e9e9e9+100 */
+background: rgb(252,252,252); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(252,252,252,1) 0%, rgba(233,233,233,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(233,233,233,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(252,252,252,1) 0%,rgba(233,233,233,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#e9e9e9',GradientType=0 ); /* IE6-9 */
+}
+.btn_type3:hover{border:1px solid #f29335;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fcfcfc+0,fff8e3+100 */
+background: rgb(252,252,252); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(252,252,252,1) 0%, rgba(255,248,227,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(255,248,227,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(252,252,252,1) 0%,rgba(255,248,227,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#fff8e3',GradientType=0 ); /* IE6-9 */
+}
+.btn_type4{border:1px solid #999999;background:#d1d1d1;}
+
+/* 탭 구조 */
+#tree > aside{float:left;}
+#tree > aside > a{display:block;width:110px;height:28px;line-height:28px;background:url("../images/sub/tab_on.jpg") repeat-x 0 0;text-align:center;color:#878787;font-weight:bold;text-shadow:1px 1px 3px rgba(255, 255, 255, 1);cursor:pointer}
+#tree > .tab1 > a{position:absolute;top:-1px;left:0px;width:110px}
+#tree > .tab2 > a{position:absolute;top:-1px;left:111px;width:109px}
+#tree .tab1 .tab_btn{border-right:1px solid #9b9b9b}
+#tree > aside.on > a{color:#333;background:url("../images/sub/tit_bg.jpg") repeat-x 0 0;border-left:0;cursor:default}
+
+/* 트리 구조 */
+.treeview .hitarea {background: url('../images/tree/treeview-default.gif') -109px -30px no-repeat;height: 16px;width: 43px;margin-left: -16px;float: left;cursor: pointer;}
+.treeview .hitarea + a{color:#275184;font-weight:bold}
+.treeview li {padding-left:16px}
+.truck_tree li { background: url('../images/tree/treeview-default-line1.gif') 0px 0 no-repeat; }
+.location_tree li { background: url('../images/tree/treeview-default-line2.gif') 0px 0 no-repeat; }
+.treeview li.collapsable, .treeview li.expandable { background-position: 0px -176px; }
+.treeview .expandable-hitarea { background-position: -147px 2px; }
+.treeview li.last { background-position: 0px -1766px ; }
+.treeview li.lastCollapsable, .treeview li.lastExpandable { background-image: url(../images/tree/treeview-default.gif); }
+
+/* 트리 오버, 클릭시 */
+.treeview li a{display:block;width:51px;height:20px;line-height:20px;padding-left:22px}
+.treeview li a:hover{color:#0d6fbc;}
+.treeview li a.active{color:#ee3901;font-weight:bold;text-decoration:underline}
+
+/* 그래프 */
+.graph{left:-29px;bottom:-7px;height:363px;background:#f0f1f3;z-index:1;float:left;clear:both;}
+.graph_tit{width:100%;text-align:left;padding-left:14px}
+.graph_area{width:97%;height:307px;margin:14px 18px}
+
+/* 그리드 사이드 영역 */
+.side_area{width:275px;border:1px solid #ccc;margin:0 0 13px 13px}
+.side_area .side_tit{height:27px;line-height:28px;padding-left:15px;font-weight:bold;color:#3e3e3e;border-bottom:1px solid #ccc;background:#f2f4f6}
+
+.side_area > div{padding:10px 20px}
+.side_area label, .side_area input[type="text"]{height:20px;line-height:20px;margin-top:5px;margin-bottom:5px}
+.side_area input[type="text"]{width:113px;margin-left:10px}
+.side_area label{display:inline-block;width:100px}
+
+.side_area .grid_area{margin:10px 0}
+
+/* 검색 영역 */
+.search_area{height:39px;line-height:39px;margin:8px 0;border:1px solid #0d6fbc;background:url("../images/sub/search_bg.jpg") repeat-x 0 0;-webkit-border-radius:6px; -moz-border-radius:6px; border-radius:6px;}
+.search_area label{padding-left:20px}
+.search_area input{width:121px;height:21px;margin-left:10px}
+.search_area  input[type="radio"]{width:13px;height:13px;margin:0 auto;}
+.search_area select{width:133px;height:23px;margin-left:10px;font-size:12px}
+.search_area img{padding:11px 5px}
+.search_area button{height:30px;margin:3.5px 10px 0 5px;}
+
+/* 상단 버튼 영역 */
+.btn_area .btn_marl{margin-left:20px}
+.btn_area .txt_red{display:inline;padding-left:5px;color:#dc2d2d}
+
+/* 등록 영역 */
+.enroll_area{width:100%;margin-top:10px;border-top:1px solid #0d6fbc;background:#f6f8f9}
+.enroll_area tr{height:30px;line-height:30px;text-align:left;border-bottom:1px solid #c6cbce;}
+.enroll_area tr th{width:10%;padding-left:8px;font-weight:normal;background:#e3e6ea}
+.enroll_area tr th.icon_no{padding-left:23px}
+.enroll_area tr td{background:#f6f8f9;padding-left:8px}
+.enroll_area tr td .wid1{width:240px}
+.enroll_area tr td .wid2{width:182px}
+.enroll_area tr td .wid3{width:80px}
+.enroll_area tr td .wid4{width:43px}
+.enroll_area label{padding:0 10px 0 5px}
+.enroll_area input[type="text"] {height:20px;line-height:20px}
+.enroll_area .btn_type{height:22px;line-height:16px;padding:3px 12px;margin-left:5px;-webkit-border-radius:3px; -moz-border-radius:3px; border-radius:3px;}
+.enroll_area textarea{width:96.7%;height:55px;margin:3px 0}
+
+/* 팝업 레이어 공통 스타일 */
+#popupMask, .popup{position:fixed;display:none;}
+.popup{background:#fff;outline:none}
+.popup h4{height:15px;line-height:15px;padding:5px 0 5px 15px;font-weight:bold;background:url("../images/sub/popup_tit.jpg") repeat-x 0 0;-webkit-border-radius:7px 7px 0 0; -moz-border-radius:7px 7px 0 0; border-radius:7px 7px 0 0}
+
+  /* 레이어 팝업 (수치 안내) */
+.pop_sensor{width:240px;border:2px solid #505761;-webkit-border-radius:10px; -moz-border-radius:10px; border-radius:10px;z-index:4}
+.pop_sensor h4{height:15px;line-height:15px;font-weight:bold;-webkit-border-radius:10px 10px 0 0; -moz-border-radius:10px 10px 0 0; border-radius:10px 10px 0 0;}
+.pop_sensor table{margin:10px 0;font-weight:bold}
+.pop_sensor table tbody tr{display:block;padding:5px 0;margin:0 10px;border-top:1px solid #ddd}
+.pop_sensor table tbody tr:first-child{border-top:0}
+.pop_sensor th{width:40px;height:20px}
+.pop_sensor th.icon1{background:url("../images/sub/sensor_icon01.gif") no-repeat 50% 50%}
+.pop_sensor th.icon2{background:url("../images/sub/sensor_icon02.gif") no-repeat 50% 50%}
+.pop_sensor th.icon3{background:url("../images/sub/sensor_icon03.gif") no-repeat 50% 50%}
+.pop_sensor th.icon4{width:71px;background:url("../images/sub/sensor_icon04.gif") no-repeat 50% 50%}
+.pop_sensor th.icon5{background:url("../images/sub/sensor_icon05.gif") no-repeat 50% 50%}
+.pop_sensor th.icon6{background:url("../images/sub/sensor_icon06.gif") no-repeat 50% 50%}
+.pop_sensor th.icon7{background:url("../images/sub/sensor_icon07.gif") no-repeat 50% 50%}
+.pop_sensor th.icon8{background:url("../images/sub/sensor_icon08.png") no-repeat 50% 50%}
+.pop_sensor td.txt{width:121px}
+.pop_sensor td:last-child{width:92px;text-align:right;font-weight:normal}
+.pop_sensor input[type="text"]{width:40px;height:20px;margin-right:5px;padding-left:8px}
+.pop_sensor .close_btn img{position:absolute;top:3px;right:10px}
+
+/* 레이어 팝업 (코드 등록) */
+#popupMask{top:0px;left:0px;width:100%;height:100%;background:#000;opacity:0.25;filter:Alpha(opacity=25);z-index:10}
+#popupLayer1{width:725px;height:355px;border:2px solid #505761;-webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px;z-index:20}
+#popupLayer1 .enroll_area{width:96%;margin:13px 15px}
+#popupLayer1 .enroll_area tr th{width:19%}
+
+#popupLayer1 input[type="text"]{width:190px}
+#popupLayer1 button{position:absolute;bottom:10px;}
+#popupLayer1 button.btn1{left:15px;}
+#popupLayer1 button.btn2{left:50%;margin-left:-50px}
+#popupLayer1 button.btn3{left:50%;margin-left:4px}
+#popupLayer1 button.btn4{right:15px;}
+#popupLayer1 .close_btn{position:absolute;right:15px;top:3px}
+
+/* 공통 사용 */
+.icon_no{padding-left:15px}
+.red_icon{padding-right:8px;font-weight:bold;color:#ff4800}
+
+.menu_left{width:280px}
+.menu_right{min-width:927px;margin-left:12px}
+
+/*==========---------- 서브 각 스타일 ----------==========*/
+
+/*==========---------- 4_1 Configuration | Sensor Manegement----------==========*/
+.cnt41 .bor_bg{position:fixed;top:71px;right:23px;width:78%;height:1px;border-bottom:1px solid #0d6fbc}
+
+.cnt41 .tab2 .tab_btn{margin-left:5px}
+
+.cnt41 > aside{float:left;position:relative;}
+.cnt41 > .tab1 > div{position:absolute;top:38px;left:0px;}
+.cnt41 > .tab2 > div{position:absolute;top:38px;left:-112px;}
+.cnt41 > aside > a{display:block;width:110px;height:30px;line-height:30px;text-align:center;color:#878787;font-weight:bold;background:#f1f1f1;border:1px solid #0d6fbc;cursor:pointer}
+
+.cnt41 > aside.on > a{color:#0d6fbc;border:1px solid #0d6fbc;border-bottom:1px solid #fff;background:#fff;cursor:default !important}
+.cnt41 > .tab2 > div{display:none}
+
+.cnt41 .sensor_btn{height:40px;margin:20px 0 10px}
+.cnt41 .sensor_btn button{width:94px;height:20px;}
+.cnt41 .sensor_btn .sensor_up{position:absolute;top:10px;left:50%;margin-left:-99px;background:url("../images/sub/up.gif") 0 0 no-repeat}
+.cnt41 .sensor_btn .sensor_down{position:absolute;top:10px;left:50%;margin-left:5px;background:url("../images/sub/down.gif") 0 0 no-repeat}
+
+.cnt41 .excel input[type="text"]{width:250px;height:24px;line-height:24px;margin-left:10px}
+.cnt41 .excel button{margin-left:5px}
+
+/*==========---------- 4_2 Configuration | Location Allocation ----------==========*/
+.cnt42 .scroll_box{border-top:1px solid #ccc;}
+
+.ban_r .list1{top:0px;}
+.ban_r .list2{top:397.5px;}
+.ban_r .list1 .ban_cnt, .ban_r .list2 .ban_cnt{min-height:0px;}
+.ban_r .list1 .ban_cnt li{padding-left:20px;background:url("../images/sub/sensor_icon.gif") 0 0 no-repeat}
+.ban_r .list2 .ban_cnt li{padding-left:20px;background:url("../images/sub/device_icon.gif") 0 0 no-repeat}
+.ban_r div ul li{padding-bottom:10px}
+.ban_r div ul li a:hover{color:#0d6fbc}
+.ban_r div ul li a.active{color:#ee3901;font-weight:bold;text-decoration:underline}
+
+/*==========---------- 4_3 Configuration | Truck Allocation ----------==========*/
+.cnt43 .truck{width:100%;height:666px;border:1px solid #ccc;background:url("../images/sub/truck_sensor.jpg") no-repeat 50% 50px}
+.cnt43 .truck_sensor{height:420px;}
+.cnt43 .truck_sensor select{position:absolute;left:50%;}
+.cnt43 .truck_sensor .sensor1{top:90px;margin-left:-310px}
+.cnt43 .truck_sensor .sensor2{top:65px;margin-left:-225px}
+.cnt43 .truck_sensor .sensor3{top:42px;margin-left:-125px}
+.cnt43 .truck_sensor .sensor4{top:220px;margin-left:-310px}
+.cnt43 .truck_sensor .sensor5{top:190px;margin-left:-220px}
+.cnt43 .truck_sensor .sensor6{top:165px;margin-left:-116px}
+.cnt43 .truck_sensor .sensor7{top:158px;margin-left:44px}
+.cnt43 .truck_sensor .sensor8{top:135px;margin-left:125px}
+.cnt43 .truck_sensor .sensor9{top:110px;margin-left:220px}
+.cnt43 .truck_sensor .sensor10{top:318px;margin-left:37px}
+.cnt43 .truck_sensor .sensor11{top:285px;margin-left:122px}
+.cnt43 .truck_sensor .sensor12{top:255px;margin-left:214px}
+.cnt43 .truck_txt img{width:198px;margin:80px 30px}
+.cnt43 .truck_txt div{height:285px;padding:20px;border:1px solid #d3d3d3;background:#f6f6f6}
+
+/*==========---------- 4_4 Configuration | Rule Management ----------==========*/
+.rule_area div{border:1px solid #d8d8d8;background:#f3f3f3}
+.rule_area div ul{min-width:871px;padding:10px 20px}
+.rule_area div ul li:first-child{padding-bottom:6px}
+.rule_area label{padding-left:5px}
+.rule_area .txt_red{display:inline-block;padding-left:5px;color:#d52121;vertical-align:middle;}
+
+.rule_set div{min-width:900px;height:454px;border:1px solid #d8d8d8;overflow:auto;overflow-y:hidden;}
+.rule_set ul{width:1606px;min-width:931px;max-width:1826px;padding:15px;overflow-x:scroll;overflow-y:hidden;white-space:nowrap;}
+.rule_set ul li{position:relative;float:left;width:172px;height:415px;margin-left:12px}
+.rule_set .list1{margin-left:0;background:url("../images/sub/rule01.jpg") 0 0 no-repeat}
+.rule_set .list2{background:url("../images/sub/rule02.jpg") 0 0 no-repeat}
+.rule_set .list3{background:url("../images/sub/rule03.jpg") 0 0 no-repeat}
+.rule_set .list4{background:url("../images/sub/rule04.jpg") 0 0 no-repeat}
+.rule_set .list5{background:url("../images/sub/rule05.jpg") 0 0 no-repeat}
+.rule_set .list6{background:url("../images/sub/rule06.jpg") 0 0 no-repeat}
+.rule_set .list7{background:url("../images/sub/rule07.jpg") 0 0 no-repeat}
+.rule_set li input[type="text"]{position:absolute;width:28px;height:21px;right:7px;}
+.rule_set li .num1{top:68px}
+.rule_set li .num2{top:93px}
+.rule_set li .num3{top:232px}
+.rule_set li .num4{top:258px}
+
+/*==========---------- 5_1 Master | Location Master ----------==========*/
+.cnt51 .side_area{margin-top:10px}
+.cnt51 .enroll_area tr th{width:20%}
+
+.side_area .image_cnt{height:251px}
+.side_area .image_cnt img{display:block;margin:0px auto;padding-top:5px}
+
+/*==========---------- 5_2 Master | Truck Master ----------==========*/
+.cnt52 .enroll_area tr th{width:15%}
+
+/*==========---------- 5_6 Master | SMS Manage Master ----------==========*/
+.cnt56 > table{margin-top:0}
+.cnt56 .grid_area{margin:10px 0}
+.cnt56 .enroll_area tr th{width:15%}
+
+/* ---------- 6_2 Log Monitoring | Utilize Personcal Information Log ---------- */
+.cnt62 .search_area label{padding-left:13px}
+.cnt62 .search_area .text{width:90px}
+
+/* ---------- 8_1 Menu Management ---------- */
+.cnt81 .enroll_area tr th{width:100px}
+.cnt81 .enroll_area{margin-top:0}
+
+.cnt81 #tabTree1{width:270px;min-height:254px;padding:10px 0 0 10px;background:#f7f7f7;border:1px solid #b2bbc8;-webkit-border-radius:3px; -moz-border-radius:3px; border-radius:3px;box-shadow:2px 2px 2px rgba(233, 233, 233, .8) inset;overflow:scroll}
+.cnt81 #tabTree1 > li > ul > li{padding-left:28px;background:url("../images/sub/menu_sub_icon.gif") no-repeat 9px 50%}
+.cnt81 #tabTree1 > li > ul > li a{padding-left:0px}
+.cnt81 #tabTree1 .lastCollapsable, .cnt81 #tabTree1 .lastExpandable{background:none}
+.cnt81 #tabTree1 li a{width:178px}
+
+/* ---------- 8_2 Common Code Management ---------- */
+.cnt82 .enroll_area tr th{width:30%}
+.cnt82 .enroll_area tr td .wid2{width:168px}
+.cnt82 #openBtn1{top:0px;right:0px}
+
+/* ---------- 8_4 System | Sensor_Type_Master ---------- */
+.cnt84 .side_area div ul{padding-top:10px}
+.cnt84 .side_area div ul li{height:45px;line-height:45px;margin-top:5px}
+.cnt84 .side_area div ul li:first{margin-top:0}
+.cnt84 .side_area div ul li h5{padding-left:20px}
+.cnt84 .side_area div ul li.list1 h5{background:url("../images/sub/type_icon01.gif") no-repeat 0 50%}
+.cnt84 .side_area div ul li.list2 h5{background:url("../images/sub/type_icon02.gif") no-repeat 0 50%}
+.cnt84 .side_area div ul li.list3 h5{background:url("../images/sub/type_icon03.gif") no-repeat 0 50%}
+.icon_area{display:inline-block;width:40px;height:40px;margin:0 38px;text-align:center;border:1px solid #cecece}
+.col_red{color:#d52121}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------  2_1 Monitoring | Location Monitoring ---------- */
+
+
+.cnt21 .map_area{height:100%;}
+.scroll_box{position:relative;height:450px;border:1px solid #ccc;border-top:0;overflow-y:scroll;}
+.cnt21{width:100%;max-height:none;min-width:0}
+.cnt21 .map_area{min-height:295px;max-height:1000px;background:url("../images/sub/image_test.jpg") no-repeat 50% 50%}
+.map_area > img{display:block;margin:0px auto}
+.cnt21 .side_tit{height:27px;line-height:27px;padding-left:15px;font-weight:normal;color:#3e3e3e;border:1px solid #ccc;background:#f2f4f6}
+
+/*==========---------- 2_2 Monitoring | Location Monitoring ----------==========*/
+.cnt22{max-height:none}
+.cnt22 .map_area{min-width:634px;height:500px}
+/*==========---------- 2_3 Monitoring | Truck GIS Monitoring ----------==========*/
+
+.cnt22 .map_area{border:1px solid #ccc;}
+.cnt22 .side_area{position:absolute;top:13px;right:14px;width:265px;height:500px;margin-top:0;margin-right:0}
+.cnt22 .side_tit div{top:0px;right:20px;}
+.cnt22 .side_tit div img{padding:4px 5px 0 10px}
+
+.cnt22 .base{width:255px;height:462px;padding:10px 0 0 10px;overflow-y:scroll;}
+.cnt22 .base > div{display:inline-block;width:102px;padding:5px;margin-bottom:5px;border:1px solid #d0d0d0;background:url("../images/sub/search_bg.jpg") repeat-x 0 50%;cursor:pointer}
+.cnt22 .base > div span{display:inline-block;padding:1px 0 0 5px}
+/*==========---------- 3_1 Analysis | Sensor Log ----------==========*/
+.cnt31 .search_area, .cnt31 .search_area form, .cnt32 .search_area, .cnt32 .search_area form .cnt33 .search_area, .cnt33 .search_area form{min-width:900px;}
+
+.graph_name{height:25px;line-height:25px;padding-left:20px;background:url("../images/sub/graph_name.gif") no-repeat 0 50%}
+.graph_info{padding-left:60px}
+.graph_info label{padding-left:7px}
+.graph_info select{width:133px;height:25px;line-height:25px}
+.graph_info input{height:23px;line-height:23px;margin-left:6px}
+.graph_info input.date{width:105px}
+.graph_info img{padding:5.5px}
+.graph_cnt{height:270px;margin-top:10px;border:1px solid #b2bbc3;background:#fff;-webkit-border-radius:px; -moz-border-radius:px; border-radius:3px;}
+.graph_cnt #chart-timber{width:97%;margin:20px auto;height:230px}
+/*==========---------- 3_2 Analysis | Senosor Alarm Log ----------==========*/
+/*==========---------- 3_3 Analysis | Senosor Status ----------==========*/
+.cnt33{max-height:none;min-width:0}
+.cnt33 .info_area{min-width:910px;margin-bottom:10px}
+.cnt33 ul{right:0px;}
+.cnt33 ul li{float:left;height:24px;line-height:24px;padding:0 10px 0 20px}
+.cnt33 ul li.list1{background:url("../images/sub/state_icon01.png") no-repeat 0 50%}
+.cnt33 ul li.list2{background:url("../images/sub/state_icon02.png") no-repeat 0 50%}
+.cnt33 ul li.list3{padding-right:0;background:url("../images/sub/state_icon03.png") no-repeat 0 50%}
+.cnt33 .grid_area{min-width:0}
+.cnt33 .search_area{min-width:0;margin-top:30px}
+
+/*==========---------- 3_4 Analysis | Truck Tracking ----------==========*/
+.snb34{height:100%;}
+.tree34{height:300px}
+
+#snb .truck_list{top:240px;left:10px;}
+#snb .truck_list .grid_area{min-width:0}
+
+#snb .truck_detail{top:370px;left:10px;width:200px}
+#snb .truck_detail table .first th, #snb .truck_detail table .first td{border-top:1px solid #adb4bf;}
+#snb .truck_detail table tr td{background:#fff;border-bottom:1px solid #adb4bf;}
+#snb .truck_detail table tr th{padding:4.5px 15px;color:#3e3e3e;background:#c5d0e8;font-weight:normal;border-bottom:1px solid #adb4bf;}
+#snb .truck_detail table tr input[type="text"]{margin:5px;width:98px;height:20px}
+
+.cnt34{top:0px;}
+.cnt34 .list1{min-width:590px}
+.cnt34 .search_area{min-width:0}
+.cnt34 .map_area{height:600px;margin-top:10px;border:1px solid #ccc}
+.cnt34 .list2{margin-left:20px}
+.cnt34 .list2 > div h3{padding-bottom:8px}
+.cnt34 #table01{width:298px}
+.cnt34 .status_list .grid_area{min-width:0}
+/*==========---------- 3_5 Analysis | Item Traceability ----------==========*/
+.cnt35{min-width:0;top:0px;max-height:none;overflow-y:scroll;}
+.cnt35 .list1{margin-right:10px;}
+.cnt35 .list1 .grid_area, .cnt35 .list2 .grid_area{min-width:0}
+.cnt35 .list2 .grid_area, .cnt35 .list2 .grid1{min-height:218px;}
+.cnt35 .list1, .cnt35 .list2, #table01{width:280px}
+.cnt35 .list2 .grid2{margin-top:6px}
+.cnt35 .cnt_area{height:434px}
+#table01{text-align:center;border:1px solid #156baf;-webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px;}
+#table01 tr{height:20px;line-height:20px;-webkit-border-radius:10px 10px 0 0	; -moz-border-radius:10px 10px 0 0; border-radius:10px 10px 0 0;}
+#table01 th{font-weight:normal;}
+#table01 thead{height:17px;line-height:17px;background:url("../images/sub/search_bg.jpg") 0 0 repeat-x;}
+#table01 thead tr th{border-bottom:1px solid #156baf;border-left:1px solid #d0d0d0}
+#table01 thead tr th:last-child{-webkit-border-radius:0 10px 0 0	; -moz-border-radius:0 10px 0 0; border-radius:0 10px 0 0;}
+#table01 thead tr th.borl0{border-left:0;-webkit-border-radius:5px 0 0 0; -moz-border-radius:5px 0 0 0; border-radius:5px 0 0 0;}
+#table01 thead tr th.bdrs_r{-webkit-border-radius:0 5px 0 0; -moz-border-radius:0 5px 0 0; border-radius:0 5px 0 0;}
+#table01 tbody tr td{border-left:1px solid #d0d0d0}
+#table01 tbody tr.borb1 th,#table01 tbody tr.borb1 td{border-bottom:1px solid #d0d0d0}
+.cnt35 .map_area{height:418px;margin-left:10px;border:1px solid #d0d0d0}
+
+
+
+
+
+/* ??? */
+h3.all_num{height:16px;line-height:16px;margin-bottom:8px;padding-left:22px;background:url("../images/sub/num_icon.gif") no-repeat 0 50%;font-weight:normal}
+h3.all_num span{font-weight:bold}
+
+
+.imgSelect {cursor: pointer;}
+
+.popupLayer div {position: absolute;top: 5px;right: 5px}
+
+/* jqgrid style 2016-03-04 */
+.sub_cnt .ui-widget-content{font-family:dotum}
+.sub_cnt .ui-jqgrid .ui-jqgrid-htable th div{line-height:17px;}
+.sub_cnt .ui-jqgrid tr.jqgrow, .sub_cnt .ui-jqgrid tr.ui-row-ltr td{border-bottom:1px solid #ccc;border-right:1px solid #ccc;border-left:0;border-top:0;}
+.sub_cnt .ui-jqgrid-bdiv .ui-state-hover{color:#333;background:#def1ff}
+.sub_cnt .ui-jqgrid-bdiv .ui-state-highlight{background:#fcdcc3}
+.sub_cnt .ui-jqgrid tr.ui-row-ltr td{border-radius:0}
+.sub_cnt .ui-th-column{border-radius:0 !important}
+
+/* 03-15 추가 */
+.logo_tip{padding:10px 0 0 10px;color:#f00}
+.logo_tip .logo_star{padding-right:9px}
+
+/* Location Allocation 2016-04-06 */
+.cnt42 .menu_tit .ko_guide, .cnt42 .menu_tit .en_guide{width:67px;height:19px}
+.ko_guide{background:url("../images/sub/ko_guide.gif") no-repeat 0 0;}
+.en_guide{background:url("../images/sub/en_guide.gif") no-repeat 0 0;}
+ 
+.cnt42 .guide{position:absolute;top:34px;right:0px;px;width: 726px;border:2px solid #505761;background:#fff;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;outline:none;z-index:10}
+.cnt42 .guide_area li{margin-bottom:10px;background:url("../images/sub/guide_bg.jpg") repeat-x 0 100%;}
+.cnt42 .guide_area h6{height:20px;line-height:20px;padding-left:20px;font-weight:bold;color:#0d6fbc}
+.cnt42 .guide_area .list1 h6{background:url("../images/sub/guide_icon01.gif") no-repeat 0 2px;}
+.cnt42 .guide_area .list2 h6{background:url("../images/sub/guide_icon02.gif") no-repeat 0 1px;}
+.cnt42 .guide_area .list3 h6{background:url("../images/sub/guide_icon03.gif") no-repeat 2px 2px;}
+.cnt42 .guide_area .list4 h6{background:url("../images/sub/guide_icon04.gif") no-repeat 0 2px;}
+.cnt42 .guide_area .list5 h6{background:url("../images/sub/guide_icon05.gif") no-repeat 0 2px;}
+.cnt42 .guide_area p{padding:7px 0 10px 20px;font-weight:normal}
+.cnt42 .guide_area .btn_type{margin-left:323px}
+
+.cctvSelect {
+   cursor: pointer;
+}
+
+/* 센서 영역 전체 화면 2016-04-11 */
+.full_shot{overflow-y:scroll;}
+.full_shot, .full_shot .cnt_area, .full_shot .map_area{height:100%}
+.full_shot .side_tit{height:27px;line-height:27px;padding-left:15px;font-weight:normal;color:#3e3e3e;border:1px solid #ccc;background:#f2f4f6; box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;}
+.full_shot .scroll_box{position: relative;height:97%;min-height:330px;border: 1px solid #ccc;border-top: 0;box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;}
+
+/* 영문 번역시 search_area 여백  */
+.en_margin label{padding-left:0 !important}
+
+/* 센서 (Location Monitoring 팝업 스타일) */
+.pop_sensor td span{font-weight:normal;text-align:right;padding-right:5px}
+
+/* 센서 (Location Allocation 팝업 스타일)  */
+.pop_sensor  .sensor_info1 th{width:82px;text-align:left}
+.pop_sensor  .sensor_info1 td:last-child{width:138px;font-weight:normal}
+
+/* 센서 (Location GIS Monitoring, truck GIS Monitoring 팝업 스타일)  */
+.cnt22 .pop_sensor{width:478px}
+.pop_sensor  .sensor_info2 th{width:154px;text-align:left}
+.pop_sensor  .sensor_info2 td:last-child{width:300px;font-weight:normal}

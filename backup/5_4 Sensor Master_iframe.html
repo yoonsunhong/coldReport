@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+  <meta charset="utf-8" />
+  <title> 5_4 Master | Sensor Master  </title>
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/sub.css" />
+  <link href="js/jqGrid/ui.jqgrid.css" rel="stylesheet" />
+  <link href="js/jqGrid/jquery-ui-1.10.3.custom.css" rel="stylesheet" />
+  <link href="js/jqGrid/jquery-ui.min.css" rel="stylesheet" />
+  <!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+	<script src="js/jqGrid/jquery-1.7.1.min.js"></script>
+	<script src="js/jqGrid/jquery-1.7.2.min.js"></script>
+	<script src="js/jqGrid/json3.min.js"></script>
+    <script src="js/jqGrid/jquery.jqGrid.src.js"></script>
+    <script src="js/jqGrid/grid.locale-kr.js"></script>
+    <script src="js/jqGrid/common.js"></script>
+    <script src="js/jqGrid/rtComm.js"></script>
+
+   <script src="js/gnb.js" type="text/javascript"></script>
+   <script src="js/sub.js" type="text/javascript"></script>
+   <script src="js/ui_common.js" type="text/javascript"></script>
+   <script src="js/common.js" type="text/javascript"></script>
+   <script src="js/jquery.treeview.js" type="text/javascript"></script>
+   <script>
+			$(document).ready(function () {
+				jQuery("#grid1").jqGrid({ 
+					colNames: ['센서명' , '센서 아이디' , '온도' , '습도' , 'CO2' , '수온' , '광량', 'PH', 'EC'],
+					colModel: [
+						  { name: 'DESCRIPTION', align: 'center'},
+						  { name: 'SENSOR_ID', align: 'center'},
+						  { name: 'TEMPERATURE', align : 'center', formatter: formatImage },
+						  { name: 'HUMIDITY', align : 'center', formatter: formatImage },
+						  { name: 'CO2', align : 'center', formatter: formatImage  },
+						  { name: 'WATER_TEMPERATURE', align : 'center', formatter: formatImage   },
+						  { name: 'LIGHT', align : 'center', formatter: formatImage   },
+						  { name: 'PH', align : 'center', formatter: formatImage   },
+						  { name: 'EC', align : 'center', formatter: formatImage   }
+					],
+					rowNum: 10,							// 한 페이지에 보여줄 데이터 갯수
+					rowList: [5, 10, 20, 50],			// 한 화면에서 볼 수 있는 row의 수를 조절 가능
+					multiselect: true,					// 멀티 셀렉트 박스가 첫번째 컬럼에 생김
+					pager: '#pager'						// 페이징을 처리할 <div> 태그의 #id값
+				});
+
+				function formatImage(cellValue, options, rowObject) {
+					var imageHtml = "<img src='images/sub/useIcon" + cellValue + ".gif' />";
+					return imageHtml;
+				}
+				var mydata = [
+					{SENSOR_ID:'00102170',DESCRIPTION:'센서6번 센서',TEMPERATURE:'N',HUMIDITY:'N',CO2:'Y',WATER_TEMPERATURE:'Y',LIGHT:'N',PH:'Y',EC:'N'},
+					{SENSOR_ID:'00102162',DESCRIPTION:'센서6번 센서',TEMPERATURE:'Y',HUMIDITY:'N',CO2:'Y',WATER_TEMPERATURE:'N',LIGHT:'Y',PH:'Y',EC:'N'},
+					{SENSOR_ID:'00102036',DESCRIPTION:'센서6번 센서',TEMPERATURE:'N',HUMIDITY:'Y',CO2:'N',WATER_TEMPERATURE:'Y',LIGHT:'N',PH:'N',EC:'Y'},
+					{SENSOR_ID:'00185233',DESCRIPTION:'센서6번 센서',TEMPERATURE:'N',HUMIDITY:'Y',CO2:'N',WATER_TEMPERATURE:'Y',LIGHT:'Y',PH:'N',EC:'N'},
+					{SENSOR_ID:'00174216',DESCRIPTION:'센서6번 센서',TEMPERATURE:'Y',HUMIDITY:'Y',CO2:'Y',WATER_TEMPERATURE:'Y',LIGHT:'N',PH:'N',EC:'Y'},
+					{SENSOR_ID:'00125036',DESCRIPTION:'센서6번 센서',TEMPERATURE:'N',HUMIDITY:'Y',CO2:'Y',WATER_TEMPERATURE:'N',LIGHT:'N',PH:'Y',EC:'Y'},
+					{SENSOR_ID:'00102746',DESCRIPTION:'센서6번 센서',TEMPERATURE:'Y',HUMIDITY:'N',CO2:'Y',WATER_TEMPERATURE:'Y',LIGHT:'Y',PH:'N',EC:'N'},
+					{SENSOR_ID:'00101236',DESCRIPTION:'센서10번 센서',TEMPERATURE:'N',HUMIDITY:'Y',CO2:'N',WATER_TEMPERATURE:'Y',LIGHT:'N',PH:'N',EC:'Y'},
+					{SENSOR_ID:'00245796',DESCRIPTION:'센서10번 센서',TEMPERATURE:'Y',HUMIDITY:'Y',CO2:'N',WATER_TEMPERATURE:'N',LIGHT:'N',PH:'Y',EC:'Y'},
+					{SENSOR_ID:'00134016',DESCRIPTION:'센서10번 센서',TEMPERATURE:'N',HUMIDITY:'Y',CO2:'Y',WATER_TEMPERATURE:'Y',LIGHT:'N',PH:'N',EC:'Y'},
+					{SENSOR_ID:'00134016',DESCRIPTION:'센서10번 센서',TEMPERATURE:'N',HUMIDITY:'Y',CO2:'Y',WATER_TEMPERATURE:'Y',LIGHT:'N',PH:'N',EC:'Y'},
+					{SENSOR_ID:'00134016',DESCRIPTION:'센서10번 센서',TEMPERATURE:'N',HUMIDITY:'Y',CO2:'Y',WATER_TEMPERATURE:'Y',LIGHT:'N',PH:'N',EC:'Y'},
+					{SENSOR_ID:'00128906',DESCRIPTION:'센서10번 센서',TEMPERATURE:'Y',HUMIDITY:'N',CO2:'N',WATER_TEMPERATURE:'Y',LIGHT:'Y',PH:'N',EC:'Y'},
+					{SENSOR_ID:'00917836',DESCRIPTION:'센서10번 센서',TEMPERATURE:'Y',HUMIDITY:'Y',CO2:'N',WATER_TEMPERATURE:'Y',LIGHT:'N',PH:'Y',EC:'N'},
+					{SENSOR_ID:'00102837',DESCRIPTION:'센서10번 센서',TEMPERATURE:'Y',HUMIDITY:'Y',CO2:'N',WATER_TEMPERATURE:'Y',LIGHT:'N',PH:'N',EC:'Y'},
+					{SENSOR_ID:'00102837',DESCRIPTION:'센서10번 센서',TEMPERATURE:'Y',HUMIDITY:'Y',CO2:'N',WATER_TEMPERATURE:'Y',LIGHT:'N',PH:'N',EC:'Y'},
+					{SENSOR_ID:'00102837',DESCRIPTION:'센서10번 센서',TEMPERATURE:'Y',HUMIDITY:'Y',CO2:'N',WATER_TEMPERATURE:'Y',LIGHT:'N',PH:'N',EC:'Y'},
+					{SENSOR_ID:'00102036',DESCRIPTION:'센서10번 센서',TEMPERATURE:'N',HUMIDITY:'Y',CO2:'N',WATER_TEMPERATURE:'Y',LIGHT:'N',PH:'N',EC:'Y'},
+					{SENSOR_ID:'00185233',DESCRIPTION:'센서10번 센서',TEMPERATURE:'N',HUMIDITY:'Y',CO2:'N',WATER_TEMPERATURE:'Y',LIGHT:'Y',PH:'N',EC:'N'},
+					{SENSOR_ID:'00174216',DESCRIPTION:'센서10번 센서',TEMPERATURE:'Y',HUMIDITY:'Y',CO2:'Y',WATER_TEMPERATURE:'Y',LIGHT:'N',PH:'N',EC:'Y'},
+					{SENSOR_ID:'00125036',DESCRIPTION:'센서10번 센서',TEMPERATURE:'N',HUMIDITY:'Y',CO2:'Y',WATER_TEMPERATURE:'N',LIGHT:'N',PH:'Y',EC:'Y'},
+					{SENSOR_ID:'00125036',DESCRIPTION:'센서10번 센서',TEMPERATURE:'N',HUMIDITY:'Y',CO2:'Y',WATER_TEMPERATURE:'N',LIGHT:'N',PH:'Y',EC:'Y'},
+					{SENSOR_ID:'00125036',DESCRIPTION:'센서100번 센서',TEMPERATURE:'N',HUMIDITY:'Y',CO2:'Y',WATER_TEMPERATURE:'N',LIGHT:'N',PH:'Y',EC:'Y'},
+					{SENSOR_ID:'00102746',DESCRIPTION:'센서100번 센서',TEMPERATURE:'Y',HUMIDITY:'N',CO2:'Y',WATER_TEMPERATURE:'Y',LIGHT:'Y',PH:'N',EC:'N'},
+					{SENSOR_ID:'00101236',DESCRIPTION:'센서100번 센서',TEMPERATURE:'N',HUMIDITY:'Y',CO2:'N',WATER_TEMPERATURE:'Y',LIGHT:'N',PH:'N',EC:'Y'},
+					{SENSOR_ID:'00245796',DESCRIPTION:'센서100번 센서',TEMPERATURE:'Y',HUMIDITY:'Y',CO2:'N',WATER_TEMPERATURE:'N',LIGHT:'N',PH:'Y',EC:'Y'},
+					{SENSOR_ID:'00134016',DESCRIPTION:'센서100번 센서',TEMPERATURE:'N',HUMIDITY:'Y',CO2:'Y',WATER_TEMPERATURE:'Y',LIGHT:'N',PH:'N',EC:'Y'},
+					{SENSOR_ID:'00102837',DESCRIPTION:'센서100번 센서',TEMPERATURE:'Y',HUMIDITY:'Y',CO2:'N',WATER_TEMPERATURE:'Y',LIGHT:'N',PH:'N',EC:'Y'},
+					{SENSOR_ID:'00102036',DESCRIPTION:'센서100번 센서',TEMPERATURE:'N',HUMIDITY:'Y',CO2:'N',WATER_TEMPERATURE:'Y',LIGHT:'N',PH:'N',EC:'Y'},
+					{SENSOR_ID:'00185233',DESCRIPTION:'센서100번 센서',TEMPERATURE:'N',HUMIDITY:'Y',CO2:'N',WATER_TEMPERATURE:'Y',LIGHT:'Y',PH:'N',EC:'N'},
+				]
+
+				for(var i=0;i<=mydata.length;i++)	// 스크립트 변수에 담겨 있는 json 데이터의 길이만큼
+					jQuery("#grid1").jqGrid('addRowData',i+1,mydata[i]);		// jqgrid의 addRowData를 이용하여 각각의 row에 gridData 변수의 데이터를 add한다
+				
+				reSizefn();
+
+				jQuery("#grid2").jqGrid({ 
+					height: 160,
+					width: 235,
+					colNames: ['센서타입명'],
+					colModel: [
+						  { name: 'SENSOR_TYPE_NM', align: 'center'},
+					],
+					rowNum: 10,							// 한 페이지에 보여줄 데이터 갯수
+					rowList: [5, 10, 20, 50],			// 한 화면에서 볼 수 있는 row의 수를 조절 가능
+					multiselect: true,					// 멀티 셀렉트 박스가 첫번째 컬럼에 생김
+				});
+
+				var mydata = [
+					{SENSOR_TYPE_NM:'Temperature'},
+					{SENSOR_TYPE_NM:'Humidity'},
+					{SENSOR_TYPE_NM:'CO2'},
+					{SENSOR_TYPE_NM:'WaterTemperature'},
+					{SENSOR_TYPE_NM:'Light'},
+					{SENSOR_TYPE_NM:'PH'},
+					{SENSOR_TYPE_NM:'EC'},
+				]
+
+				for(var i=0;i<=mydata.length;i++)	// 스크립트 변수에 담겨 있는 json 데이터의 길이만큼
+					jQuery("#grid2").jqGrid('addRowData',i+1,mydata[i]);		// jqgrid의 addRowData를 이용하여 각각의 row에 gridData 변수의 데이터를 add한다
+				
+				reSizefn();
+			});
+			
+			function reSizefn() {
+				$(window).resize(function () {
+					var grid = $("#grid1");
+					var width = $(window).width() - 355;
+					var height = $(window).height() - 185;
+					if ( height <= 590 ) {
+						height = 590;
+					}
+
+					grid.setGridWidth(width, true);
+					grid.setGridHeight(height, true);
+				}).resize();       
+			}
+   </script>
+ </head>
+
+ <body>
+  <!-- =========content=========== -->
+  <div id="wrap">
+		<div class="title">
+			<h2 class="sub_name f_l">Sensor Master</h2>
+			<ul class="location f_r">
+				<li>Master Data</li>
+				<li>&gt;</li>
+				<li>Sensor Master</li>
+			</ul>
+		</div>
+		<div class="sub_cnt frame1_cnt cnt54">
+			<button class="btn_type btn_type1">신규</button>
+			<button class="btn_type btn_type1">저장</button>
+			<button class="btn_type btn_type1">삭제</button>
+			<button class="btn_type btn_type1">조회</button>
+			<div class="search_area">
+				<form action="">
+					<label for="">· 센서명</label><input type="text" />
+					<label for="">· 센서 아이디</label><input type="text" />
+				</form>
+			</div>
+			<div class="type_area clear">
+				<div class="grid_area f_l">
+					<table id="grid1" ></table>    
+				</div>
+				<div id="pager"></div>
+				<div class="side_area f_l">
+					<h4 class="side_tit">센서 추가</h4>
+					<div>
+						<label for=""><span class="red_icon">*</span>센서명</label><input type="text" />
+						<label for=""><span class="red_icon">*</span>센서아이디</label><input type="text" />
+						<div class="grid_area">
+							<table id="grid2" ></table>    
+						</div>
+						<button class="btn_type btn_type3">서식 다운로드</button>
+						<button class="btn_type btn_type3">파일찾기</button>
+						<button class="btn_type btn_type3">업로드</button>
+						<label for="">엑셀파일</label><input type="text" />
+					</div>
+				</div>
+			</div>
+		</div>	
+  </div>
+  <!-- =========//content=========== -->
+ </body>
+</html>

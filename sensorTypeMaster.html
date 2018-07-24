@@ -73,7 +73,7 @@
 		$(window).resize(function () {
 			var grid = $("#grid1");
 			var gridCnt = $(".grid_area > div");
-			var width = $(window).width() - 357;
+			var width = $('.frame1_cnt').width() - 357;
 			var height = $(window).height() - 318;
 			if ( height <= 590 ) {
 				height = 590;
@@ -137,17 +137,17 @@
 									<li class="list1">
 										<h5>정상</h5>
 										<div class="icon_area"><img src="images/sub/Sensor_Normal.png" width="30" height="40" alt="정상일 경우의 센서 타입 아이콘 예시 이미지"></div>
-										<span class="p_r"><button class="btn_type btn_type3">파일찾기</button><input type="file"></span>
+										<span class="p_r"><button class="btn_type btn_type3">파일찾기</button><label for="normalSensorIcon" class="blind"></label><input type="file" id="normalSensorIcon"></span>
 									</li>
 									<li class="list2">
 										<h5>주의</h5>
 										<div class="icon_area"><img src="images/sub/sensor_caution.png" width="30" height="40" alt="주의일 경우의 센서 타입 아이콘 예시 이미지"></div>
-										<span class="p_r"><button class="btn_type btn_type3">파일찾기</button><input type="file"></span>
+										<span class="p_r"><button class="btn_type btn_type3">파일찾기</button><label for="cautionSensorIcon" class="blind"></label><input type="file" id="cautionSensorIcon"></span>
 									</li>
 									<li class="list3">
 										<h5>경고</h5>
 										<div class="icon_area"><img src="images/sub/Sensor_Warning.png" width="30" height="40" alt="경고일 경우의 센서 타입 아이콘 예시 이미지"></div>
-										<span class="p_r"><button class="btn_type btn_type3">파일찾기</button><input type="file"></span>
+										<span class="p_r"><button class="btn_type btn_type3">파일찾기</button><label for="warningSensorIcon" class="blind"></label><input type="file" id="warningSensorIcon"></span>
 									</li>
 								</ul>					
 							</div>

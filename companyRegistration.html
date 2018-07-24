@@ -104,23 +104,24 @@
 					</div>
 					<div class="search_area">
 						<form action="" method="post">
-							<label for="">· 업체명</label><input type="text">
-							<label for="">· 사용자이름</label><input type="text">
+							<label for="companyName">· 업체명</label><input type="text" id="companyName">
+							<label for="userName">· 사용자이름</label><input type="text" id="userName">
 						</form>
 					</div>
 					<div class="grid_area">
 						<table id="grid1" ></table>    
 					</div>
-					<div id="pager" ></div>
+					<div id="pager"></div>
 					<br>
 					<p>* 사용자 신규등록시 최초 비밀번호는 '이메일 아이디 + 사용자 연락처 마지막 전화번호'로 등록 됩니다.</p>
 					<p>* 비밀번호 초기화 시 비밀번호는 '이메일 아이디 + 사용자 연락처 마지막 전화번호'로 등록 됩니다.</p>
 					<br>
 					<table class="enroll_area">
+						<caption>업체 정보</caption>
 						<tbody>
 							<tr>
-								<th><span class="red_icon">*</span><span class="blind">필수 입력</span><label for="companyName">업체명</label></th>
-								<td><input class="wid2" type="text" id="companyName" ></td>
+								<th><span class="red_icon">*</span><span class="blind">필수 입력</span><label for="companyName1">업체명</label></th>
+								<td><input class="wid2" type="text" id="companyName1" ></td>
 								<th><span class="red_icon">*</span><span class="blind">필수 입력</span>사용자등록번호</th>
 								<td><label for="userRegiNum1" class="blind">사용자등록번호 앞자리</label><input class="wid4" type="text" id="userRegiNum1"> - <label for="userRegiNum2" class="blind">사용자등록번호 중간자리</label><input class="wid4" type="text" id="userRegiNum2" > - <label for="userRegiNum3" class="blind">사용자등록번호 뒷자리</label><input class="wid4" type="text" id="userRegiNum3" ></td>
 							</tr>
@@ -138,9 +139,9 @@
 							</tr>
 							<tr>
 								<th><span class="red_icon">*</span><span class="blind">필수 입력</span><label for="userName">사용자이름</label></th>
-								<td><input class="wid2" type="text" id="userName" /></td>
+								<td><input class="wid2" type="text" id="userName"></td>
 								<th class="icon_no"><label for="userPosition">사용자직책</label></th>
-								<td><input class="wid2" type="text" id="userPosition"/></td>
+								<td><input class="wid2" type="text" id="userPosition"></td>
 							</tr>
 							<tr>
 								<th><span class="red_icon">*</span><span class="blind">필수 입력</span><label for="userID">사용자아이디</label></th>
@@ -149,9 +150,9 @@
 								<td><input class="wid2" type="text" id="userPwd" disabled></td>
 							</tr>
 							<tr>
-								<th><span class="red_icon">*</span><span class="blind">필수 입력</span><label for="userEmail">사용자이메일</label></th>
+								<th><span class="red_icon">*</span><span class="blind">필수 입력</span>사용자이메일</th>
 								<td><label for="userEmailID" class="blind">이메일 아이디</label><input class="wid3" type="text" id="userEmailID"/> @ <label for="userEmailDamain" class="blind">이메일 도메인</label><input class="wid2" type="text" id="userEmailDamain"/></td>
-								<th><span class="red_icon">*</span><span class="blind">필수 입력</span><label for="userTel">사용자연락처</label></th>
+								<th><span class="red_icon">*</span><span class="blind">필수 입력</span>사용자연락처</th>
 								<td><label for="tel1" class="blind">휴대 전화 앞자리</label><input class="wid4" type="text" id="tel1"> - <label for="tel2" class="blind">휴대 전화 중간자리</label><input class="wid4" type="text" id="tel2"> - <label for="tel3" class="blind">휴대 전화 뒷자리</label><input class="wid4" type="text" id="tel3"></td>
 							</tr>
 							<tr>
@@ -162,7 +163,7 @@
 							</tr>
 							<tr>
 								<th><span class="red_icon">*</span>센서종류</th>
-								<td colspan="3"><input type="checkbox"><label for="sensorTemperature">온도</label><input type="checkbox"><label for="sensorHumidity">습도</label><input type="checkbox"><label for="sensorCO2">CO2</label><input type="checkbox"><label for="sensorWaterTem">수온</label><input type="checkbox"><label for="sensorLight">광량</label><input type="checkbox"><label for="sensorPH">PH</label><input type="checkbox"><label for="sensorEC">EC</label></td>
+								<td colspan="3"><input type="checkbox" id="sensorTemperature"><label for="sensorTemperature">온도</label><input type="checkbox" id="sensorHumidity"><label for="sensorHumidity">습도</label><input type="checkbox" id="sensorCO2"><label for="sensorCO2">CO2</label><input type="checkbox" id="sensorWaterTem"><label for="sensorWaterTem">수온</label><input type="checkbox" id="sensorLight"><label for="sensorLight">광량</label><input type="checkbox" id="sensorPH"><label for="sensorPH">PH</label><input type="checkbox" id="sensorEC"><label for="sensorEC">EC</label></td>
 							</tr>
 							<tr>
 								<th class="icon_no"><label for="logoFile">로고이미지파일</label></th>

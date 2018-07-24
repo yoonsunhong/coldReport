@@ -1,0 +1,505 @@
+@charset "utf-8";
+/*==========---------- 서브 공통 ----------==========*/
+
+.sub_cnt{float:left;min-width:1100px;padding:13px 14px 8px 30px;top:145px}
+.sub_cnt:after{display:block;content:"";clear:both;}
+.sub_name{position:absolute;top:0px;left:45px;font-weight:bold;}
+
+.title{position:absolute;top:0px;left:0px;width:100%;min-width:1280px;height:26px;line-height:26px;color:#333;border-bottom:1px solid #b8b9b9;border-top:1px solid #b8b9b9;background:#f1f4f5 url("../images/sub/sub_name_icon.gif") no-repeat 26px 50%}
+.page_tit{position:absolute;top:0px;left:0px}
+
+.tit_bg{width:220px;height:28px;line-height:28px;font-weight:bold;text-align:center;color:#253a55;background:url("../images/sub/tit_bg.jpg") repeat-x 0 0}
+.title li{float:left;line-height:28px;padding-left:7px;color:#7a7a7a}
+.title li:first-child{padding-left:18px;background:url("../images/sub/home.gif") no-repeat 0 8.5px}
+.title li:last-child{font-weight:bold}
+
+.banner{top:1px;left:0px;width:220px;height:536px;background:#e1e3ea;border-right:1px solid #9b9b9b}
+.banner3{position:fixed;top:145px;right:17px;width:220px;height:810px;background:#e1e3ea;border-right:1px solid #9b9b9b;border-left:1px solid #9b9b9b}
+.f4_bdrs{position:absolute;top:37px;left:10px;width:174px;height:500px;padding:12px;border:1px solid #adb3b8;background:#f7f7f7;-webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px;overflow:scroll}
+.bdrs{position:absolute;top:28px;left:0px;width:174px;height:500px; padding:12px;margin:10px;border:1px solid #adb3b8;background:#f7f7f7;-webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px;overflow:scroll}
+
+.location{position:absolute;top:0px;right:23px;}
+
+.oc_btn{position:absolute;top:64px;left:221px;width:10px;height:87px;text-indent:-9999px;z-index:1}
+.open_btn{background:url("../images/sub/open_btn.png") no-repeat 0 0}
+.close_btn{background:url("../images/sub/close_btn.png") no-repeat 0 0}
+
+iframe{overflow:hidden}
+
+.top117 {top:117px}
+
+/*==========---------- jqgrid ----------==========*/
+.grid_area{min-width:1136px}
+/*==========----------button style ----------==========*/
+.btn_type{padding:4px 12px;font-size:12px;color:#fff;font-weight:bold;-webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px;}
+.btn_type1{border: 1px solid #5c6372;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6a707e+0,535a6a+100 */
+background: rgb(106,112,126); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(106,112,126,1) 0%, rgba(83,90,106,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(106,112,126,1) 0%,rgba(83,90,106,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(106,112,126,1) 0%,rgba(83,90,106,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6a707e', endColorstr='#535a6a',GradientType=0 ); /* IE6-9 */
+}
+.btn_type1:hover{border:1px solid #a16628;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f19d28+0,ef7b0d+100 */
+background: rgb(241,157,40); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(241,157,40,1) 0%, rgba(239,123,13,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(241,157,40,1) 0%,rgba(239,123,13,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(241,157,40,1) 0%,rgba(239,123,13,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f19d28', endColorstr='#ef7b0d',GradientType=0 ); /* IE6-9 */
+}
+.btn_type2{border:1px solid #999999;background:#afafaf;cursor:none}
+.btn_type3, .btn_type4{color:#525969}
+.btn_type3{border:1px solid #b6b6b6;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fcfcfc+0,e9e9e9+100 */
+background: rgb(252,252,252); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(252,252,252,1) 0%, rgba(233,233,233,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(233,233,233,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(252,252,252,1) 0%,rgba(233,233,233,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#e9e9e9',GradientType=0 ); /* IE6-9 */
+}
+.btn_type3:hover{border:1px solid #f29335;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fcfcfc+0,fff8e3+100 */
+background: rgb(252,252,252); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(252,252,252,1) 0%, rgba(255,248,227,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(255,248,227,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(252,252,252,1) 0%,rgba(255,248,227,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#fff8e3',GradientType=0 ); /* IE6-9 */
+}
+.btn_type4{border:1px solid #999999;background:#d1d1d1;cursor:none}
+
+/* frame2 */
+.search_area{min-width:1136px;height:39px;line-height:39px;margin:8px 0;border:1px solid #0d6fbc;background:url("../images/sub/search_bg.jpg") repeat-x 0 0;-webkit-border-radius:6px; -moz-border-radius:6px; border-radius:6px;}
+.search_area label{padding-left:20px}
+.search_area input{width:121px;height:21px;margin-left:10px}
+
+/*==========---------- Sensor_Management frame4 ----------==========*/
+/*-- 탭 구조 --*/
+#tree01 > aside{float:left;}
+#tree01 > aside > a{display:block;width:110px;height:28px;line-height:28px;background:url("../images/sub/tab_on.jpg") repeat-x 0 0;text-align:center;color:#878787;font-weight:bold;text-shadow:1px 1px 3px rgba(255, 255, 255, 1);cursor:pointer}
+#tree01 > .tab1 > a{position:absolute;top:-1px;left:0px;width:110px}
+#tree01 > .tab2 > a{position:absolute;top:-1px;left:111px;width:109px}
+#tree01 .tab1 .tab_btn{border-right:1px solid #9b9b9b}
+#tree01 > aside.on > a{color:#333;background:url("../images/sub/tit_bg.jpg") repeat-x 0 0;border-left:0;cursor:default}
+
+/*-- 트리 구조 --*/
+.treeview .hitarea {background: url(../images/tree/treeview-default.gif) -109px -30px no-repeat;height: 16px;width: 43px;margin-left: -16px;float: left;cursor: pointer;}
+.treeview .hitarea + a{color:#275184;font-weight:bold}
+.treeview li {padding-left:16px}
+.truck_tree li { background: url(../images/tree/treeview-default-line1.gif) 0 0 no-repeat; }
+.location_tree li { background: url(../images/tree/treeview-default-line2.gif) 0 0 no-repeat; }
+.treeview li.collapsable, .treeview li.expandable { background-position: 0 -176px; }
+.treeview .expandable-hitarea { background-position: -147px 2px; }
+.treeview li.last { background-position: 0 -1766px ; }
+.treeview li.lastCollapsable, .treeview li.lastExpandable { background-image: url(../images/tree/treeview-default.gif); }
+
+/* 트리 오버, 클릭시 */
+.treeview li a{display:block;width:178px;height:20px;line-height:20px;padding-left:22px}
+.treeview li a:hover{color:#0d6fbc;}
+.treeview li a.active{color:#ee3901;font-weight:bold;text-decoration:underline}
+
+/* = 그래프 = */
+.graph{left:-30px;bottom:-10px;width:104.5%;height:363px;background:#f0f1f3;z-index:1;float:left;clear:both;}
+.graph_tit{width:100%;text-align:left;padding-left:14px}
+.graph_area{width:97%;height:307px;margin:14px 18px}
+
+/*==========---------- 2_1 Monitoring | Location Monitoring ----------==========*/
+.content21{width:100%}
+.content21 .banner{top:27px;}
+.banner21 .bdrs{min-height:300px}
+.cnt{overflow-y:scroll;}
+.cnt21 > div{margin-top:0;margin-left:0;margin-right:0}
+.cnt21 .map_area{height:100%;}
+.cnt42 .cnt_area, .cnt21 .cnt_area{width:100%;position:relative;top:0px;min-height:0;height:500px;clear:both;float:left;}
+.scroll_box{position:relative;height:450px;border:1px solid #ccc;border-top:0;overflow-y:scroll;}
+.cnt21{width:100%;max-height:none;min-width:0}
+.cnt21 .map_area{min-height:295px;max-height:1000px;background:url("../images/sub/image_test.jpg") no-repeat 50% 50%}
+.map_area > img{display:block;margin:0px auto}
+.cnt21 .side_tit{height:27px;line-height:27px;padding-left:15px;font-weight:normal;color:#3e3e3e;border:1px solid #ccc;background:#f2f4f6}
+/* 레이어 팝업 (2_1) */
+.pop_sensor{width:240px;border:2px solid #505761;-webkit-border-radius:10px; -moz-border-radius:10px; border-radius:10px;z-index:4}
+.pop_sensor h4{height:15px;line-height:15px;font-weight:bold;-webkit-border-radius:10px 10px 0 0; -moz-border-radius:10px 10px 0 0; border-radius:10px 10px 0 0;}
+
+.pop_sensor table{margin:10px 0;font-weight:bold}
+.pop_sensor table tbody tr{display:block;margin-bottom:5px}
+.pop_sensor th{width:21px;height:20px}
+.pop_sensor th.icon1{background:url("../images/sub/sensor_icon01.gif") no-repeat 7px 50%}
+.pop_sensor th.icon2{background:url("../images/sub/sensor_icon02.gif") no-repeat 7px 50%}
+.pop_sensor th.icon3{background:url("../images/sub/sensor_icon03.gif") no-repeat 5px 50%}
+.pop_sensor th.icon4{background:url("../images/sub/sensor_icon04.gif") no-repeat 5px 50%}
+.pop_sensor th.icon5{background:url("../images/sub/sensor_icon05.gif") no-repeat 4px 50%}
+.pop_sensor th.icon6{background:url("../images/sub/sensor_icon06.gif") no-repeat 7px 50%}
+.pop_sensor th.icon7{background:url("../images/sub/sensor_icon07.gif") no-repeat 7px 50%}
+.pop_sensor td.txt{width:121px}
+.pop_sensor td:last-child{width:92px}
+.pop_sensor input[type="text"]{width:45px;height:20px;margin-right:5px;padding-left:8px}
+
+.pop_sensor .close_btn img{position:absolute;top:3px;right:3px;padding-top:0}
+/*==========---------- 2_2 Monitoring | Location Monitoring ----------==========*/
+.cnt22{max-height:none}
+.cnt22 .map_area{min-width:634px;height:500px}
+/*==========---------- 2_3 Monitoring | Truck GIS Monitoring ----------==========*/
+.cnt31, .cnt33, .cnt34, .cnt41, .cnt44, .cnt43{overflow-y:scroll;overflow-x:hidden}
+
+.cnt22 .map_area{border:1px solid #ccc;}
+.cnt22 .side_area{position:absolute;top:13px;right:14px;width:265px;height:500px;margin-top:0;margin-right:0}
+.cnt22 .side_tit div{top:0px;right:20px;}
+.cnt22 .side_tit div img{padding:0 8px 0 10px}
+
+.cnt22 .base{width:255px;height:462px;padding:10px 0 0 10px;overflow-y:scroll;}
+.cnt22 .base > div{display:inline-block;width:102px;padding:5px;margin-bottom:5px;border:1px solid #d0d0d0;background:url("../images/sub/search_bg.jpg") repeat-x 0 50%;cursor:pointer}
+.cnt22 .base > div span{display:inline-block;padding:1px 0 0 5px}
+/*==========---------- 3_1 Analysis | Senosor Log ----------==========*/
+.cnt33 .search_area, .cnt33 .search_area form{min-width:900px;}
+.search_area img{padding:8.5px;padding-bottom:12.5px}
+
+.graph_name{height:25px;line-height:25px;padding-left:20px;background:url("../images/sub/graph_name.gif") no-repeat 0 50%}
+.graph_info{padding-left:60px}
+.graph_info label{padding-left:7px}
+.graph_info select{width:110px;height:25px;line-height:25px}
+.graph_info input{height:23px;line-height:23px;margin-left:6px}
+.graph_info input.date{width:90px}
+.graph_info img{padding:3.5px}
+.graph_cnt{height:270px;margin-top:10px;border:1px solid #b2bbc3;background:#fff;-webkit-border-radius:px; -moz-border-radius:px; border-radius:3px;}
+.graph_cnt #chart-timber{width:97%;margin:20px auto;height:230px}
+/*==========---------- 3_2 Analysis | Senosor Alarm Log ----------==========*/
+/*==========---------- 3_3 Analysis | Senosor Status ----------==========*/
+.cnt33{max-height:none;min-width:0}
+.cnt33 .info_area{min-width:910px;margin-bottom:10px}
+.cnt33 ul{right:0px;}
+.cnt33 ul li{float:left;height:24px;line-height:24px;padding:0 10px 0 20px}
+.cnt33 ul li.list1{background:url("../images/sub/state_icon01.png") no-repeat 0 50%}
+.cnt33 ul li.list2{background:url("../images/sub/state_icon02.png") no-repeat 0 50%}
+.cnt33 ul li.list3{padding-right:0;background:url("../images/sub/state_icon03.png") no-repeat 0 50%}
+.cnt33 .grid_area{min-width:0}
+
+/*==========---------- 3_4 Analysis | Truck Tracking ----------==========*/
+.snb34{height:100%;}
+.tree34{height:300px}
+
+#snb .truck_list{top:240px;left:10px;}
+#snb .truck_list .grid_area{min-width:0}
+
+#snb .truck_detail{top:370px;left:10px;width:200px}
+#snb .truck_detail table .first th, #snb .truck_detail table .first td{border-top:1px solid #adb4bf;}
+#snb .truck_detail table tr td{background:#fff;border-bottom:1px solid #adb4bf;}
+#snb .truck_detail table tr th{padding:4.5px;color:#3e3e3e;background:#c5d0e8;font-weight:normal;border-bottom:1px solid #adb4bf;}
+#snb .truck_detail table tr input[type="text"]{margin:2px 5px;width:108px}
+
+/*
+
+*/
+
+.cnt34{top:0px;}
+.cnt34 .list1{min-width:590px}
+.cnt34 .search_area{min-width:0}
+.cnt34 .map_area{height:600px;margin-top:10px;border:1px solid #ccc}
+.cnt34 .list2{margin-left:20px}
+.cnt34 .list2 > div h3{padding-bottom:8px}
+.cnt34 #table01{width:298px}
+.cnt34 .status_list .grid_area{min-width:0}
+/*==========---------- 3_5 Analysis | Item Traceability ----------==========*/
+.cnt35{min-width:0;top:0px;max-height:none;overflow-y:scroll;}
+.cnt35 .list1{margin-right:10px;}
+.cnt35 .list1 .grid_area, .cnt35 .list2 .grid_area{min-width:0}
+.cnt35 .list2 .grid_area, .cnt35 .list2 .grid1{min-height:218px;}
+.cnt35 .list1, .cnt35 .list2, #table01{width:280px}
+.cnt35 .list2 .grid2{margin-top:6px}
+.cnt35 .cnt_area{height:434px}
+#table01{text-align:center;border:1px solid #156baf;-webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px;}
+#table01 tr{height:20px;line-height:20px;-webkit-border-radius:10px 10px 0 0	; -moz-border-radius:10px 10px 0 0; border-radius:10px 10px 0 0;}
+#table01 th{font-weight:normal;}
+#table01 thead{height:17px;line-height:17px;background:url("../images/sub/search_bg.jpg") 0 0 repeat-x;}
+#table01 thead tr th{border-bottom:1px solid #156baf;border-left:1px solid #d0d0d0}
+#table01 thead tr th:last-child{-webkit-border-radius:0 10px 0 0	; -moz-border-radius:0 10px 0 0; border-radius:0 10px 0 0;}
+#table01 thead tr th.borl0{border-left:0;-webkit-border-radius:5px 0 0 0; -moz-border-radius:5px 0 0 0; border-radius:5px 0 0 0;}
+#table01 thead tr th.bdrs_r{-webkit-border-radius:0 5px 0 0; -moz-border-radius:0 5px 0 0; border-radius:0 5px 0 0;}
+#table01 tbody tr td{border-left:1px solid #d0d0d0}
+#table01 tbody tr.borb1 th,#table01 tbody tr.borb1 td{border-bottom:1px solid #d0d0d0}
+.cnt35 .map_area{height:418px;margin-left:10px;border:1px solid #d0d0d0}
+
+/*==========---------- 4_1 Configuration | Sensor Manegement----------==========*/
+.cnt41{max-height:none;top:0px;}
+.cnt41 .side_area{width:278px}
+.cnt41 .bor_bg{position:absolute;top:43px;min-width:922px;width:100%;height:1px;border-bottom:1px solid #0d6fbc}
+
+.cnt41 .tab2 .tab_btn{margin-left:5px}
+
+.cnt41 > aside{float:left;position:relative;}
+.cnt41 > .tab1 > div{position:absolute;top:38px;left:0px;}
+.cnt41 > .tab2 > div{position:absolute;top:38px;left:-112px;}
+.cnt41 > aside > a{display:block;width:110px;height:30px;line-height:30px;text-align:center;color:#878787;font-weight:bold;background:#f1f1f1;border:1px solid #0d6fbc;cursor:pointer}
+
+.cnt41 > aside.on > a{color:#0d6fbc;border:1px solid #0d6fbc;border-bottom:1px solid #fff;background:#fff;cursor:default !important}
+.cnt41 > .tab2 > div{display:none}
+
+.cnt41 .btn_area{height:40px;line-height:40px;margin-top:10px}
+.cnt41 .btn_area button{width:94px;height:20px;}
+.cnt41 .btn_area .sensor_up{position:absolute;top:10px;left:50%;margin-left:-99px;background:url("../images/sub/up.gif") 0 0 no-repeat}
+.cnt41 .btn_area .sensor_down{position:absolute;top:10px;left:50%;margin-left:5px;background:url("../images/sub/down.gif") 0 0 no-repeat}
+
+.cnt41 .grid_area{min-width:0}
+
+.cnt41 .excel{margin:10px 0}
+.cnt41 .excel input[type="text"]{width:250px;height:20px;line-height:20px;margin-left:10px}
+.cnt41 .excel button{margin-left:5px}
+/*==========---------- 4_2 Configuration | Location Allocation ----------==========*/
+.cnt42{max-width:none;max-height:none;overflow-y:scroll;overflow-x:hidden;}
+.cnt42 .page_tit{top:-1px;}
+.banner3 .list1{top:0px;}
+.banner3 .list2{top:350px;}
+.banner3 .list1 .bdrs{min-height:0;height:240px}
+.banner3 .list2 .bdrs{min-height:0;height:150px}
+.banner3 .list1 .bdrs li{padding-left:20px;background:url("../images/sub/sensor_icon.gif") 0 0 no-repeat}
+.banner3 .list2 .bdrs li{padding-left:20px;background:url("../images/sub/device_icon.gif") 0 0 no-repeat}
+.banner3 div ul li{padding-bottom:10px}
+.banner3 div ul li a:hover{color:#0d6fbc}
+.banner3 div ul li a.active{color:#ee3901;font-weight:bold;text-decoration:underline}
+
+.cnt42 .scroll_box{height:512px;border-top:1px solid #ccc;}
+.cnt21 .map_area > img
+/*==========---------- 4_3 Configuration | Truck Allocation ----------==========*/
+.cnt43{min-width:0}
+.cnt43 .truck{width:100%;height:666px;border:1px solid #ccc;background:url("../images/sub/truck_sensor.jpg") no-repeat 50% 50px}
+.cnt43 .truck_sensor{height:420px;}
+.cnt43 .truck_sensor select{position:absolute;left:50%;}
+.cnt43 .truck_sensor .sensor1{top:90px;margin-left:-310px}
+.cnt43 .truck_sensor .sensor2{top:65px;margin-left:-225px}
+.cnt43 .truck_sensor .sensor3{top:42px;margin-left:-125px}
+.cnt43 .truck_sensor .sensor4{top:220px;margin-left:-310px}
+.cnt43 .truck_sensor .sensor5{top:190px;margin-left:-220px}
+.cnt43 .truck_sensor .sensor6{top:165px;margin-left:-116px}
+.cnt43 .truck_sensor .sensor7{top:158px;margin-left:44px}
+.cnt43 .truck_sensor .sensor8{top:135px;margin-left:125px}
+.cnt43 .truck_sensor .sensor9{top:110px;margin-left:220px}
+.cnt43 .truck_sensor .sensor10{top:318px;margin-left:37px}
+.cnt43 .truck_sensor .sensor11{top:285px;margin-left:122px}
+.cnt43 .truck_sensor .sensor12{top:255px;margin-left:214px}
+.cnt43 .truck_txt{width:100%}
+.cnt43 .truck_txt img{width:198px;margin:30px 30px}
+.cnt43 .truck_txt div{width:80%;min-width:585px;height:185px;padding:20px;border:1px solid #d3d3d3;background:#f6f6f6}
+/*==========---------- 4_4 Configuration | Rule Management ----------==========*/
+.cnt44{min-width:0;left:222px;}
+.cnt44 > div{min-width:900px}
+.cnt44 label{padding-left:5px}
+.rule_area div{min-width:871px;height:64px;border:1px solid #d8d8d8;background:#f3f3f3}
+.rule_area div ul{min-width:871px;padding:15px 20px}
+.rule_area div ul li:first-child{padding-bottom:6px}
+.rule_area .txt_red{display:inline-block;padding-left:5px;color:#d52121;vertical-align:middle;}
+
+.rule_set div{min-width:900px;height:474px;border:1px solid #d8d8d8;overflow:auto;overflow-y:hidden;}
+.rule_set ul{width:1606px;min-width:931px;max-width:1826px;height:444px;padding:15px;overflow-x:scroll;overflow-y:hidden;white-space:nowrap;}
+.rule_set ul li{position:relative;float:left;width:172px;height:415px;margin-left:12px}
+.rule_set .list1{margin-left:0;background:url("../images/sub/rule01.jpg") 0 0 no-repeat}
+.rule_set .list2{background:url("../images/sub/rule02.jpg") 0 0 no-repeat}
+.rule_set .list3{background:url("../images/sub/rule03.jpg") 0 0 no-repeat}
+.rule_set .list4{background:url("../images/sub/rule04.jpg") 0 0 no-repeat}
+.rule_set .list5{background:url("../images/sub/rule05.jpg") 0 0 no-repeat}
+.rule_set .list6{background:url("../images/sub/rule06.jpg") 0 0 no-repeat}
+.rule_set .list7{background:url("../images/sub/rule07.jpg") 0 0 no-repeat}
+.rule_set li input[type="text"]{position:absolute;width:28px;height:21px;right:7px;}
+.rule_set li .num1{top:68px}
+.rule_set li .num2{top:93px}
+.rule_set li .num3{top:232px}
+.rule_set li .num4{top:258px}
+
+/*==========---------- 5_1 Master | Location Master ----------==========*/
+.table04, .table04 dl{min-width:300px}
+.cnt51 .table04, .cnt51 .table04 dl, .cnt51 .menu_info .table04 dl, .cnt51 .enroll_area dl{min-width:0}
+
+.btn_area .btn_marl{margin-left:20px}
+.btn_area .txt_red{display:inline;padding-left:5px;color:#dc2d2d}
+
+.menu_info .table04 dl{min-width:610px}
+.table04{margin-top:8px}
+.table04 input[type="text"]{width:300px}
+.table04 dl dt.icon_no{width:100px}
+.table04 .hei2 dt.icon_no{height:61px}
+.table04 dd{min-width:424px}
+.table04 dd input[type="text"].num1{width:50px}
+.table04 .hei2 {height:61px}
+.table04 .hei3, .table04 .hei3 dt, .table04 .hei3 dd {padding-bottom:3px}
+.table04 .hei2 .wid1{width:50px}
+.table04 .hei2 .wid2{width:156px;margin-left:5px}
+.table04 .hei2 .wid3{width:340px}
+.table04 .hei2 .wid4{width:400px;height:54px;margin:4px 0}
+.table04 .pad1{padding:0;padding-right:10px}
+.table04 .pad3{padding:0 10px}
+.table04 input[type="text"].pad2{width:90px}
+
+.side_area{width:280px;min-height:284px;border:1px solid #ccc;margin:8px 15px 0 15px}
+.side_area .side_tit{height:27px;line-height:27px;padding-left:15px;font-weight:normal;color:#3e3e3e;border-bottom:1px solid #ccc;background:#f2f4f6}
+.side_area .image_cnt{width:100%;height:430px}
+.side_area .image_cnt img{display:block;margin:0px auto;padding-top:5px}
+
+/*==========---------- 5_1 Master | Location Master ----------==========*/
+.cnt51{width:100%;min-width:0}
+.cnt51 .side_area{position:absolute;top:43px;right:14px;width:300px;margin-right:0}
+.cnt51 .side_area .image_cnt{height:258px}
+/*==========---------- 5_2 Master | Truck Master ----------==========*/
+.cnt52{width:100%;min-width:0}
+.cnt52 .enroll_area dl, .cnt52 .menu_info, .cnt52 .menu_info .grid_area{min-width:915px}
+.cnt52 .menu_info{width:100%}
+.cnt52 dl dt.icon_no{width:100px}
+
+/*==========---------- 5_3 Master | Sensor_Type_Master ----------==========*/
+h3.all_num{height:16px;line-height:16px;margin-bottom:8px;padding-left:22px;background:url("../images/sub/num_icon.gif") no-repeat 0 50%;font-weight:normal}
+h3.all_num span, .sen_type01  .side_tit, .sen_type02 .side_tit, .sen_type01 .red_icon{font-weight:bold}
+
+.sen_type01{width:275px;min-height:0;margin-top:0;margin-right:0;margin-left:10px}
+.sen_type02{width:275px;margin-right:0}
+.sen_type01 > div, .sen_type02 > div{padding:10px 20px}
+.sen_type01 label, .sen_type01 input[type="text"]{height:20px;margin-top:5px;margin-bottom:5px}
+.sen_type01 label{display:inline-block;width:100px}
+.sen_type01 input[type="text"]{width:113px;height:20px;margin-left:10px}
+.sen_type02 > div > ul{padding-top:10px}
+.sen_type02 > div > ul > li{height:39px;line-height:39px;margin-top:5px}
+.sen_type02 > div > ul > li:first{margin-top:0}
+.sen_type02 > div > ul > li h5{width:50px;padding-left:17px}
+.sen_type02 > div > ul > li.list1 h5{background:url("../images/sub/type_icon01.gif") no-repeat 0 50%}
+.sen_type02 > div > ul > li.list2 h5{background:url("../images/sub/type_icon02.gif") no-repeat 0 50%}
+.sen_type02 > div > ul > li.list3 h5{background:url("../images/sub/type_icon03.gif") no-repeat 0 50%}
+
+.icon_area{display:inline-block;width:37px;height:37px;margin-right:25px;border:1px solid #cecece}
+.col_red{color:#d52121}
+
+/*.type_area{min-width:1190px}*/
+.type_area .grid_area, .cnt54 .type_txt{min-width:842px}
+.cnt53 .search_area{min-width:0}
+.cnt53 .sen_type02{min-height:0;margin-left:10px}
+/*==========---------- 5_4 Master | Sensor Master ----------==========*/
+.cnt54 .sen_type01 label{width:105px;height:14px}
+.cnt54 .side_area input[type="checkbox"]{margin:6px 2px 0 0}
+.cnt54 .type_area .sen_type01 .grid2_area input[type="checkbox"]{margin-top:3px;margin-right:0}
+.cnt54 .type_area .sen_type01 .grid2_area{min-width:0;margin-top:30px}
+.cnt54 .type_area .sen_type01 button{margin-top:10px}
+.cnt54 .type_area .sen_type01 .btn1{margin-left:23px}
+.cnt54 .type_area .sen_type01 .btn2{margin-right:23px}
+.cnt54 .sen_type01 div > span{display:inline-block;margin-top:6px}
+.cnt54 .sen_type01 div .grid_area input[type="checkbox"]{margin:0px;}
+.cnt54 .ui-jqgrid-labels input[type="checkbox"]{margin-top:3px}
+.cnt54 .search_area{min-width:0}
+.cnt54 .sen_type01 input[type="text"]{margin-left:5px}
+
+/*==========---------- 5_5 Master | CCTV Master ----------==========*/
+.cnt55 .icon_no{padding-left:15px}
+.cnt55 .disable_bg{background:#ececec}
+.cnt55 .search_area{min-width:0}
+
+/*==========---------- 5_6 Master | SMS Manage Master ----------==========*/
+.cnt56, .cnt56 .search_area, .cnt56 .grid_area{min-width:0}
+.cnt56 .search_area, .cnt56 .enroll_area{margin-top:0}
+.cnt56 .enroll_area dt{width:175px}
+/*==========---------- 6_3 Log Monitoring | Utilize Personcal Information Log ----------==========*/
+.cnt63 .search_area{height:78px;background:url("../images/sub/search_bg2.jpg") repeat-x 0 0;}
+.cnt63 label{padding-left:30px}
+.cnt63 .padl1{padding-left:30px;padding-right:3px}
+.cnt63 .padl2{padding-left:158px;padding-right:4px}
+
+/*==========---------- 7_1 Company Management ----------==========*/
+.enroll_area{margin-top:16px;border-top:1px solid #0d6fbc;background:#f6f8f9}
+.enroll_area dl{min-width:835px;max-width:1920px;border-bottom:1px solid #c6cbce;}
+.enroll_area dl:after{display:block;content:"";clear:both;}
+.enroll_area dt, .enroll_area dd{float:left;height:30px;line-height:30px;color:#3e3e3e}
+.enroll_area dt{width:115px;padding-left:10px;background:#e3e6ea}
+.enroll_area dt.icon_no{width:123px;padding-left:25px}
+.red_icon{padding-right:8px;font-weight:bold;color:#ff4800}
+.enroll_area dd{min-width:200px;width:445px;margin-left:13px;background:#f6f8f9}
+.enroll_area input[type="text"] {width:204px;height:20px;line-height:20px;font-size:12px}	
+.enroll_area input[type="checkbox"], .enroll_area input[type="radio"]{vertical-align:middle}
+.enroll_area select{height:20px;line-height:20px}
+.enroll_area label{padding:0 20px 0 5px}
+.enroll_area dd .disable_bg{background:#ececec}
+.enroll_area .pho_num input{width:40px}
+.enroll_area .dd_wid100{width:80%}
+.enroll_area .dd_wid100 input.wid1{width:50px;margin-left:0}
+.enroll_area .dd_wid100 input.wid2{width:200px;margin-left:8px}
+.enroll_area .dd_wid100 input.wid3{width:500px;margin-left:8px}
+.enroll_area dd .ema_wid1{width:85px}
+.enroll_area dd .num1{width:50px}
+.enroll_area dd .btn_type{height:22px;line-height:16px;padding:3px 12px;margin-left:5px;-webkit-border-radius:3px; -moz-border-radius:3px; border-radius:3px;}
+
+/*==========---------- 7_2 User Registration ----------==========*/
+.table01{min-width:1136px}
+.table01 dd{width:400px}
+
+/*==========---------- 8_1 Menu Management ----------==========*/
+.menu_struc{width:280px;margin-right:12px;}
+.menu_struc .menu_tree{min-height:207px;padding-left:10px;padding-top:10px;overflow:scroll}
+.menu_tit{height:14px;line-height:14px;padding:10px 0 10px 20px;color:#3e3e3e;font-weight:bold;background:url("../images/sub/menu_icon.png") no-repeat 2px 50%}
+.menu_tree{width:282px;margin:0px auto;min-height:213px;background:#f7f7f7;border:1px solid #b2bbc8;-webkit-border-radius:3px; -moz-border-radius:3px; border-radius:3px;box-shadow:2px 2px 2px rgba(233, 233, 233, .8) inset;}
+.cnt81 .menu_tree {min-height:500px}
+/*.menu_info, .menu_info .grid_area{min-width:825px}*/
+.table02{margin-top:0;border-top:1px solid #0d6fbc;background:#f6f8f9}
+.table02 dt{float:left;width:138px}
+/*.frame1_cnt .menu_info{min-width:827px}*/
+.table02, .table02 dl{min-width:825px}
+.cnt81 .menu_info{margin-left:12px}
+.cnt81 .menu_tree > li > ul > li{padding-left:28px;background:url("../images/sub/menu_sub_icon.gif") no-repeat 9px 50%}
+.cnt81 .menu_tree > li > ul > li a{padding-left:0px}
+.cnt81 .menu_tree .lastCollapsable, .cnt81 .menu_tree .lastExpandable{background:none}
+/*==========---------- 8_2 Common Code Management ----------==========*/
+#popupLayer1 .table01{min-width:696px}
+.search_area select{width:133px;height:23px;margin-left:10px;font-size:12px}
+.table03 .menu_struc .enroll_area{width:282px}
+.table03{border-top:1px solid #0d6fbc;background:#f6f8f9}
+
+/* 레이어 팝업 1 (8_2) */
+#popupMask, .popup{position:fixed;display:none;}
+#popupMask{top:117px;left:0px;width:100%;height:100%;background:#000;opacity:0.25;filter:Alpha(opacity=25);z-index:999}
+#popupMask2{z-index:0}
+.popup{background:#fff;outline:none}
+#popupLayer1{width:726px;height:345px;border:2px solid #505761;-webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px;z-index:1000}
+.popup h4{height:15px;padding:5px 0 5px 15px;font-weight:bold;background:url("../images/sub/popup_tit.jpg") repeat-x 0 0;-webkit-border-radius:7px 7px 0 0; -moz-border-radius:7px 7px 0 0; border-radius:7px 7px 0 0}
+#popupLayer1 .enroll_area{margin:13px 15px}
+#popupLayer1 dl{min-width:696px}
+#popupLayer1 dt{width:113px}
+#popupLayer1 dt.icon_no{width:98px;padding-left:25px}
+#popupLayer1 dd{width:212px}
+#popupLayer1 .hei2 dt{height:60px}
+#popupLayer1 .hei2 dd{height:60px}
+#popupLayer1 .hei2 textarea{width:536px;height:45px;margin:5px 0}
+#popupLayer1 input[type="text"]{width:190px}
+#popupLayer1 select{width:100px;padding-left:40px}
+#popupLayer1 button.btn1{position:absolute;bottom:24px;left:15px;}
+#popupLayer1 button.btn2{position:absolute;bottom:24px;left:50%;margin-left:-59px}
+#popupLayer1 button.btn3{position:absolute;bottom:24px;left:50%;margin-left:-3px}
+#popupLayer1 button.btn4{position:absolute;bottom:24px;right:15px;}
+#popupLayer1 .close_btn{position:absolute;right:15px;top:3px}
+
+/*==========---------- 8_3 Company Registration ----------==========*/
+.code_area2 .ui-jqgrid{width:282px;height:306px}
+
+.menu_struc .table03 dl{min-width:280px}
+.menu_struc .table03 dt{width:79px}
+.menu_struc .table03 dt.icon_no{width:63px;padding-left:26px}
+.menu_struc .table03 dd{width:178px;min-width:0}
+.menu_struc .table03 input[type="text"]{width:155px}
+.menu_struc .table03 label{padding-right:27px}
+.menu_info #openBtn1{top:0px;right:0px;outline:none}
+
+/* jqgrid */
+.ui-jqgrid .ui-jqgrid-bdiv {-webkit-border-radius:0 0 5px 5px; -moz-border-radius:0 0 5px 5px; border-radius:0 0 5px 5px;}
+
+/* 스크롤 */
+.frame1_cnt, .frame2_cnt, .cnt82, .cnt81{overflow-x:hidden;overflow-y:scroll}
+.cnt82 .search_area, .cnt82 .grid_area{min-width:0}
+
+.imgSelect {
+	cursor: pointer;
+}
+
+.popupLayer div {
+	position: absolute;
+	top: 5px;
+	right: 5px
+}
+
+/* jqgrid style 2016-03-04 */
+.sub_cnt .ui-widget-content{font-family:dotum}
+.sub_cnt .ui-jqgrid .ui-jqgrid-htable th div{line-height:17px;}
+.sub_cnt .ui-jqgrid tr.jqgrow, .sub_cnt .ui-jqgrid tr.ui-row-ltr td{border-bottom:1px solid #ccc;border-right:1px solid #ccc}
+.sub_cnt .ui-jqgrid-bdiv .ui-state-hover{color:#333;background:#def1ff}
+.sub_cnt .ui-jqgrid-bdiv .ui-state-highlight{background:#fcdcc3}
+.sub_cnt .ui-jqgrid tr.ui-row-ltr td{border-radius:0}
+.sub_cnt .ui-th-column{border-radius:0 !important}

@@ -51,6 +51,7 @@
 						<button class="btn_type btn_type1">저장</button>
 					</div>
 					<table class="enroll_area">
+						<caption>업체 관리 정보</caption>
 						<tbody>
 							<tr>
 								<th><span class="red_icon">*</span><span class="blind">필수 입력</span><label for="companyName">업체명</label></th>
@@ -81,9 +82,9 @@
 								<td colspan="3"><input class="wid2" type="text" id="userID" disabled></td>
 							</tr>
 							<tr>
-								<th><span class="red_icon">*</span><span class="blind">필수 입력</span><label for="userEmail">사용자이메일</label></th>
-								<td><label for="userEmailID" class="blind">이메일 아이디</label><input class="wid3" type="text" id="userEmailID"/> @ <label for="userEmailDamain" class="blind">이메일 도메인</label><input class="wid2" type="text" id="userEmailDamain"/></td>
-								<th><span class="red_icon">*</span><span class="blind">필수 입력</span><label for="userTel">사용자연락처</label></th>
+								<th><span class="red_icon">*</span><span class="blind">필수 입력</span>사용자이메일</th>
+								<td><label for="userEmailID" class="blind">이메일 아이디</label><input class="wid3" type="text" id="userEmailID"> @ <label for="userEmailDamain" class="blind">이메일 도메인</label><input class="wid2" type="text" id="userEmailDamain"/></td>
+								<th><span class="red_icon">*</span><span class="blind">필수 입력</span>사용자연락처</th>
 								<td><label for="tel1" class="blind">휴대 전화 앞자리</label><input class="wid4" type="text" id="tel1"> - <label for="tel2" class="blind">휴대 전화 중간자리</label><input class="wid4" type="text" id="tel2"> - <label for="tel3" class="blind">휴대 전화 뒷자리</label><input class="wid4" type="text" id="tel3"></td>
 							</tr>
 							<tr>
@@ -94,11 +95,11 @@
 							</tr>
 							<tr>
 								<th class="icon_no">센서종류</th>
-								<td colspan="3"><input type="checkbox"><label for="sensorTemperature">온도</label><input type="checkbox"><label for="sensorHumidity">습도</label><input type="checkbox"><label for="sensorCO2">CO2</label><input type="checkbox"><label for="sensorWaterTem">수온</label><input type="checkbox"><label for="sensorLight">광량</label><input type="checkbox"><label for="sensorPH">PH</label><input type="checkbox"><label for="sensorEC">EC</label></td>
+								<td colspan="3"><input type="checkbox" id="sensorTemperature"><label for="sensorTemperature">온도</label><input type="checkbox" id="sensorHumidity"><label for="sensorHumidity">습도</label><input type="checkbox" id="sensorCO2"><label for="sensorCO2">CO2</label><input type="checkbox" id="sensorWaterTem"><label for="sensorWaterTem">수온</label><input type="checkbox" id="sensorLight"><label for="sensorLight">광량</label><input type="checkbox" id="sensorPH"><label for="sensorPH">PH</label><input type="checkbox" id="sensorEC"><label for="sensorEC">EC</label></td>
 							</tr>
 							<tr>
 								<th class="icon_no"><label for="logoFile">로고이미지파일</label></th>
-								<td colspan="3"><input class="wid2" type="text" id="logoFile"/><span class="p_r"><button class="btn_type btn_type3">파일찾기</button><input type="file"></span></td>
+								<td colspan="3"><input class="wid2" type="text" id="logoFile"/><span class="p_r"><button class="btn_type btn_type3">파일찾기</button><label for="logoFileFind"></label><input type="file" id="logoFileFind"></span></td>
 							</tr>
 						</tbody>
 					</table>

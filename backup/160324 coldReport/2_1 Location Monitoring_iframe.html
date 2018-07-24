@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+  <meta charset="utf-8" />
+  <title> 2_1 Monitoring | Location Monitoring </title>
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/sub.css" />
+  <link href="css/jqGrid/ui.jqgrid.css" rel="stylesheet" />
+  <link href="css/jqPlot/jquery.jqplot.css" rel="stylesheet" />
+  <link href="css/jquery-ui-1.10.3.custom.css" rel="stylesheet" />
+  <link href="css/jquery-ui.min.css" rel="stylesheet" />
+  <!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+	<script src="js/jqGrid/jquery-1.7.1.min.js"></script>
+	<script src="js/jqGrid/jquery-1.7.2.min.js"></script>
+	<script src="js/jqGrid/json3.min.js"></script>
+    <script src="js/jqGrid/jquery.jqGrid.src.js"></script>
+    <script src="js/jqGrid/grid.locale-kr.js"></script>
+    <script src="js/jqGrid/common.js"></script>
+    <script src="js/jqGrid/rtComm.js"></script>
+
+	<script src="js/treeview/jquery.treeview.js"></script>
+
+    <script src="js/jqPlot/jquery.jqplot.js"></script>
+	<script src="js/jqPlot/jqplot.highlighter.js"/><!-- Highlighter(마우스 접근시 데이터정보 표시) 설정 -->
+	<script src="js/jqPlot/jqplot.cursor.js"/><!-- 좌표에 관한 정보나 Zoom 기능 사용시 설정 -->
+	<script src="js/jqPlot/jqplot.dateAxisRenderer.js"/><!-- 축의 데이터를 날짜형태로 입력하기 위해서 설정 -->
+	<script src="js/jqPlot/jqplot.canvasAxisLabelRenderer.js"/><!-- 축의 데이터의 Label Option을 설정 -->
+	<script src="js/jqPlot/jqplot.enhanceLegendRenderer.js"/><!-- Legend(Line에대한 간단한 범례)의 Option을 설정 -->
+	<script src="js/jqPlot/jqplot.categoryAxisRenderer.js"/><!-- 축의 데이터를 순서에 상관없이 자동정렬을 설정 -->
+	<script src="js/jqPlot/jqplot.canvasAxisTickRenderer.js"/><!-- 축의 데이터 표현설정과 그래프위의 점의 Option을 설정 -->
+
+	<script src="js/gnb.js"></script>
+   <script src="js/sub.js"></script>
+   <script src="js/ui_common.js"></script>
+   <script src="js/common.js"></script>
+   <script src="js/jquery-ui.js" type="text/javascript"></script>   <script type="text/javascript">
+		$(function() {
+			$("#tabTree1").treeview({
+				collapsed: true,
+				animated: "medium",
+				control:"#sidetreecontrol",
+				persist: "location"
+			});
+		});
+
+		$(document).ready(function (){
+			var tree = $(".treeview > li > ul > li > ul > li")
+			tree.removeClass().find("div").remove();
+			tree.find("li").removeClass();
+
+			$(".treeview li:last-child").last().addClass("last");	
+		});
+   </script>
+      	<script>
+		  $(function() {
+			$( "#datepicker1" ).datepicker({
+			  showOn: "button",								// 버튼과 텍스트 필드 또는 모두 캘린더에 표시할지에 대한 여부 선택, both/button,text
+			  buttonImage: "images/sub/date_icon.png",	// image 경로 지정, 버튼 이미지 선택
+			  buttonImageOnly: true,							// 버튼에 있는 이미지만 표시, true/false
+			  buttonText: "Select date",						
+			  changeMonth: true,								// 월을 바꿀 수 있는 select 박스 표시, true/false
+			  changeYear: true,									// 년을 바꿀 수 있는 select 박스 표시, true/false
+			  nextText: '다음달',								// next 아이콘의 title 설정
+			  prevText: '이전달',								// prev 아이콘의 title 설정
+			  //numberOfMonths: [2,3],						// 한 번에 표시할 월의 수 설정 [2,3] 2(행) x 3(열) = 6개의 월 표시
+			  //yearRange: 2,									// 년도 선택 셀렉트 박스를 현재 년도에서 이전, 이후로 얼마의 범위를 표시할 것인지 설정
+			  //stepMonths: 'c-100:c+100',					// next, prev 버튼을 클릭했을 때 얼마나 많은 월을 이동하여 표시하는지 설정
+			  showButtonPanel: true,						// 캘린더 하단에 (today,done) 버튼 패널 표시 여부 선택
+			  closeText: '닫기',									// close 버튼의 text 선택
+			  dateFormat: 'yy-mm-dd',						// 표시할 날짜 형식 선택
+			  dayNames: ['월요일', '화요일', '수요일', '목요일', '금요일', '토요일', '일요일'],			// 표시할 요일 이름
+			  dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'],											// 표시할 요일 약자 이름
+			  monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월']	,	// 표시할 달 이름
+			  monthNamesShort: ['1','2','3','4','5','6','7','8','9','10','11','12'],								// 표시할 달 약자 이름
+			  //showOtherMonths: true,																		// 다른 달의 표시여부
+			  //selectOtherMonths: true,																		// 달 선택을 할 수 있는 기능의 사용 여부
+			  //minDate: -20,																					// 달력에 최소값을 정해서 최소값 이전날짜는 disable 처리
+			  //maxDate: '+3D',																					// 달력에 최대값을 정해서 최소값 이전날짜는 disable 처리
+			  //showWeek: true,																				// 주 표시 여부
+			}); 
+			$( "#datepicker2" ).datepicker({
+			  showOn: "button",
+			  buttonImage: "images/sub/date_icon.png",
+			  buttonImageOnly: true,
+			  buttonText: "Select date",
+			  changeMonth: true,								// 월을 바꿀 수 있는 select 박스 표시, true/false
+			  changeYear: true,									// 년을 바꿀 수 있는 select 박스 표시, true/false
+			  nextText: '다음달',								// next 아이콘의 title 설정
+			  prevText: '이전달',								// prev 아이콘의 title 설정
+			  //numberOfMonths: [2,3],						// 한 번에 표시할 월의 수 설정 [2,3] 2(행) x 3(열) = 6개의 월 표시
+			  //yearRange: 2,									// 년도 선택 셀렉트 박스를 현재 년도에서 이전, 이후로 얼마의 범위를 표시할 것인지 설정
+			  //stepMonths: 'c-100:c+100',					// next, prev 버튼을 클릭했을 때 얼마나 많은 월을 이동하여 표시하는지 설정
+			  showButtonPanel: true,						// 캘린더 하단에 (today,done) 버튼 패널 표시 여부 선택
+			  closeText: '닫기',									// close 버튼의 text 선택
+			  dateFormat: 'yy-mm-dd',						// 표시할 날짜 형식 선택
+			  dayNames: ['월요일', '화요일', '수요일', '목요일', '금요일', '토요일', '일요일'],			// 표시할 요일 이름
+			  dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'],											// 표시할 요일 약자 이름
+			  monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월']	,	// 표시할 달 이름
+			  monthNamesShort: ['1','2','3','4','5','6','7','8','9','10','11','12'],								// 표시할 달 약자 이름
+			  //showOtherMonths: true,																		// 다른 달의 표시여부
+			  //selectOtherMonths: true,																		// 달 선택을 할 수 있는 기능의 사용 여부
+			  //minDate: -20,																					// 달력에 최소값을 정해서 최소값 이전날짜는 disable 처리
+			  //maxDate: '+3D',																					// 달력에 최대값을 정해서 최소값 이전날짜는 disable 처리
+			  //showWeek: true,																				// 주 표시 여부
+
+			});
+		  });
+	</script>
+</head>
+<body>
+<div id="wrap">
+    <!-- container -->
+    <div id="container" class="p_r">
+		<div class="title p_r">
+			<h2 class="sub_name f_l">Location Monitoring</h2>
+			<ul class="location p_a f_r">
+				<li>Monitoring</li>
+				<li>&gt;</li>
+				<li>Location Monitoring</li>
+			</ul>
+		</div>
+
+		<div id="snb">
+			<h3 class="page_tit tit_bg">Location Explor</h3>
+			<ul id="tabTree1" class="bdrs treeview location_tree">
+				<li>
+					<a href="">이천</a>
+					<ul>
+						<li><a href="">1번하우스</a></li>
+						<li><a href="">2번하우스</a></li>
+						<li><a href="">3번하우스</a></li>
+						<li><a href="">4번하우스</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="">하남</a>
+					<ul>
+						<li><a href="">1번하우스</a></li>
+						<li><a href="">2번하우스</a></li>
+						<li><a href="">3번하우스</a></li>
+						<li><a href="">4번하우스</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<a href="#" class="btn_fold close_btn" onclick="fordingLeft();"></a> <!-- oc_btn -->
+
+		<div id="subCnt" class="sub_cnt p_r frame4_cnt cnt21 clear">
+			<div class="cnt_area">
+				<h4 class="side_tit">UB센터1</h4>
+				<div class="scroll_box">
+					<div class="map_area p_r">
+						<img class="imgSelect" style="position:absolute;top:293px;left:194px"src="images/sub/popup_test.gif" width="35" height="36" border="0" alt="클릭1">
+						<img class="imgSelect" style="position:absolute;top:20px;left:94px"src="images/sub/popup_test.gif" width="35" height="36" border="0" alt="클릭2">
+						<img class="imgSelect" style="position:absolute;top:400px;left:500px"src="images/sub/popup_test.gif" width="35" height="36" border="0" alt="클릭3">
+						<img class="imgSelect" style="position:absolute;top:150px;left:700px"src="images/sub/popup_test.gif" width="35" height="36" border="0" alt="클릭4">
+						<img class="imgSelect" style="position:absolute;top:100px;left:450px"src="images/sub/popup_test.gif" width="35" height="36" border="0" alt="클릭5">
+					</div>
+					<div class="popupLayer popup pop_sensor">
+						<h4>UB센터 센서1</h4>
+						<table>
+							<tbody>
+								<tr>
+									<th class="icon1"></th>
+									<td class="txt">WaterTemperature</td>
+									<td><input type="text" /><span>℃</span></td>
+								</tr>
+								<tr>
+									<th class="icon2"></th>
+									<td class="txt">Temperature</td>
+									<td><input type="text" /><span>%</span></td>
+								</tr>
+								<tr>
+									<th class="icon3"></th>
+									<td class="txt">WaterTemperature</td>
+									<td><input type="text" /><span>℃</span></td>
+								</tr>
+								<tr>
+									<th class="icon4"></th>
+									<td class="txt">WaterTemperature</td>
+									<td><input type="text" /><span>℃</span></td>
+								</tr>
+								<tr>
+									<th class="icon5"></th>
+									<td class="txt">WaterTemperature</td>
+									<td><input type="text" /><span>℃</span></td>
+								</tr>
+								<tr>
+									<th class="icon6"></th>
+									<td class="txt">WaterTemperature</td>
+									<td><input type="text" /><span>℃</span></td>
+								</tr>
+								<tr>
+									<th class="icon7"></th>
+									<td class="txt">WaterTemperature</td>
+									<td><input type="text" /><span>℃</span></td>
+								</tr>
+							</tbody>
+							<!-- <li class="list1">온도<input type="text" /><span>℃</span></li>
+							<li class="list2">습도<input type="text" /><span>%</span></li> -->
+						</table>
+						<a href="#" class="close_btn"><img src="images/sub/close_btn.gif" width="18" height="18" border="0" alt="닫기"></a>
+					</div>
+				</div>
+			</div>
+			<div class="graph p_r clear">
+				<h3 class="graph_tit tit_bg">Chart Explorer</h3>
+				<div class="graph_area">
+					<div class="graph_data clear">
+						<h4 class="graph_name f_l">UB센터1</h4>
+						<div class="graph_info f_l">
+							<label for="">· 조회일</label><input class="date" type="text" id="datepicker1">~<input class="date" type="text" id="datepicker2">
+							<label for="">· 센서종류</label>
+							<select name="" id="">
+								<option value="선택">선택</option>
+								<option value="Temperature">Temperature</option>
+								<option value="Humidity">Humidity</option>
+								<option value="CO2">CO2</option>
+								<option value="Water Temperature">Water Temperature</option>
+								<option value="Light">Light</option>
+								<option value="PH">PH</option>
+								<option value="EC">EC</option>
+							</select>
+							<label for="">· 센서 주기</label>
+							<select name="" id="">
+								<option value="선택">::선택하세요</option>
+								<option value="1시간">1시간</option>
+								<option value="2시간">2시간</option>
+								<option value="3시간">3시간</option>
+							</select>
+						</div>
+						<button class="btn_type btn_type1 f_r">조회</button>
+					</div>
+					<div class="graph_cnt"></div>
+				</div>
+			</div>
+		</div>
+
+    </div>
+    <!-- //container -->
+    
+	<!-- =========footer=========== -->
+	<footer id="footer">
+		<address>Copyrights 2016 RetailTech. All Rights Reserved.</address>
+	</footer>
+	<!-- =========//footer=========== -->
+</div>
+</body>
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+  <meta charset="utf-8" />
+  <title> 4_1 Configuration | Sensor Management </title>
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/sub.css" />
+  <link href="js/jqGrid/ui.jqgrid.css" rel="stylesheet" />
+  <link href="js/jqGrid/jquery-ui-1.10.3.custom.css" rel="stylesheet" />
+  <link href="js/jqGrid/jquery-ui.min.css" rel="stylesheet" />
+  <!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+	<script src="js/jqGrid/jquery-1.7.1.min.js"></script>
+	<script src="js/jqGrid/jquery-1.7.2.min.js"></script>
+	<script src="js/jqGrid/json3.min.js"></script>
+    <script src="js/jqGrid/jquery.jqGrid.src.js"></script>
+    <script src="js/jqGrid/grid.locale-kr.js"></script>
+    <script src="js/jqGrid/common.js"></script>
+    <script src="js/jqGrid/rtComm.js"></script>
+
+   <script src="js/gnb.js" type="text/javascript"></script>
+   <script src="js/sub.js" type="text/javascript"></script>
+   <script src="js/ui_common.js" type="text/javascript"></script>
+   <script src="js/common.js" type="text/javascript"></script>
+   <script src="js/jquery.treeview.js" type="text/javascript"></script>
+   <script type="text/javascript">
+		$(function() {
+			$("#tabTree1").treeview({
+				collapsed: true,
+				animated: "medium",
+				control:"#sidetreecontrol",
+				persist: "location"
+			});
+			$("#tabTree2").treeview({
+				collapsed: true,
+				animated: "medium",
+				control:"#sidetreecontrol",
+				persist: "location"
+			});
+
+			$("#tabTree2").hide();
+		});
+   </script>
+    <script>
+			$(document).ready(function () {
+				jQuery("#grid1").jqGrid({
+											//url: "GetUserList",
+											mtype: 'POST', 
+											datatype: "json",
+											colNames: ['회사코드' 
+													 , '아이디'
+													 , '이름'
+													 , '직책'
+													 , '이메일'
+													 , '연락처'
+													 , '사용권한'
+													 , '임시암호변경유무'
+													 
+											],
+											colModel: [
+													  { name: 'COMPANY_CD', align: "left", hidden: true, sortable: true },
+													  { name: 'USER_ID', align: "left", hidden: false, sortable: true },
+													  { name: 'USER_NAME', align: "center", hidden: false, sortable: true },
+													  { name: 'USER_POSI', align: "center", hidden: false, sortable: true },
+													  { name: 'USER_MAIL', align: "center", hidden: false, sortable: true },
+													  { name: 'USER_TEL', align: "center", hidden: false, sortable: true },
+													  { name: 'MASTER_YN', align: "center", hidden: true, sortable: true },
+													  { name: 'RESET_YN', align: "center", hidden: false, sortable: true }
+
+											],
+											autowidth: true,
+											multiselect: true,
+											rowNum: 10,
+											rowList: [5, 10, 20, 50, 100],
+											pager: jQuery('#ajaxProwed1'),
+											sortorder: "asc",
+											viewrecords: true,
+											// caption: "Manipulating Array Data"            
+											onSelectRow: function (id) {
+
+												reSizefn();
+											},
+											onPaging: function (pgButton) {               
+
+												
+
+												reSizefn();
+
+											},
+											//헤더 클릭시 정렬
+											onSortCol: function (sidx, colnum, sort_order) { 	//헤더 클릭
+											
+												reSizefn();
+
+											}
+										});
+										var data = {
+											//"page": "1",
+											//"records": "2",
+											"rows": [
+												{ COMPANY_CD: "1", USER_ID: "어드민", USER_NAME: "유저네임",USER_POSI: "대리",USER_TEL: "010-1234-1235", MASTER_YN:"Y", RESET_YN:"N"}
+												
+											]
+										};
+
+										jQuery("#grid2").jqGrid({
+											//url: "GetUserList",
+											mtype: 'POST', 
+											datatype: "json",
+											colNames: ['회사코드' 
+													
+													 
+											],
+											colModel: [
+													  { name: 'COMPANY_CD', align: "left", hidden: false, sortable: true }
+
+											],
+											autowidth: true,
+											multiselect: true,
+											rowNum: 10,
+											rowList: [5, 10, 20, 50, 100],
+											pager: jQuery('#ajaxProwed1'),
+											sortorder: "asc",
+											viewrecords: true,
+											// caption: "Manipulating Array Data"            
+											onSelectRow: function (id) {
+
+												reSizefn();
+											},
+											onPaging: function (pgButton) {               
+
+												
+
+												reSizefn();
+
+											},
+											//헤더 클릭시 정렬
+											onSortCol: function (sidx, colnum, sort_order) { 	//헤더 클릭
+											
+												reSizefn();
+
+											}
+										});
+										var data = {
+											//"page": "1",
+											//"records": "2",
+											"rows": [
+												{ COMPANY_CD: "1", USER_ID: "어드민", USER_NAME: "유저네임",USER_POSI: "대리",USER_TEL: "010-1234-1235", MASTER_YN:"Y", RESET_YN:"N"}
+												
+											]
+										};
+
+
+										reSizefn();
+										jQuery("#grid1").jqGrid('addJSONData', data);
+										jQuery("#grid2").jqGrid('addJSONData', data);
+			
+
+				
+				});
+			
+				function reSizefn() {
+					//그리드1 사이즈 
+					$(window).resize(function () {
+						var grid = $("#grid1");
+						var width = $(".grid1_area").width();
+						var height = $(window).height() - 1700;
+						if (height < 500) {
+							height = 100;
+						}
+						//grid.setGridWidth(width, true);
+						//grid.setGridHeight(height, true);
+
+					}).resize();       
+				}				
+    </script>
+
+
+</head>
+<body>
+<div id="wrap">
+    <!-- container -->
+    <div id="container" class="p_r">
+
+		
+		<div class="top117 title p_r">
+			<h2 class="sub_name f_l">센서 관리</h2>
+			<ul class="location p_a f_r">
+				<li>1Depth</li>
+				<li>&gt;</li>
+				<li> 현재 위치</li>
+			</ul>
+		</div>
+			
+		<div id="snb">
+			<h3 class="page_tit tit_bg">Location Explor</h3>
+				<div class="banner banner22 banner_s on tab p_a f_l clear" id="tree01">
+					<aside class="tab1 on">
+						<a class="tab_btn" href="#">Truck</a>
+						<ul id="tabTree1" class="f4_bdrs truck_tree">
+							<li>
+								<a href="">Truck</a>
+								<ul>
+									<li><a href="">222</a></li>
+									<li>
+										<a href="">222</a>
+										<ul>
+											<li><a href="">333</a></li>
+											<li>
+												<a href="">333</a>
+												<ul>
+													<li><a href="">444</a></li>
+													<li><a href="">444</a></li>
+													<li><a href="">444</a></li>
+													<li><a href="">444</a></li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+									<li><a href="">222</a></li>
+								</ul>
+							</li>
+							<li><a href="">111</a></li>
+							<li><a href="">111</a></li>
+						</ul>
+					</aside>
+					<aside class="tab2">
+						<a class="tab_btn" href="#">Location</a>
+						<ul id="tabTree2" class="f4_bdrs location_tree">
+							<li>
+								<a href="">Location</a>
+								<ul>
+									<li><a href="">222</a></li>
+									<li>
+										<a href="">222</a>
+										<ul>
+											<li><a href="">333</a></li>
+											<li><a href="">333</a></li>
+										</ul>
+									</li>
+									<li><a href="">222</a></li>
+								</ul>
+							</li>
+							<li><a href="">111</a></li>
+							<li><a href="">111</a></li>
+						</ul>
+					</aside>
+				</div>
+		</div>
+		<a href="#" class="btn_fold close_btn" onclick="fordingLeft();"></a>
+
+				<div id="subCnt" class="sub_cnt frame4_cnt cnt41 tab p_a">
+					<div class="bor_bg"></div>
+					<aside class="tab1 p_r on">
+						<a class="tab_btn" href="#">센서 목록</a>
+						<div class="list1">
+							<div>
+								<button class="btn_type btn_type1">저장</button>
+							</div>
+							<div class="f_l">
+								<div>
+									<h3 class="menu_tit">맵핑 목록</h3>
+									<div class="grid_area">
+										<table id="grid1" ></table>    
+									</div>
+								</div>
+								<div class="btn_area p_r">
+									<button class="sensor_up"></button>
+									<button class="sensor_down"></button>
+								</div>
+								<div>
+									<h3 class="menu_tit">센서 목록</h3>
+									<div class="grid_area">
+										<table id="grid2" ></table>    
+									</div>
+								</div>
+								<div>
+									<h3 class="menu_tit">센서 일괄 등록</h3>
+									<button class="btn_type btn_type3">샘플 엑셀파일 센서</button>
+									<p class="excel"><span>엑셀 파일</span><input type="text" /><button class="btn_type btn_type3">파일 찾기</button><button class="btn_type btn_type3">업로드</button></p>
+								</div>
+							</div>
+							<div class="f_r">
+								<div class="side_area">
+									<h4 class="side_tit">이미지 미리보기</h4>
+									<div class="image_cnt p_r clear">
+										<img src="images/sub/image_test.jpg" width="217" height="204" border="0" alt="">
+									</div>
+								</div>
+							</div>
+						</div>
+					
+					
+					
+					</aside>
+					<aside class="tab2 p_r">
+						<a class="tab_btn" href="#">CCTV 목록</a>
+						<div class="list1">
+							<div>
+								<button class="btn_type btn_type1">저장</button>
+							</div>
+							<div class="f_l">
+								<div>
+									<h3 class="menu_tit">맵핑 목록</h3>
+									<div class="grid_area">
+										<table id="grid3" ></table>    
+									</div>
+								</div>
+								<div class="btn_area p_r">
+									<button class="sensor_up"></button>
+									<button class="sensor_down"></button>
+								</div>
+								<div>
+									<h3 class="menu_tit">센서 목록</h3>
+									<div class="grid_area">
+										<table id="grid4" ></table>    
+									</div>
+								</div>
+								<div>
+									<h3 class="menu_tit">센서 일괄 등록</h3>
+									<button class="btn_type btn_type3">샘플 엑셀파일 센서</button>
+									<p class="excel"><span>엑셀 파일</span><input type="text" /><button class="btn_type btn_type3">파일 찾기</button><button class="btn_type btn_type3">업로드</button></p>
+								</div>
+							</div>
+							<div class="f_r">
+								<div class="side_area">
+									<h4 class="side_tit">이미지 미리보기</h4>
+									<div class="image_cnt p_r clear">
+										<img src="images/sub/image_test.jpg" width="217" height="204" border="0" alt="">
+									</div>
+								</div>
+							</div>
+						</div>
+					</aside>
+				
+				
+				
+				
+				
+					<!-- <ul class="clear">
+						<li class="list1 on">
+							<a class="tab_btn" href="">센서목록</a>
+							<div>
+								<div class="info_area p_r clear">
+									<button class="btn_type btn_type1 f_l">저장</button>
+								</div>
+								<h3 class="menu_tit">맵핑 목록</h3>
+								<div class="grid_area">
+									<table id="grid1" ></table>
+								</div>
+								<div id="ajaxProwed1" ></div>
+							</div>
+						</li>
+						<li class="list2">
+							<a class="tab_btn" href="">CCTV 목록</a>
+							<div>
+								<div class="info_area p_r clear">
+									<button class="btn_type btn_type1 f_l">저장</button>
+								</div>
+								<h3 class="menu_tit">맵핑 목록</h3>
+								<div class="grid_area">
+									<table id="grid1" ></table>
+								</div>
+								<div id="ajaxProwed1" ></div>
+							</div>
+				
+						</li>
+					</ul> -->
+				</div>
+
+
+    </div>
+    <!-- //container -->
+    
+    <!-- footer -->
+	<hr>
+  <!-- =========footer=========== -->
+
+			<footer id="footer">
+				<address>Copyrights 2016 RetailTech. All Rights Reserved.</address>
+			</footer>  <!-- =========footer=========== -->
+</div>
+
+</body>
+</html>

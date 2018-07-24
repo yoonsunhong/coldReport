@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+  <meta charset="utf-8" />
+  <title> 7_2 Administrator | User Registration  </title>
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/sub.css" />
+  <link href="js/jqGrid/ui.jqgrid.css" rel="stylesheet" />
+  <link href="js/jqGrid/jquery-ui-1.10.3.custom.css" rel="stylesheet" />
+  <link href="js/jqGrid/jquery-ui.min.css" rel="stylesheet" />
+  <!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+	<script src="js/jqGrid/jquery-1.7.1.min.js"></script>
+	<script src="js/jqGrid/jquery-1.7.2.min.js"></script>
+	<script src="js/jqGrid/json3.min.js"></script>
+    <script src="js/jqGrid/jquery.jqGrid.src.js"></script>
+    <script src="js/jqGrid/grid.locale-kr.js"></script>
+    <script src="js/jqGrid/common.js"></script>
+    <script src="js/jqGrid/rtComm.js"></script>
+
+   <script src="js/gnb.js" type="text/javascript"></script>
+   <script src="js/sub.js" type="text/javascript"></script>
+   <script src="js/ui_common.js" type="text/javascript"></script>
+   <script src="js/common.js" type="text/javascript"></script>
+   <script src="js/jquery.treeview.js" type="text/javascript"></script>
+    <script>
+			$(document).ready(function () {
+				jQuery("#grid1").jqGrid({
+
+					colNames: ['사용자아이디' , '사용자이름' , '사용자직책' , '사용자이메일' , '사용자연락처' , '임시암호변경유무' ],
+					colModel: [
+						  { name: 'USER_ID', align: 'center' },
+						  { name: 'USER_NM', align: 'center' },
+						  { name: 'USER_POSI', align : 'center' },
+						  { name: 'USER_MAIL', align : 'center' },
+						  { name: 'USER_TEL', align : 'center' },
+						  { name: 'RESET_YN', align : 'center' },
+					],
+					rowNum: 10,							// 한 페이지에 보여줄 데이터 갯수
+					rowList: [5, 10, 20, 50],			// 한 화면에서 볼 수 있는 row의 수를 조절 가능
+					pager: '#pager'						// 페이징을 처리할 <div> 태그의 #id값
+
+				});
+				var mydata = [
+					{USER_ID:'admin',USER_NM:'풀무원 관리자',USER_POSI:'과장',USER_MAIL:'plijyg2001@5649',USER_TEL:'010-5649-9700',RESET_YN:'Y'},
+					{USER_ID:'admin1',USER_NM:'System',USER_POSI:'대리',USER_MAIL:'test@retailtech.co.kr',USER_TEL:'010-5129-2300',RESET_YN:'Y'},
+					{USER_ID:'admin2',USER_NM:'그린트리플러스',USER_POSI:'차장',USER_MAIL:'1234asd@gmail.com',USER_TEL:'010-5789-1250',RESET_YN:'N'},
+					{USER_ID:'gtplus',USER_NM:'Plus',USER_POSI:'대리',USER_MAIL:'plijyg2001@naver.com',USER_TEL:'010-8424-342',RESET_YN:'N'},
+				]
+
+				for(var i=0;i<=mydata.length;i++)	// 스크립트 변수에 담겨 있는 json 데이터의 길이만큼
+					jQuery("#grid1").jqGrid('addRowData',i+1,mydata[i]);		// jqgrid의 addRowData를 이용하여 각각의 row에 gridData 변수의 데이터를 add한다
+
+				reSizefn();
+			});
+			
+			function reSizefn() {
+				//그리드1 사이즈 
+				$(window).resize(function () {
+					var grid = $("#grid1");
+					var width = $(".grid_area").width();
+					var height = $(window).height() - 1700;
+					if (height < 115) {
+						height = 400;
+					}
+					grid.setGridWidth(width, true);
+					grid.setGridHeight(height, true);
+				}).resize();       
+			}
+    </script>
+
+ </head>
+
+ <body>
+  <!-- =========content=========== -->
+  <div id="wrap">
+  	<div id="container" class="p_r">
+		<div class="top117 title p_r">
+			<h2 class="sub_name f_l">User Registration</h2>
+			<ul class="location p_a f_r">
+				<li>Administrator</li>
+				<li>&gt;</li>
+				<li>User Registration</li>
+			</ul>
+		</div>
+		<div class="sub_cnt frame1_cnt f_l p_a">
+			<div>
+				<button class="btn_type btn_type1">신규</button>
+				<button class="btn_type btn_type1">저장</button>
+				<button class="btn_type btn_type1">삭제</button>
+				<button class="btn_type btn_type1">조회</button>
+			</div>
+			<div class="search_area">
+				<form action="">
+					<label for="">· 사용자아이디</label><input type="text" />
+					<label for="">· 사용자이름</label><input type="text" />
+				</form>
+			</div>
+			<div class="grid_area">
+				<table id="grid1" ></table>    
+			</div>
+			<div id="pager" ></div>
+			<br>
+			<p>* 사용자 신규등록시 최초 비밀번호는 '이메일 아이디 + 사용자 연락처 마지막 전화번호'로 등록 됩니다.</p>
+			<p>* 비밀번호 초기화 시 비밀번호는 '이메일 아이디 + 사용자 연락처 마지막 전화번호'로 등록 됩니다.</p>
+			<div class="enroll_area table01 clear">
+				<dl>
+					<dt><span class="red_icon">*</span>사용자아이디</dt>
+					<dd><input type="text" /></dd>
+					<dt><span class="red_icon">*</span>사용자이름</dt>
+					<dd><input type="text" /></dd>
+				</dl>
+				<dl>
+					<dt><span class="red_icon">*</span>사용자비밀번호</dt>
+					<dd><input class="disable_bg" type="text" /></dd>
+					<dt class="icon_no">사용자직책</dt>
+					<dd><input type="text" /></dd>
+				</dl>
+				<dl>
+					<dt><span class="red_icon">*</span>사용자연락처</dt>
+					<dd class="pho_num"><input type="text" /> - <input type="text" /> - <input type="text" /></dd>
+					<dt><span class="red_icon">*</span>사용자이메일</dt>
+					<dd><input class="ema_wid1"type="text" /> @ <input type="text" /></dd>
+				</dl>
+				<dl>
+					<dt class="icon_no">사용권한</dt>
+					<dd><input class="disable_bg" type="text" /></dd>
+					<dt class="icon_no">임시암호변경유무</dt>
+					<dd><input class="disable_bg" type="text" /></dd>
+				</dl>
+			</div>
+		</div>	
+	</div>
+  </div>
+  <!-- =========//content=========== -->
+ </body>
+</html>

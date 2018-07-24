@@ -95,7 +95,7 @@
 					var gridCnt2 = $(".menu_right .grid_area > div");
 
 					var width1 = 280;
-					var width2 = $(window).width() - 352;
+					var width2 = $('.frame1_cnt').width() - 351;
 					var height1 = $(window).height() - 471;
 					var height2 = $(window).height() - 350;
 					if ( height1 <= 470 ) {
@@ -142,9 +142,9 @@
 					</div>
 					<div class="search_area">
 						<form action="" method="post">
-							<label for="">· 분류명</label><input type="text">
-							<label for="">· 사용여부</label>
-							<select name="" id="">
+							<label for="sortName">· 분류명</label><input type="text" id="sortName">
+							<label for="useYN">· 사용여부</label>
+							<select name="useYN" id="useYN">
 								<option value="선택하세요.">선택하세요.</option>
 							</select>
 						</form>
@@ -156,10 +156,11 @@
 								<table id="grid1" ></table>    
 							</div>
 							<table class="enroll_area">
+								<caption>각 공통코드에 대한 정보</caption>
 								<tbody>
 									<tr>
-										<th><span class="red_icon">*</span><span class="blind">필수 입력</span><label for="sortName">분류명</label></th>
-										<td><input class="wid2" type="text" id="sortName" /></td>
+										<th><span class="red_icon">*</span><span class="blind">필수 입력</span><label for="sortName1">분류명</label></th>
+										<td><input class="wid2" type="text" id="sortName1" /></td>
 									</tr>
 									<tr>
 										<th class="icon_no"><label for="sortCode">분류코드</label></th>
@@ -185,7 +186,7 @@
 							<div id="pager" ></div>
 							<div id="popupLayer1" class="popup p_a">
 								<h4>상세 코드 신규</h4>
-								<table class="enroll_area p_r">
+								<table class="enroll_ area p_r">
 									<tbody>
 										<tr>
 											<th><span class="red_icon">*</span><span class="blind">필수 입력</span><label for="commonCode">공통코드</label></th>

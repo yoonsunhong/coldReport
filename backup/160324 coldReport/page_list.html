@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>coldReport Page-list</title>
+<style>
+body {font-size:11px;} 
+#wrap {max-width:900px; margin: 0 auto;}
+
+header {position:fixed; width:100%; min-width:900px; max-width:900px; background-color:#fff; padding:30px 0 0; top:0}
+section {padding-top:105px;}
+
+h1 {text-align:center; text-decoration:underline; font-size:24px; margin:0 20px;}
+h2 {text-align:right; font-size:11px; color:#999;}
+.tab ul {list-style:none; overflow:hidden; font-size:14px; margin:20px 0; padding:0}
+.tab li {float:left; margin:0 5px 0 0}
+.tab li a {display:block; border:1px solid #ddd; text-decoration:none; padding:5px 10px; color:#666; background-color:#f5f5f5}
+.tab li.on a {color:#0066FF; border-color:#0066ff}
+
+table {width:100%; min-width:900px; border-spacing:0; border-collapse:collapse;}
+table th,table td {border:1px solid #bbb; padding:3px 5px}
+table thead {background-color:#333; color:#fff;}
+table tbody th {background-color:#ccc; text-align:center; font-weight:normal;}
+table tbody tr:nth-child(even) {background-color:#f9f9f9;}
+tfoot {text-align:right; background-color:#ddd}
+tfoot td {padding:10px;}
+tfoot td span {font-weight:bold; margin-right:2px;}
+
+.td_design,
+.td_markup,
+.td_style {text-align:center; font-size:14px;}
+.td_design a,
+.td_markup a,
+.td_style a {color:#5563FF; font-weight:bold; text-decoration:none;}
+
+caption {display:none;}
+.gray {background-color:#eee;}
+.do{background:#BBFF66}
+.align_cen {text-align:center;}
+.new {display:inline-block; background-color:#00BFF3; color:#fff; font-weight:bold; font-size:11px; font-style:normal; padding:0 2px; margin-right:5px; border-radius:3px;}
+
+#content {height:900px; overflow:auto;}
+.border_btm {border-bottom:2px solid #aaa;}
+</style>
+<script src="_js/jquery-1.11.1.min.js"></script>
+<script>
+$(document).ready(function() {
+
+	// numbering
+	$('tbody tr').each(function() {
+		var myNum = $(this).index()
+		$('th',this).text(myNum);
+	})
+
+	var p_design = parseInt(($('.td_design.do').size()/35)*100);
+	$('.p_design').text(p_design);
+	
+	var p_markup = parseInt(($('.td_markup.do').size()/35)*100);
+	$('.p_markup').text(p_markup);
+	
+	var p_style = parseInt(($('.td_style.do').size()/35)*100);
+	$('.p_style').text(p_style);
+	
+	var p_cb = parseInt(($('.td_cb.do').size()/35)*100);
+	$('.p_cb').text(p_cb);
+	
+	
+});
+</script>
+</head>
+
+<body>
+<div id="wrap">
+
+<header>
+
+<h1>coldReport Page-list</h1>
+<h2>Last Update : 2016-01-20</h2>
+
+
+<table>
+	<colgroup>
+		<col width="5%">
+		<col width="12%">
+		<col width="20%">
+		<col width="13%">
+		<col width="27%">
+		<col width="5%">
+		<col width="18%">
+	</colgroup>
+	<thead>
+		<tr>
+			<th scope="col">No.</th>
+			<th scope="col">1depth</th>
+			<th scope="col">2depth</th>
+			<th scope="col">한글메뉴명</th>
+			<th scope="col">파일명</th>
+			<th scope="col">Markup</th>
+			<th scope="col">비고</th>
+		</tr>
+	</thead>
+</table>
+</header>
+
+
+<section>
+<table class="lst_page">
+	<colgroup>
+		<col width="5%">
+		<col width="12%">
+		<col width="20%">
+		<col width="13%">
+		<col width="27%">
+		<col width="5%">
+		<col width="18%">
+	</colgroup>
+	<tbody>
+		<tr>
+			<th>01</th>
+			<td>대메뉴</td>
+			<td></td>
+			<td></td>
+			<td>template.html</td>
+			<td class="td_markup do"><a href="template.html" target="_blank">○</a></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>02</th>
+			<td>frame01</td>
+			<td></td>
+			<td></td>
+			<td>frame01.html</td>
+			<td class="td_markup do"><a href="frame01.html" target="_blank">○</a></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>03</th>
+			<td>frame02</td>
+			<td></td>
+			<td></td>
+			<td>frame02.html</td>
+			<td class="td_markup do"><a href="frame02.html" target="_blank">○</a></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>04</th>
+			<td>frame03</td>
+			<td></td>
+			<td></td>
+			<td>frame03.html</td>
+			<!--<td class="td_markup do"><a href="frame03.html" target="_blank">○</a></td> -->
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>05</th>
+			<td>frame04</td>
+			<td></td>
+			<td></td>
+			<td>frame04.html</td>
+			<!-- <td class="td_markup do"><a href="frame04.html" target="_blank">○</a></td> -->
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>	
+		<tr>
+			<th></th>
+			<td rowspan="2">Login</td>
+			<td>Login</td>
+			<td>로그인</td>
+			<td>1_1 Login.html</td>
+			<td class="td_markup do"><a href="1_1 Login.html" target="_blank">○</a></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td>Password Change</td>
+			<td>비밀번호변경</td>
+			<td>1_2 Password Change.html</td>
+			<td class="td_markup do"><a href="1_2 Password Change.html" target="_blank">○</a></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td rowspan="3">Monitoring</td>
+			<td>Location Monitoring</td>
+			<td>거점 모니터링</td>
+			<td>2_1 Location Monitoring.html</td>
+			<td class="td_markup do"><a href="2_1 Location Monitoring.html" target="_blank">○</a></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td>Location GIS Monitoring</td>
+			<td>거점 위치 모니터링</td>
+			<td>2_2 Location GIS Monitoring.html</td>
+			<td class="td_markup do"><a href="2_2 Location GIS Monitoring.html" target="_blank">○</a></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td>Truck GIS Monitoring</td>
+			<td>트럭 위치 모니터링</td>
+			<td>2_3 Truck GIS Monitoring.html</td>
+			<td class="td_markup do"><a href="2_3 Truck GIS Monitoring.html" target="_blank">○</a></td>
+			<td>2_2와 동일</td>
+		</tr>
+		<tr>
+			<th></th>
+			<td rowspan="5">Analysis</td>
+			<td>Senosor Log</td>
+			<td>센서 로그</td>
+			<td>3_1 Sensor Log.html</td>
+			<td class="td_markup do"><a href="3_1 Sensor Log.html" target="_blank">○</a></td>
+			<td></td>
+		</tr>
+ 		<tr>
+			<th></th>
+			<td>Senosor Alarm Log</td>
+			<td>센서 알림 로그</td>
+			<td>3_2 Senosor Alarm Log.html</td>
+			<td class="td_markup do"><a href="3_2 Senosor Alarm Log.html" target="_blank">○</a></td>
+			<td>3_1과 동일</td>
+		</tr>
+		<tr>
+			<th></th>
+			<td>Sensor Status</td>
+			<td>센서 상태</td>
+			<td>3_3 Sensor Status.html</td>
+			<td class="td_markup do"><a href="3_3 Sensor Status.html" target="_blank">○</a></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td>Truck Tracking</td>
+			<td>트럭 이력 조회</td>
+			<td>3_4 Truck Tracking.html</td>
+			<td class="td_markup do"><a href="3_4 Truck Tracking.html" target="_blank">○</a></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td>Item Traceability</td>
+			<td>상품 이력 조회</td>
+			<td>3_5 Item Traceability.html</td>
+			<td class="td_markup do"><a href="3_5 Item Traceability.html" target="_blank">○</a></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td rowspan="4">Configuration</td>
+			<td>Sensor Management</td>
+			<td>센서 관리</td>
+			<td>4_1 Sensor Management.html</td>
+			<td class="td_markup do"><a href="4_1 Sensor Management.html" target="_blank">○</a></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td>Location Allocation</td>
+			<td>거점 센서 배치</td>
+			<td>4_2 Location Allocation.html</td>
+			<td class="td_markup do"><a href="4_2 Location Allocation.html" target="_blank">○</a></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td>Truck Allocation</td>
+			<td>트럭 센서 배치</td>
+			<td>4_3 Truck Allocation.html</td>
+			<td class="td_markup do"><a href="4_3 Truck Allocation.html" target="_blank">○</a></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td>Rule Management</td>
+			<td>룰 설정 관리</td>
+			<td>4_4 Rule Management.html</td>
+			<td class="td_markup do"><a href="4_4 Rule Management.html" target="_blank">○</a></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td rowspan="6">Master</td>
+			<td>Location Master</td>
+			<td>거점 마스터</td>
+			<td>5_1 Location Master.html</td>
+			<td class="td_markup do"><a href="5_1 Location Master.html" target="_blank">○</a></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td>Truck Master</td>
+			<td>트럭 마스터</td>
+			<td>5_2 Truck Master.html</td>
+			<td class="td_markup do"><a href="5_2 Truck Master.html" target="_blank">○</a></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td>Sensor Type Master</td>
+			<td>센서 타입 마스터</td>
+			<td>5_3 Sensor Type Master.html</td>
+			<td class="td_markup do"><a href="5_3 Sensor Type Master.html" target="_blank">○</a></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td>Sensor Master</td>
+			<td>센서 마스터</td>
+			<td>5_4 Sensor Master.html</td>
+			<td class="td_markup do"><a href="5_4 Sensor Master.html" target="_blank">○</a></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td>CCTV Master</td>
+			<td>CCTV 조회 로그</td>
+			<td>5_5 CCTV Master.html</td>
+			<td class="td_markup do"><a href="5_5 CCTV Master.html" target="_blank">○</a></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td>SMS Manage Master</td>
+			<td>문자 메시지 마스터</td>
+			<td>5_6 SMS Manage Master.html</td>
+			<td class="td_markup do"><a href="5_6 SMS Manage Master.html" target="_blank">○</a></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td rowspan="3">Log Monitoring</td>
+			<td>Login Log</td>
+			<td>접속 로그</td>
+			<td>6_1 Login Log.html</td>
+			<td class="td_markup do"><a href="6_1 Login Log.html" target="_blank">○</a></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td>CCTV Log</td>
+			<td>CCTV 조회 로그</td>
+			<td>6_2 CCTV Log.html</td>
+			<td class="td_markup do"><a href="6_2 CCTV Log.html" target="_blank">○</a></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td>Utilize Personcal Information Log</td>
+			<td>개인정보 이용 로그</td>
+			<td>6_3 Utilize Personcal Information Log.html</td>
+			<td class="td_markup do"><a href="6_3 Utilize Personcal Information Log.html" target="_blank">○</a></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td rowspan="2">Administrator</td>
+			<td>Company Management</td>
+			<td>업체 정보 관리</td>
+			<td>7_1 Company_Management.html</td>
+			<td class="td_markup do"><a href="7_1 Company_Management.html" target="_blank">○</a></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td>User Registration</td>
+			<td>사용자 관리</td>
+			<td>7_2 User_Registration.html</td>
+			<td class="td_markup do"><a href="7_2 User_Registration.html" target="_blank">○</a></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td rowspan="3">System</td>
+			<td>Menu Management</td>
+			<td>메뉴 관리</td>
+			<td>8_1 Menu_Management.html</td>
+			<td class="td_markup do"><a href="8_1 Menu_Management.html" target="_blank">○</a></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td>Common Code Management</td>
+			<td>공통 코드 관리</td>
+			<td>8_2 Common_Code_Management.html</td>
+			<td class="td_markup do"><a href="8_2 Common_Code_Management.html" target="_blank">○</a></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td>Company Registration</td>
+			<td>업체 등록</td>
+			<td>8_3 Company_Registration.html</td>
+			<td class="td_markup do"><a href="8_3 Company_Registration.html" target="_blank">○</a></td>
+			<td></td>
+		</tr>
+	</tbody>
+</table> 
+</section>
+
+
+</div>
+</body>
+</html>

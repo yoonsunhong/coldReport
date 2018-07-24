@@ -2,8 +2,8 @@
 @import url(https://fonts.googleapis.com/css?family=Arimo:400,700);		/* 구글 웹폰트 Arimo */
 
 /* -------- 1) 태그 초기화  -------- */
-body, html, div, h1, h2, h3, h4, h5, h6, ul, ol, dl, dt, dd, p, hr, button, input, form{margin:0px;padding:0px;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;-o-box-sizing:border-box;box-sizing:border-box;}
-html,body{height:100%;}
+body, html, div, h1, h2, h3, h4, h5, h6, ul, ol, dl, dt, dd, p, hr, button, input, form{margin:0px;padding:0px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-o-box-sizing:border-box;box-sizing:border-box;}
+html,body{width:100%;height:100%;}
 body{background:#fff;font-family:dotum;font-size:0.75em;color:#434343;overflow-y:hidden;}
 header,nav,section,article,aside,footer{display:block}
 h1, h2, h3, h4, h5, h6{font-size:100%;font-weight:normal}
@@ -18,8 +18,6 @@ button{background:none;border:none;}
 hr{width:0px;height:0px;overflow:hidden;position:absolute;top:0px;left:-9999px;visibility:hidden}
 input[type="text"], input[type="password"], select, textarea{padding-left:10px;border:1px solid #ccc;-webkit-border-radius:3px; -moz-border-radius:3px; border-radius:3px;box-shadow:2px 2px 2px rgba(233, 233, 233, .8) inset}
 input[type="text"], input[type="checkbox"], input[type="radio"], textarea, label{vertical-align:middle}
-select{-webkit-appearance: none;-moz-appearance:none;appearance:none;background:#fff url('../images/common/select_arrow.gif') no-repeat 90% 50%;}
-select::-ms-expand{display:none}
 
 /* -------- 2) 공통 클래스 모음 -------- */
 .f_l{float:left;}
@@ -33,19 +31,20 @@ select::-ms-expand{display:none}
 /* -------- 3) 공통레이아웃 -------- */
 #wrap{width:100%;min-width:1280px;height:100%;min-height:100%;overflow:hidden;}
 #header{width:100%;min-width:1280px;height:116px;z-index:2}
-#content{width:100%;min-width:1280px;height:calc(100% - 116px);}
+#content{width:100%;min-width:1280px;height:-webkit-calc(100% - 116px);height:-moz-calc(100% - 116px);height:calc(100% - 116px);}
 #footer{position:absolute;left:0px;bottom:0px;width:100%;min-width:1280px;height:24px;line-height:24px;overflow-x:auto;background:url("../images/common/footer_bg.jpg") repeat-x 0 0;text-align:center;color:#9e9e9e}
 
 .sub_cnt{width:100%;padding:13px 14px 8px 30px;overflow-x:hidden;overflow-y:scroll}
-.frame1_cnt, .frame2_cnt, .frame3_cnt, .frame4_cnt{height: calc(100% - 49px);overflow-x:hidden;}
+.frame1_cnt, .frame2_cnt, .frame3_cnt, .frame4_cnt{height:-webkit-calc(100% - 49px);height:-moz-calc(100% - 49px);height:calc(100% - 49px);overflow-x:hidden;}
 .frame1_cnt{min-width:1280px;} 
 .frame1_cnt .sub_cnt, .frame2_cnt .sub_cnt, .frame3_cnt .sub_cnt{height:100%}
-.frame2_cnt .sub_cnt, .frame4_cnt .cnt_r{float:right;width: calc(100% - 221px)} 
-.frame3_cnt .sub_cnt{float:left;width: calc(100% - 442px);overflow-y:hidden}
+.frame2_cnt .sub_cnt, .frame4_cnt .cnt_r{float:right;width:-webkit-calc(100% - 221px);width:-moz-calc(100% - 221px);width:calc(100% - 221px)} 
+.frame3_cnt .sub_cnt{float:left;width: -webkit-calc(100% - 442px);width: -moz-calc(100% - 442px);width: calc(100% - 442px)}
 
-.frame3_cnt, .frame4_cnt{overflow-y:scroll}
+.frame2_cnt, .frame3_cnt, .frame4_cnt{overflow-y:hidden}
+.frame3_cnt .sub_cnt, .frame4_cnt .cnt_r{overflow-y:scroll}
+.frame4_cnt .sub_cnt{height:-webkit-calc(100% - 364px);height:-moz-calc(100% - 364px);height:calc(100% - 364px);min-height:445px;overflow-y:hidden}
 .frame4_cnt .cnt_r{height:100%}
-.frame4_cnt .sub_cnt{height:calc(100% - 364px);min-height:445px;overflow-y:hidden}
 
 /* -------- 4) 상단헤더  -------- */
 /* 메인 로고 및 타이틀 */
@@ -68,7 +67,7 @@ select::-ms-expand{display:none}
 #snb li:nth-child(even){padding:0 10px}
 #snb li:after{padding-left:5px;content:'|'}
 #snb li:last-child:after{content:''}
-#snb select{height:22px;line-height:22px;padding-right:23px;font-size:1em}
+#snb select{height:22px;font-size:1em}
 
 /* gnb */
 #gnb > ul{background:#0d6fbc;min-width:1280px}

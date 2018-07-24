@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+#header{height:47px;padding-left:35px;background:url("../images/main/tit_bg.jpg") repeat-x}
+#content{height:100%;background:url("../images/main/body_bg.jpg") repeat-x;overflow:hidden;}
+
+/* 로그인 */
+#login{width:644px;height:200px;padding-top:411px;margin:0px auto;background:url("../images/main/main_img.png") repeat-x 50% 70px}
+#login > div{width:413px;margin:0px auto;height:120px;padding:20px;background:#fff;-webkit-border-radius:10px; -moz-border-radius:10px; border-radius:10px;}
+#login h2{padding-bottom:20px;text-align:center;font-size:17px;color:#2778b7;font-weight:900}
+#login label{display:inline-block;height:34px;line-height:34px;font-size:14px;font-weight:bold;padding:0px 0 0px 30px;margin-left:15px;}
+#login .uid1{margin-bottom:5px;background:url("../images/main/id.gif") no-repeat 0 50%}
+#login .upwd1{background:url("../images/main/pwd.gif") no-repeat 0 50%}
+#login input{width:169px;height:32px;padding-left:6px}
+#login .uid2{margin-bottom:4px;margin-left:45px}
+#login .uid2, #login .upwd2, #login .ucode2, #login .urecode2{background:#faffbd}
+#login .upwd2{margin-left:30px}
+#login input[type="button"]{top:60px;right:25px;width:91px;height:72px;background:url("../images/main/login.gif") no-repeat;background-size:91px 72px}
+
+#content address{padding-top:15px;text-align:center;color:#fff}
+
+/* 비밀번호 변경 */
+#login .change{height:189px}
+#login .ucode1, #login .urecode1{background:url("../images/main/pwd_blue.gif") no-repeat 0 50%}
+#login .ucode2{margin-bottom:4px;margin-left:60px;margin-top:4px}
+#login .urecode2{margin-left:9px;margin-top:0px}
+
+#login input[type="button"].change_btn{height:148px;background: url("../images/main/change.gif") no-repeat;}
+

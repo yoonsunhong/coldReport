@@ -13,26 +13,27 @@
 .tit_bg{width:221px;height:27px;line-height:27px;font-weight:bold;text-align:center;color:#253a55;background:url("../images/sub/tit_bg.jpg") repeat-x 0 0;border-right:1px solid #9b9b9b}
 
 /* 배너 영역 */
-.ban_l, .ban_r{width:221px;height:100%}
+.ban_l, .ban_r{width:221px;height:-webkit-calc(100% - 167px);height:-moz-calc(100% - 167px);height:calc(100% - 167px)}
 .ban_l{float:left;position:relative}
 .ban_r{float:right;background:#e1e3ea;border-right:1px solid #9b9b9b;border-left:1px solid #9b9b9b;}
 
 .tree_area{height:100%}
-.tree_area > div{height:calc(100% - 27px);background-color:#e1e4eb;border-right:1px solid #9b9b9b;overflow:hidden}
+.tree_area > div{height:-webkit-calc(100% - 27px);height:-moz-calc(100% - 27px);height:calc(100% - 27px);background-color:#e1e4eb;border-right:1px solid #9b9b9b;overflow-y:hidden}
 .tree_area .tab{height:100%}
-.tree_cnt{width:200px;height:calc(100% - 20px);min-height:500px;padding:12px;margin:10px;border:1px solid #adb3b8;background:#f7f7f7;-webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px;overflow:scroll}
-.tab .tree_cnt{height:calc(100% - 46px);margin-top:36px}
+.tree_cnt{width:200px;min-height:200px;padding:12px;margin:10px;border:1px solid #adb3b8;background:#f7f7f7;-webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px;overflow:scroll}
+.tab .tree_cnt{height:-webkit-calc(100% - 46px);height:-moz-calc(100% - 46px);height:calc(100% - 46px);margin-top:36px}
 
-.ban_r .tree_cnt{height:357px;min-height:0}
+.ban_r > div{height:50%;}
+.ban_r .tit_bg + div{height:-webkit-calc(100% - 26px);height:-moz-calc(100% - 26px);height:calc(100% - 26px);overflow-y:scroll;}
+.ban_r .tree_cnt{width:181px;height:-webkit-calc(100% - 20px);height:-moz-calc(100% - 20px);height:calc(100% - 20px);min-height:191px}
 .ban_r .tree_cnt li{padding-left:20px;background-repeat:no-repeat;background-position:0 0}
-.ban_r div:last-child{border-top:1px solid #9b9b9b}
 .ban_r div:first-child li{background-image:url("../images/sub/sensor_icon.gif")}
 .ban_r div:last-child li{background-image:url("../images/sub/device_icon.gif")}
 .ban_r div ul li{padding-bottom:10px}
 .ban_r div ul li a:hover{color:#0d6fbc}
 .ban_r div ul li a.active{color:#ee3901;font-weight:bold;text-decoration:underline}
 
-.btn_fold{position:absolute;top:65px;left:220px;width:10px;height:87px;display:block;z-index:1;cursor:pointer;background:url("../images/sub/close_btn.png") no-repeat 0 0}
+.btn_fold{position:absolute;top:65px;left:220px;width:10px;height:87px;display:block;z-index:1;cursor:pointer;background:url("../images/sub/close_btn.png") no-repeat 0 0;text-indent:-9999px;}
 
 .ban_cnt3{width:158px;min-height:453px;padding:12px;margin:10px 10px 0 10px;border:1px solid #adb3b8;background:#f7f7f7;-webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px;overflow:scroll}
 .oc_btn{position:absolute;top:64px;left:221px;width:10px;height:87px;text-indent:-9999px;z-index:1}
@@ -64,14 +65,14 @@
 /* 여닫기 */
 .folded .btn_fold{background:url("../images/sub/open_btn.png") no-repeat 0 0}
 .folded .ban_l{position:absolute;left:-221px;}
-.folded .frame3_cnt .sub_cnt{width: calc(100% - 221px);}
+.folded .frame3_cnt .sub_cnt{width:-webkit-calc(100% - 221px);width:-moz-calc(100% - 221px);width:calc(100% - 221px);}
 .folded .frame2_cnt .sub_cnt, .folded .frame4_cnt .cnt_r{width:100%}
 
 /* 서브 콘텐츠 메뉴 타이틀 */
 .menu_tit{height:32px;padding:10px 0 10px 20px;color:#3e3e3e;font-weight:bold;background:url("../images/sub/menu_icon.png") no-repeat 2px 50%}
 
 /* 버튼 스타일 */
-.btn_type{padding:4px 10px;font-size:12px;color:#fff;font-weight:bold;-webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px;}
+.btn_type{height:26px;line-height:26px;padding:0 10px;font-size:12px;color:#fff;font-weight:bold;-webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px;}
 .btn_type1{border: 1px solid #5c6372;
 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6a707e+0,535a6a+100 */
 background: rgb(106,112,126); /* Old browsers */
@@ -145,7 +146,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', end
 .search_area input[type="text"].date{width:90px} 
 .search_area select{width:133px;height:23px;margin-left:4px;font-size:12px}
 .search_area img{padding:11px 5px}
-.search_area button{height:29px;margin:4px;}
+.search_area .btn_type{height:29px;line-height:29px;margin:3px;}
 
 .frame4_cnt .search_area{margin-top:0}
 .frame4_cnt .sub_cnt > div > div{margin-bottom:8px}
@@ -158,7 +159,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', end
 /* 등록 영역 */
 .enroll_area{width:100%;border-top:1px solid #0d6fbc;background:#f6f8f9;border-collapse:collapse;}
 .enroll_area tr{height:30px;line-height:30px;text-align:left;border-bottom:1px solid #c6cbce;}
-.enroll_area tr th{width:10%;padding-left:8px;font-weight:normal;background:#e3e6ea}
+.enroll_area tr th{width:10%;padding-left:8px;font-weight:normal;text-align:left;background:#e3e6ea}
 .enroll_area tr th.icon_no{padding-left:21px}
 .enroll_area tr td{background:#f6f8f9;padding-left:8px}
 .enroll_area tr td .wid1{width:240px}
@@ -168,7 +169,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', end
 .enroll_area tr td label{padding:0 10px 0 5px}
 .enroll_area tr td label:first-child{padding-left:0}
 .enroll_area input[type="text"] {height:20px;line-height:20px}
-.enroll_area .btn_type{height:22px;line-height:16px;padding:3px 12px;margin-left:5px;-webkit-border-radius:3px; -moz-border-radius:3px; border-radius:3px;}
+.enroll_area .btn_type{height:20px;line-height:15px;padding:3px 12px;margin-left:5px;-webkit-border-radius:3px; -moz-border-radius:3px; border-radius:3px;}
 .enroll_area textarea{width:97%;height:55px;margin:3px 0}
 
 /* 팝업 레이어 공통 스타일 */
@@ -194,7 +195,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', end
 .pop_sensor li:after{display:block;content:"";clear:both;}
 .pop_sensor .name{float:left}
 .pop_sensor p{float:right}
-.pop_sensor p span{padding-right:4px;font-weight:normal}
+.pop_sensor p label{padding-right:4px;font-weight:normal}
 .pop_sensor input[type="text"]{width:40px;height:20px;margin-right:5px;padding-left:8px}
 .pop_sensor .close_btn img{position:absolute;top:3px;right:10px}
 .imgSelect, .cctvSelect {cursor: pointer;}
@@ -231,7 +232,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', end
 .red_icon{padding-right:6px;font-weight:bold;color:#ff4800}
 
 .menu_left{width:280px}
-.menu_right{width:calc(100% - 280px)}
+.menu_right{width:-webkit-calc(100% - 280px);width:-moz-calc(100% - 280px);width:calc(100% - 280px)}
 
 .logo_tip{padding:10px 0 0 10px;color:#f00}
 .logo_tip .logo_star{padding-right:9px}
@@ -240,8 +241,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', end
 /*.btn_area .btn_type:not(:first-child){margin-left:4px}*/
 .map_area{border:1px solid #ddd}
 /*.img_cnt{display:block;margin:0px auto;}*/
+.btn_area .btn_type{margin-right:4px}
 
-.btn_type + input[type="file"]{position:absolute;left:6px;width:73px;height:28px;opacity:0.01;filter:Alpha(opacity=0.01);-ms-filter:"alpha(opacity=0.01)";-khtml-opacity:0.01;-moz-opacity:0.01;}
+.btn_type + input[type="file"]{position:absolute;top:-6px;left:6px;width:73px;height:22px;opacity:0.01;filter:Alpha(opacity=0.01);-ms-filter:"alpha(opacity=0.01)";-khtml-opacity:0.01;-moz-opacity:0.01;}
 /*==========---------- 서브 각 스타일 ----------==========*/
 /*==========---------- 2_1 Monitoring | Location Monitoring ----------==========*/
 /*.cnt21 .map_area{width:1000px;margin:0px auto;border:0}
@@ -256,7 +258,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', end
 
 /*==========---------- 2_2 Monitoring | Location GIS Monitoring, 2_3 Monitoring | Truck GIS Monitoring ----------==========*/
 .cnt22 .loc_area, .cnt22 .map_area, .cnt22 .side_area{height:377px}
-.cnt22 .map_area{width:calc(100% - 272px)}
+.cnt22 .map_area{width:-webkit-calc(100% - 272px);width:-moz-calc(100% - 272px);width:calc(100% - 272px)}
 .cnt22 .side_area{width:264px}
 .cnt22 .side_tit{font-weight:normal}
 .cnt22 .side_tit div{top:0px;right:22px;}
@@ -271,7 +273,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', end
 .pop_sensor  .sensor_info2 td:last-child{width:300px;font-weight:normal}
 
 /*==========---------- 3_1 Analysis | Senosor Log ----------==========*/
-.cnt31 .btn_type, .cnt32 .btn_type{margin-right:4px}
 .cnt31 .txt, .cnt32 .txt{height:26px;line-height:26px;margin-left:20px;color:#a52020}
 
 /*==========---------- 3_3 Analysis | Sensor Status ----------==========*/
@@ -289,7 +290,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', end
  .truck_detail table tr input[type="text"]{margin:5px;width:79px;height:20px}
 
 .cnt34 .map_area{height:706px;}
-.cnt34 .list1{width:calc(100% - 321px)}
+.cnt34 .list1{width:-webkit-calc(100% - 321px);width:-moz-calc(100% - 321px);width:calc(100% - 321px)}
 .cnt34 .list2{width:311px}
 .cnt34 .list2 .sum_table{width:100%;text-align:center;border:1px solid #156baf;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;}
 .cnt34 .list2 .sum_table tr{height:20px;line-height:20px;-webkit-border-radius:10px 10px 0 0;-moz-border-radius:10px 10px 0 0;border-radius:10px 10px 0 0;}
@@ -305,19 +306,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', end
 /*==========---------- 3_5 Analysis | Item Traceability ----------==========*/
 .cnt35 .loc_area, .cnt35 .list1, .cnt35 .list2, .cnt35 .map_area{height:342px}
 .cnt35 .list1, .cnt35 .list2{width:280px;margin-right:10px}
-.cnt35 .map_area{width:calc(100% - 580px)}
+.cnt35 .map_area{width:-webkit-calc(100% - 580px);width:-moz-calc(100% - 580px);width:calc(100% - 580px)}
 
 /*==========---------- 4_1 Configuration | Sensor Manegement----------==========*/
 .cnt41 .bor_bg{position:relative;top:32px;right:0px;width:100%;height:1px;background:#0d6fbc}
 
 .cnt41 > div{float:left;position:relative;}
-.cnt41 > div > div{width:calc(100% - 283px)}
 .cnt41 > div > div:after{display:block;content:"";clear:both;}
+.cnt41 > div > div > div.f_l{width:-webkit-calc(100% - 283px);width:-moz-calc(100% - 283px);width:calc(100% - 283px)}
+.cnt41 > div > div > div.f_r{width:283px}
 .cnt41 > .tab1 > div{position:absolute;top:38px;left:0px;}
 .cnt41 > .tab2 > div{position:absolute;top:38px;left:-112px;display:none}
 .cnt41 .tab2 .tab_btn{margin-left:5px}
 .cnt41 .tab_btn{display:block;width:110px;height:30px;line-height:30px;text-align:center;color:#878787;font-weight:bold;background:#f1f1f1;border:1px solid #0d6fbc;cursor:pointer}
-.cnt41 > div.on > .tab_btn{color:#0d6fbc;border:1px solid #0d6fbc;border-bottom:1px solid #fff;background:#fff;cursor:default !important}
+.cnt41 > div.on > .tab_btn{color:#0d6fbc;border:1px solid #0d6fbc;border-bottom:1px solid #fff;background:#fff;cursor:default}
 
 .cnt41 .sensor_btn{height:35px;}
 .cnt41 .sensor_btn button{width:94px;height:20px;}
@@ -328,7 +330,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', end
 .cnt41 .excel button{margin-left:5px}
 
 /*==========---------- 4_2 Configuration | Location Allocation ----------==========*/
-.cnt42 .scroll_box{height:755px;border-top:1px solid #ccc;}
+.cnt42 .scroll_box{height:-webkit-calc(100% - 32px);height:-moz-calc(100% - 32px);height:calc(100% - 32px);min-height:450px;border-top:1px solid #ccc;}
 .cnt42 .map_area{border:0}
 
 .pop_sensor  .sensor_info1 th{width:82px;text-align:left}
@@ -338,7 +340,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', end
 .ko_guide{background:url("../images/sub/ko_guide.gif");}
 .en_guide{background:url("../images/sub/en_guide.gif");}
  
-.cnt42 .guide{position:absolute;top:34px;right:0px;px;width: 726px;border:2px solid #505761;background:#fff;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;outline:none;z-index:10}
+.cnt42 .guide{position:absolute;top:34px;right:0px;width: 726px;border:2px solid #505761;background:#fff;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;outline:none;z-index:10}
 .cnt42 .guide_area li{margin-bottom:10px;background:url("../images/sub/guide_bg.jpg") repeat-x 0 100%;}
 .cnt42 .guide_area h6{height:20px;line-height:20px;padding-left:20px;font-weight:bold;color:#0d6fbc;background-repeat:no-repeat;background-position:0 2px}
 .cnt42 .guide_area .list1 h6{background-image:url("../images/sub/guide_icon01.gif")}
@@ -368,7 +370,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', end
 .cnt43 .truck_sensor .sensor11{top:285px;margin-left:122px}
 .cnt43 .truck_sensor .sensor12{top:255px;margin-left:214px}
 .cnt43 .truck_txt img{width:198px;margin:0px 30px}
-.cnt43 .truck_txt div{width:calc(100% - 258px);height:183px;padding:20px;border:1px solid #d3d3d3;background:#f6f6f6}
+.cnt43 .truck_txt div{width:-webkit-calc(100% - 258px);width:-moz-calc(100% - 258px);width:calc(100% - 258px);height:183px;padding:20px;border:1px solid #d3d3d3;background:#f6f6f6}
 
 /*==========---------- 4_4 Configuration | Rule Management ----------==========*/
 .rule_area div{border:1px solid #d8d8d8;background:#f3f3f3}
@@ -394,7 +396,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', end
 .rule_set li .num4{top:258px}
 
 /*==========---------- 5_1 Master | Location Master ----------==========*/
-.cnt51 .enroll_area{width:calc(100% - 285px)}
+.cnt51 .enroll_area{width:-webkit-calc(100% - 285px);width:-moz-calc(100% - 285px);width:calc(100% - 285px)}
 .cnt51 .enroll_area tr th{width:20%}
 
 .side_area .image_cnt{height:251px}
@@ -403,6 +405,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', end
 /*==========---------- 5_2 Master | Truck Master ----------==========*/
 .cnt52 .enroll_area tr th{width:15%}
 
+/*==========---------- 5_4 Master | sensorMaster ----------==========*/
+.cnt54 .type_area > .grid_area{width:-webkit-calc(100% - 283px);width:-moz-calc(100% - 283px);width:calc(100% - 283px);}
 /*==========---------- 5_5 Master | SMS Manage Master ----------==========*/
 .cnt56 > table{margin-top:0}
 .cnt56 .grid_area{margin:10px 0}
@@ -422,7 +426,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', end
 .cnt82 .enroll_area{margin-top:10px}
 .cnt82 .enroll_area tr th{width:30%}
 .cnt82 .enroll_area tr td .wid2{width:168px}
-.cnt82 .menu_right{width:calc(100% - 290px);margin-left:10px}
+.cnt82 .menu_right{width:-webkit-calc(100% - 290px);width:-moz-calc(100% - 290px);width:calc(100% - 290px);margin-left:10px}
 .cnt82 #openBtn1{top:0px;right:0px}
 .cnt82 #popupLayer1{height:364px}
 .cnt82 #popupLayer1 .enroll_area select{width:80px}
@@ -438,3 +442,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', end
 .cnt84 .side_area li.list3 h5{background-image:url("../images/sub/type_icon03.gif")}
 .icon_area{float:left;width:40px;height:43px;margin:0 38px;text-align:center;border:1px solid #cecece}
 .col_red{color:#d52121}
+
+/* 사파리 전용 css 추가 */
+.safari .btn_type{font-weight:normal}
+.safari .search_area{line-height:2.7}
